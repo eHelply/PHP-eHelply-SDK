@@ -55,7 +55,7 @@ docs/Model/DetailedMetaCreate.md
 docs/Model/Email.md
 docs/Model/Field.md
 docs/Model/FieldDynamo.md
-docs/Model/GetAppointment403Response.md
+docs/Model/GetServicesWithSpecs403Response.md
 docs/Model/HTTPValidationError.md
 docs/Model/HeartbeatResponse.md
 docs/Model/KpiResponse.md
@@ -196,7 +196,7 @@ lib/Model/DetailedMetaCreate.php
 lib/Model/Email.php
 lib/Model/Field.php
 lib/Model/FieldDynamo.php
-lib/Model/GetAppointment403Response.php
+lib/Model/GetServicesWithSpecs403Response.php
 lib/Model/HTTPValidationError.php
 lib/Model/HeartbeatResponse.php
 lib/Model/KpiResponse.php
@@ -336,7 +336,7 @@ test/Model/DetailedTest.php
 test/Model/EmailTest.php
 test/Model/FieldDynamoTest.php
 test/Model/FieldTest.php
-test/Model/GetAppointment403ResponseTest.php
+test/Model/GetServicesWithSpecs403ResponseTest.php
 test/Model/HTTPValidationErrorTest.php
 test/Model/HeartbeatResponseTest.php
 test/Model/KpiResponseTest.php

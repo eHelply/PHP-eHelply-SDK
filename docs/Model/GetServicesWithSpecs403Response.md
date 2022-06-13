@@ -1,4 +1,4 @@
-# # GetAppointment403Response
+# # GetServicesWithSpecs403Response
 
 ## Properties
 
