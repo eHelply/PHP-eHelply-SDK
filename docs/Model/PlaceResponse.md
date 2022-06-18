@@ -13,11 +13,6 @@ Name | Type | Description | Notes
 **uuid** | **string** |  |
 **project_uuid** | **string** |  | [optional]
 **meta_uuid** | **string** |  | [optional]
-**catalog_data** | **object** |  | [optional]
-**review_group_data** | **object** |  | [optional]
-**schedule_data** | **object** |  | [optional]
-**collection_data** | **object** |  | [optional]
-**blog_data** | **object** |  | [optional]
 **tags** | [**\OpenAPI\Client\Model\TagBase[]**](TagBase.md) |  | [optional]
 **categories** | [**\OpenAPI\Client\Model\CategoryBase[]**](CategoryBase.md) |  | [optional]
 **company** | [**\OpenAPI\Client\Model\Company**](Company.md) |  | [optional]

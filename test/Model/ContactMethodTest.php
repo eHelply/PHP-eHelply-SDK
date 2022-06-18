@@ -1,6 +1,6 @@
 <?php
 /**
- * ResponseAddmembertoprojectTest
+ * ContactMethodTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ResponseAddmembertoprojectTest Class Doc Comment
+ * ContactMethodTest Class Doc Comment
  *
  * @category    Class
- * @description ResponseAddmembertoproject
+ * @description ContactMethod
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ResponseAddmembertoprojectTest extends TestCase
+class ContactMethodTest extends TestCase
 {
 
     /**
@@ -72,18 +72,27 @@ class ResponseAddmembertoprojectTest extends TestCase
     }
 
     /**
-     * Test "ResponseAddmembertoproject"
+     * Test "ContactMethod"
      */
-    public function testResponseAddmembertoproject()
+    public function testContactMethod()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "message"
+     * Test attribute "name"
      */
-    public function testPropertyMessage()
+    public function testPropertyName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "value"
+     */
+    public function testPropertyValue()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -1,6 +1,6 @@
 <?php
 /**
- * TicketsResponse
+ * ContactMethod
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * TicketsResponse Class Doc Comment
+ * ContactMethod Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -43,7 +43,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class TicketsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class ContactMethod implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class TicketsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TicketsResponse';
+    protected static $openAPIModelName = 'ContactMethod';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,9 +60,8 @@ class TicketsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'subject' => 'string',
-        'priority' => 'string',
-        'ticket_id' => 'string'
+        'name' => 'string',
+        'value' => 'string'
     ];
 
     /**
@@ -73,9 +72,8 @@ class TicketsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'subject' => null,
-        'priority' => null,
-        'ticket_id' => null
+        'name' => null,
+        'value' => null
     ];
 
     /**
@@ -105,9 +103,8 @@ class TicketsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'subject' => 'subject',
-        'priority' => 'priority',
-        'ticket_id' => 'ticket_id'
+        'name' => 'name',
+        'value' => 'value'
     ];
 
     /**
@@ -116,9 +113,8 @@ class TicketsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'subject' => 'setSubject',
-        'priority' => 'setPriority',
-        'ticket_id' => 'setTicketId'
+        'name' => 'setName',
+        'value' => 'setValue'
     ];
 
     /**
@@ -127,9 +123,8 @@ class TicketsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'subject' => 'getSubject',
-        'priority' => 'getPriority',
-        'ticket_id' => 'getTicketId'
+        'name' => 'getName',
+        'value' => 'getValue'
     ];
 
     /**
@@ -189,9 +184,8 @@ class TicketsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['subject'] = $data['subject'] ?? null;
-        $this->container['priority'] = $data['priority'] ?? null;
-        $this->container['ticket_id'] = $data['ticket_id'] ?? null;
+        $this->container['name'] = $data['name'] ?? '';
+        $this->container['value'] = $data['value'] ?? '';
     }
 
     /**
@@ -203,15 +197,6 @@ class TicketsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['subject'] === null) {
-            $invalidProperties[] = "'subject' can't be null";
-        }
-        if ($this->container['priority'] === null) {
-            $invalidProperties[] = "'priority' can't be null";
-        }
-        if ($this->container['ticket_id'] === null) {
-            $invalidProperties[] = "'ticket_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -228,73 +213,49 @@ class TicketsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets subject
+     * Gets name
      *
-     * @return string
+     * @return string|null
      */
-    public function getSubject()
+    public function getName()
     {
-        return $this->container['subject'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets subject
+     * Sets name
      *
-     * @param string $subject subject
+     * @param string|null $name name
      *
      * @return self
      */
-    public function setSubject($subject)
+    public function setName($name)
     {
-        $this->container['subject'] = $subject;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets priority
+     * Gets value
      *
-     * @return string
+     * @return string|null
      */
-    public function getPriority()
+    public function getValue()
     {
-        return $this->container['priority'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets priority
+     * Sets value
      *
-     * @param string $priority priority
+     * @param string|null $value value
      *
      * @return self
      */
-    public function setPriority($priority)
+    public function setValue($value)
     {
-        $this->container['priority'] = $priority;
-
-        return $this;
-    }
-
-    /**
-     * Gets ticket_id
-     *
-     * @return string
-     */
-    public function getTicketId()
-    {
-        return $this->container['ticket_id'];
-    }
-
-    /**
-     * Sets ticket_id
-     *
-     * @param string $ticket_id ticket_id
-     *
-     * @return self
-     */
-    public function setTicketId($ticket_id)
-    {
-        $this->container['ticket_id'] = $ticket_id;
+        $this->container['value'] = $value;
 
         return $this;
     }
