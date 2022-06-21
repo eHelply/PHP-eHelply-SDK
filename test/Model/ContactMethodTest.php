@@ -1,6 +1,6 @@
 <?php
 /**
- * PaginationTest
+ * ContactMethodTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * PaginationTest Class Doc Comment
+ * ContactMethodTest Class Doc Comment
  *
  * @category    Class
- * @description Pagination state
+ * @description ContactMethod
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class PaginationTest extends TestCase
+class ContactMethodTest extends TestCase
 {
 
     /**
@@ -72,81 +72,27 @@ class PaginationTest extends TestCase
     }
 
     /**
-     * Test "Pagination"
+     * Test "ContactMethod"
      */
-    public function testPagination()
+    public function testContactMethod()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "current_page"
+     * Test attribute "name"
      */
-    public function testPropertyCurrentPage()
+    public function testPropertyName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "page_size"
+     * Test attribute "value"
      */
-    public function testPropertyPageSize()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "total_items"
-     */
-    public function testPropertyTotalItems()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "total_pages"
-     */
-    public function testPropertyTotalPages()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "has_previous_page"
-     */
-    public function testPropertyHasPreviousPage()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "has_next_page"
-     */
-    public function testPropertyHasNextPage()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "previous_page"
-     */
-    public function testPropertyPreviousPage()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "next_page"
-     */
-    public function testPropertyNextPage()
+    public function testPropertyValue()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

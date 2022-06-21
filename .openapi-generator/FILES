@@ -43,6 +43,7 @@ docs/Model/CompanyBase.md
 docs/Model/CompanyResponse.md
 docs/Model/Contact.md
 docs/Model/ContactBase.md
+docs/Model/ContactMethod.md
 docs/Model/ContactResponse.md
 docs/Model/CreateKeyResponse.md
 docs/Model/CreateReview.md
@@ -184,6 +185,7 @@ lib/Model/CompanyBase.php
 lib/Model/CompanyResponse.php
 lib/Model/Contact.php
 lib/Model/ContactBase.php
+lib/Model/ContactMethod.php
 lib/Model/ContactResponse.php
 lib/Model/CreateKeyResponse.php
 lib/Model/CreateReview.php
@@ -323,6 +325,7 @@ test/Model/CompanyBaseTest.php
 test/Model/CompanyResponseTest.php
 test/Model/CompanyTest.php
 test/Model/ContactBaseTest.php
+test/Model/ContactMethodTest.php
 test/Model/ContactResponseTest.php
 test/Model/ContactTest.php
 test/Model/CreateKeyResponseTest.php

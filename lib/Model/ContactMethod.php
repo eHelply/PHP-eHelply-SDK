@@ -1,6 +1,6 @@
 <?php
 /**
- * UserTokenReturn
+ * ContactMethod
  *
  * PHP version 7.4
  *
@@ -33,10 +33,9 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * UserTokenReturn Class Doc Comment
+ * ContactMethod Class Doc Comment
  *
  * @category Class
- * @description Tokens, naming scheme based off of cognito return fields
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +43,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class UserTokenReturn implements ModelInterface, ArrayAccess, \JsonSerializable
+class ContactMethod implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class UserTokenReturn implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'UserTokenReturn';
+    protected static $openAPIModelName = 'ContactMethod';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,10 +60,8 @@ class UserTokenReturn implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'access_token' => 'string',
-        'expires_in' => 'int',
-        'token_type' => 'string',
-        'id_token' => 'string'
+        'name' => 'string',
+        'value' => 'string'
     ];
 
     /**
@@ -75,10 +72,8 @@ class UserTokenReturn implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'access_token' => null,
-        'expires_in' => null,
-        'token_type' => null,
-        'id_token' => null
+        'name' => null,
+        'value' => null
     ];
 
     /**
@@ -108,10 +103,8 @@ class UserTokenReturn implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'access_token' => 'AccessToken',
-        'expires_in' => 'ExpiresIn',
-        'token_type' => 'TokenType',
-        'id_token' => 'IdToken'
+        'name' => 'name',
+        'value' => 'value'
     ];
 
     /**
@@ -120,10 +113,8 @@ class UserTokenReturn implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'access_token' => 'setAccessToken',
-        'expires_in' => 'setExpiresIn',
-        'token_type' => 'setTokenType',
-        'id_token' => 'setIdToken'
+        'name' => 'setName',
+        'value' => 'setValue'
     ];
 
     /**
@@ -132,10 +123,8 @@ class UserTokenReturn implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'access_token' => 'getAccessToken',
-        'expires_in' => 'getExpiresIn',
-        'token_type' => 'getTokenType',
-        'id_token' => 'getIdToken'
+        'name' => 'getName',
+        'value' => 'getValue'
     ];
 
     /**
@@ -195,10 +184,8 @@ class UserTokenReturn implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['access_token'] = $data['access_token'] ?? null;
-        $this->container['expires_in'] = $data['expires_in'] ?? null;
-        $this->container['token_type'] = $data['token_type'] ?? null;
-        $this->container['id_token'] = $data['id_token'] ?? null;
+        $this->container['name'] = $data['name'] ?? '';
+        $this->container['value'] = $data['value'] ?? '';
     }
 
     /**
@@ -210,18 +197,6 @@ class UserTokenReturn implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['access_token'] === null) {
-            $invalidProperties[] = "'access_token' can't be null";
-        }
-        if ($this->container['expires_in'] === null) {
-            $invalidProperties[] = "'expires_in' can't be null";
-        }
-        if ($this->container['token_type'] === null) {
-            $invalidProperties[] = "'token_type' can't be null";
-        }
-        if ($this->container['id_token'] === null) {
-            $invalidProperties[] = "'id_token' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -238,97 +213,49 @@ class UserTokenReturn implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets access_token
+     * Gets name
      *
-     * @return string
+     * @return string|null
      */
-    public function getAccessToken()
+    public function getName()
     {
-        return $this->container['access_token'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets access_token
+     * Sets name
      *
-     * @param string $access_token access_token
+     * @param string|null $name name
      *
      * @return self
      */
-    public function setAccessToken($access_token)
+    public function setName($name)
     {
-        $this->container['access_token'] = $access_token;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets expires_in
+     * Gets value
      *
-     * @return int
+     * @return string|null
      */
-    public function getExpiresIn()
+    public function getValue()
     {
-        return $this->container['expires_in'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets expires_in
+     * Sets value
      *
-     * @param int $expires_in expires_in
+     * @param string|null $value value
      *
      * @return self
      */
-    public function setExpiresIn($expires_in)
+    public function setValue($value)
     {
-        $this->container['expires_in'] = $expires_in;
-
-        return $this;
-    }
-
-    /**
-     * Gets token_type
-     *
-     * @return string
-     */
-    public function getTokenType()
-    {
-        return $this->container['token_type'];
-    }
-
-    /**
-     * Sets token_type
-     *
-     * @param string $token_type token_type
-     *
-     * @return self
-     */
-    public function setTokenType($token_type)
-    {
-        $this->container['token_type'] = $token_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets id_token
-     *
-     * @return string
-     */
-    public function getIdToken()
-    {
-        return $this->container['id_token'];
-    }
-
-    /**
-     * Sets id_token
-     *
-     * @param string $id_token id_token
-     *
-     * @return self
-     */
-    public function setIdToken($id_token)
-    {
-        $this->container['id_token'] = $id_token;
+        $this->container['value'] = $value;
 
         return $this;
     }
