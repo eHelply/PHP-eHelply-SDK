@@ -57,6 +57,9 @@ docs/Model/Email.md
 docs/Model/Field.md
 docs/Model/FieldDynamo.md
 docs/Model/GetAppointment403Response.md
+docs/Model/GetServiceServiceWithSpecsResponse.md
+docs/Model/GetServiceSpecResponse.md
+docs/Model/GetServiceSpecsResponse.md
 docs/Model/HTTPValidationError.md
 docs/Model/HeartbeatResponse.md
 docs/Model/KpiResponse.md
@@ -102,9 +105,6 @@ docs/Model/ResponseCreatekey.md
 docs/Model/ResponseDeletekey.md
 docs/Model/ResponseDeleteusagetype.md
 docs/Model/ResponseGeneratetoken.md
-docs/Model/ResponseGetservicespec.md
-docs/Model/ResponseGetservicespecs.md
-docs/Model/ResponseGetserviceswithspecs.md
 docs/Model/ResponseRemovememberfromproject.md
 docs/Model/SecurityCreateToken.md
 docs/Model/SecurityEncryptionKeyGet.md
@@ -199,6 +199,9 @@ lib/Model/Email.php
 lib/Model/Field.php
 lib/Model/FieldDynamo.php
 lib/Model/GetAppointment403Response.php
+lib/Model/GetServiceServiceWithSpecsResponse.php
+lib/Model/GetServiceSpecResponse.php
+lib/Model/GetServiceSpecsResponse.php
 lib/Model/HTTPValidationError.php
 lib/Model/HeartbeatResponse.php
 lib/Model/KpiResponse.php
@@ -245,9 +248,6 @@ lib/Model/ResponseCreatekey.php
 lib/Model/ResponseDeletekey.php
 lib/Model/ResponseDeleteusagetype.php
 lib/Model/ResponseGeneratetoken.php
-lib/Model/ResponseGetservicespec.php
-lib/Model/ResponseGetservicespecs.php
-lib/Model/ResponseGetserviceswithspecs.php
 lib/Model/ResponseRemovememberfromproject.php
 lib/Model/SecurityCreateToken.php
 lib/Model/SecurityEncryptionKeyGet.php
@@ -340,6 +340,9 @@ test/Model/EmailTest.php
 test/Model/FieldDynamoTest.php
 test/Model/FieldTest.php
 test/Model/GetAppointment403ResponseTest.php
+test/Model/GetServiceServiceWithSpecsResponseTest.php
+test/Model/GetServiceSpecResponseTest.php
+test/Model/GetServiceSpecsResponseTest.php
 test/Model/HTTPValidationErrorTest.php
 test/Model/HeartbeatResponseTest.php
 test/Model/KpiResponseTest.php
@@ -385,9 +388,6 @@ test/Model/ResponseCreatekeyTest.php
 test/Model/ResponseDeletekeyTest.php
 test/Model/ResponseDeleteusagetypeTest.php
 test/Model/ResponseGeneratetokenTest.php
-test/Model/ResponseGetservicespecTest.php
-test/Model/ResponseGetservicespecsTest.php
-test/Model/ResponseGetserviceswithspecsTest.php
 test/Model/ResponseRemovememberfromprojectTest.php
 test/Model/SecurityCreateTokenTest.php
 test/Model/SecurityEncryptionKeyGetTest.php

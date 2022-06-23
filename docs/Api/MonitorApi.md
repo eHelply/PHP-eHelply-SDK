@@ -627,7 +627,7 @@ No authorization required
 ## `getServiceSpec()`
 
 ```php
-getServiceSpec($service, $spec, $as_json): \OpenAPI\Client\Model\ResponseGetservicespec
+getServiceSpec($service, $spec): \OpenAPI\Client\Model\GetServiceSpecResponse
 ```
 
 Getservicespec
@@ -647,10 +647,9 @@ $apiInstance = new OpenAPI\Client\Api\MonitorApi(
 );
 $service = 'service_example'; // string
 $spec = 'spec_example'; // string
-$as_json = false; // bool
 
 try {
-    $result = $apiInstance->getServiceSpec($service, $spec, $as_json);
+    $result = $apiInstance->getServiceSpec($service, $spec);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->getServiceSpec: ', $e->getMessage(), PHP_EOL;
@@ -663,11 +662,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service** | **string**|  |
  **spec** | **string**|  |
- **as_json** | **bool**|  | [optional] [default to false]
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ResponseGetservicespec**](../Model/ResponseGetservicespec.md)
+[**\OpenAPI\Client\Model\GetServiceSpecResponse**](../Model/GetServiceSpecResponse.md)
 
 ### Authorization
 
@@ -685,7 +683,7 @@ No authorization required
 ## `getServiceSpecs()`
 
 ```php
-getServiceSpecs($service): \OpenAPI\Client\Model\ResponseGetservicespecs
+getServiceSpecs($service): \OpenAPI\Client\Model\GetServiceSpecsResponse
 ```
 
 Getservicespecs
@@ -721,7 +719,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ResponseGetservicespecs**](../Model/ResponseGetservicespecs.md)
+[**\OpenAPI\Client\Model\GetServiceSpecsResponse**](../Model/GetServiceSpecsResponse.md)
 
 ### Authorization
 
@@ -863,7 +861,7 @@ No authorization required
 ## `getServicesWithSpecs()`
 
 ```php
-getServicesWithSpecs(): \OpenAPI\Client\Model\ResponseGetserviceswithspecs
+getServicesWithSpecs(): \OpenAPI\Client\Model\GetServiceServiceWithSpecsResponse
 ```
 
 Getserviceswithspecs
@@ -896,7 +894,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ResponseGetserviceswithspecs**](../Model/ResponseGetserviceswithspecs.md)
+[**\OpenAPI\Client\Model\GetServiceServiceWithSpecsResponse**](../Model/GetServiceServiceWithSpecsResponse.md)
 
 ### Authorization
 
