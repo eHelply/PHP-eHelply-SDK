@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `createNote()`
 
 ```php
-createNote($note_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\NoteDynamo
+createNote($note_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\NoteDynamoResponse
 ```
 
 Create Note
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\NoteDynamo**](../Model/NoteDynamo.md)
+[**\OpenAPI\Client\Model\NoteDynamoResponse**](../Model/NoteDynamoResponse.md)
 
 ### Authorization
 
@@ -217,7 +217,7 @@ No authorization required
 ## `updateNote()`
 
 ```php
-updateNote($note_id, $note_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\NoteDynamo
+updateNote($note_id, $note_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\NoteDynamoResponse
 ```
 
 Update Note
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\NoteDynamo**](../Model/NoteDynamo.md)
+[**\OpenAPI\Client\Model\NoteDynamoResponse**](../Model/NoteDynamoResponse.md)
 
 ### Authorization
 

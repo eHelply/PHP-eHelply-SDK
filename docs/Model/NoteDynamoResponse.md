@@ -1,9 +1,12 @@
-# # NotesHTTPValidationError
+# # NoteDynamoResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**detail** | [**\OpenAPI\Client\Model\NotesValidationError[]**](NotesValidationError.md) |  | [optional]
+**uuid** | **string** |  |
+**content** | **string** |  |
+**time** | **string** |  |
+**meta** | [**\OpenAPI\Client\Model\NoteMeta**](NoteMeta.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

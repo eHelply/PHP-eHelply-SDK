@@ -74,11 +74,9 @@ docs/Model/MetaCustom.md
 docs/Model/MetaDynamo.md
 docs/Model/MetaSlugger.md
 docs/Model/NoteBase.md
-docs/Model/NoteDynamo.md
 docs/Model/NoteDynamoHistory.md
+docs/Model/NoteDynamoResponse.md
 docs/Model/NoteMeta.md
-docs/Model/NotesHTTPValidationError.md
-docs/Model/NotesValidationError.md
 docs/Model/OptionGroup.md
 docs/Model/Options.md
 docs/Model/Page.md
@@ -225,11 +223,9 @@ lib/Model/MetaDynamo.php
 lib/Model/MetaSlugger.php
 lib/Model/ModelInterface.php
 lib/Model/NoteBase.php
-lib/Model/NoteDynamo.php
 lib/Model/NoteDynamoHistory.php
+lib/Model/NoteDynamoResponse.php
 lib/Model/NoteMeta.php
-lib/Model/NotesHTTPValidationError.php
-lib/Model/NotesValidationError.php
 lib/Model/OptionGroup.php
 lib/Model/Options.php
 lib/Model/Page.php
@@ -374,10 +370,8 @@ test/Model/MetaDynamoTest.php
 test/Model/MetaSluggerTest.php
 test/Model/NoteBaseTest.php
 test/Model/NoteDynamoHistoryTest.php
-test/Model/NoteDynamoTest.php
+test/Model/NoteDynamoResponseTest.php
 test/Model/NoteMetaTest.php
-test/Model/NotesHTTPValidationErrorTest.php
-test/Model/NotesValidationErrorTest.php
 test/Model/OptionGroupTest.php
 test/Model/OptionsTest.php
 test/Model/PageTest.php
