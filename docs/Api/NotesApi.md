@@ -147,7 +147,7 @@ No authorization required
 ## `getNote()`
 
 ```php
-getNote($note_id, $history, $history_content, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\NoteDynamoHistory
+getNote($note_id, $history, $history_content, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\NoteDynamoHistoryResponse
 ```
 
 Get Note
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\NoteDynamoHistory**](../Model/NoteDynamoHistory.md)
+[**\OpenAPI\Client\Model\NoteDynamoHistoryResponse**](../Model/NoteDynamoHistoryResponse.md)
 
 ### Authorization
 
