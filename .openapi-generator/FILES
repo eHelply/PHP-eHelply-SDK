@@ -70,7 +70,7 @@ docs/Model/MetaCustom.md
 docs/Model/MetaDynamo.md
 docs/Model/MetaSlugger.md
 docs/Model/NoteBase.md
-docs/Model/NoteDynamoHistory.md
+docs/Model/NoteDynamoHistoryResponse.md
 docs/Model/NoteDynamoResponse.md
 docs/Model/NoteMeta.md
 docs/Model/OptionGroup.md
@@ -211,7 +211,7 @@ lib/Model/MetaDynamo.php
 lib/Model/MetaSlugger.php
 lib/Model/ModelInterface.php
 lib/Model/NoteBase.php
-lib/Model/NoteDynamoHistory.php
+lib/Model/NoteDynamoHistoryResponse.php
 lib/Model/NoteDynamoResponse.php
 lib/Model/NoteMeta.php
 lib/Model/OptionGroup.php
@@ -349,7 +349,7 @@ test/Model/MetaCustomTest.php
 test/Model/MetaDynamoTest.php
 test/Model/MetaSluggerTest.php
 test/Model/NoteBaseTest.php
-test/Model/NoteDynamoHistoryTest.php
+test/Model/NoteDynamoHistoryResponseTest.php
 test/Model/NoteDynamoResponseTest.php
 test/Model/NoteMetaTest.php
 test/Model/OptionGroupTest.php

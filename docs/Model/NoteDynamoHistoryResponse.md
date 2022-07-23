@@ -1,11 +1,11 @@
-# # NoteDynamoHistory
+# # NoteDynamoHistoryResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | **string** |  |
-**content** | **\SplFileObject** |  | [optional]
+**content** | **string** |  |
 **time** | **string** |  |
 **meta** | [**\OpenAPI\Client\Model\NoteMeta**](NoteMeta.md) |  |
 **history** | [**\OpenAPI\Client\Model\NoteDynamoResponse[]**](NoteDynamoResponse.md) |  | [optional]
