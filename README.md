@@ -85,6 +85,14 @@ Class | Method | HTTP request | Description
 *BillingApi* | [**processPayment**](docs/Api/BillingApi.md#processpayment) | **POST** /sam/billing/process_payment | Processpayment
 *BillingApi* | [**reconcilePaymentMethod**](docs/Api/BillingApi.md#reconcilepaymentmethod) | **GET** /sam/billing/reconcile_payment | Reconcilepaymentmethod
 *BillingApi* | [**removePaymentMethod**](docs/Api/BillingApi.md#removepaymentmethod) | **DELETE** /sam/billing/remove_payment_method | Removepaymentmethod
+*CatalogsApi* | [**attachProductToCatalog**](docs/Api/CatalogsApi.md#attachproducttocatalog) | **POST** /products/catalogs/{catalog_uuid}/products/{product_uuid} | Addproducttocatalog
+*CatalogsApi* | [**createCatalog**](docs/Api/CatalogsApi.md#createcatalog) | **POST** /products/catalogs | Createcatalog
+*CatalogsApi* | [**deleteCatalog**](docs/Api/CatalogsApi.md#deletecatalog) | **DELETE** /products/catalogs/{catalog_uuid} | Deletecatalog
+*CatalogsApi* | [**detachProductFromCatalog**](docs/Api/CatalogsApi.md#detachproductfromcatalog) | **DELETE** /products/catalogs/{catalog_uuid}/products/{product_uuid} | Removeproductfromcatalog
+*CatalogsApi* | [**getCatalog**](docs/Api/CatalogsApi.md#getcatalog) | **GET** /products/catalogs/{catalog_uuid} | Getcatalog
+*CatalogsApi* | [**searchCatalogProducts**](docs/Api/CatalogsApi.md#searchcatalogproducts) | **GET** /products/catalogs/{catalog_uuid}/products | Searchcatalogproducts
+*CatalogsApi* | [**searchCatalogs**](docs/Api/CatalogsApi.md#searchcatalogs) | **GET** /products/catalogs | Searchcatalogs
+*CatalogsApi* | [**updateCatalog**](docs/Api/CatalogsApi.md#updatecatalog) | **PUT** /products/catalogs/{catalog_uuid} | Updatecatalog
 *CategoryApi* | [**createCategoryPlacesCategoriesPost**](docs/Api/CategoryApi.md#createcategoryplacescategoriespost) | **POST** /places/categories | Create Category
 *CategoryApi* | [**deleteCategoryPlacesCategoriesCategoryUuidDelete**](docs/Api/CategoryApi.md#deletecategoryplacescategoriescategoryuuiddelete) | **DELETE** /places/categories/{category_uuid} | Delete Category
 *CategoryApi* | [**getCategoryPlacesCategoriesCategoryUuidGet**](docs/Api/CategoryApi.md#getcategoryplacescategoriescategoryuuidget) | **GET** /places/categories/{category_uuid} | Get Category
@@ -96,33 +104,14 @@ Class | Method | HTTP request | Description
 *CompaniesApi* | [**searchCompaniesPlacesCompaniesGet**](docs/Api/CompaniesApi.md#searchcompaniesplacescompaniesget) | **GET** /places/companies | Search Companies
 *CompaniesApi* | [**updateCompanyPlacesCompaniesCompanyUuidPut**](docs/Api/CompaniesApi.md#updatecompanyplacescompaniescompanyuuidput) | **PUT** /places/companies/{company_uuid} | Update Company
 *DefaultApi* | [**attachEntityToAppointment**](docs/Api/DefaultApi.md#attachentitytoappointment) | **POST** /appointments/appointments/{appointment_uuid}/entities/{entity_uuid} | Attach Entity To Appointment
-*DefaultApi* | [**attachProductToCatalog**](docs/Api/DefaultApi.md#attachproducttocatalog) | **POST** /products/catalogs/{catalog_uuid}/products/{product_uuid} | Attach Product To Catalog
 *DefaultApi* | [**createAppointment**](docs/Api/DefaultApi.md#createappointment) | **POST** /appointments/appointments | Create Appointment
-*DefaultApi* | [**createCatalog**](docs/Api/DefaultApi.md#createcatalog) | **POST** /products/catalogs | Create Catalog
-*DefaultApi* | [**createProduct**](docs/Api/DefaultApi.md#createproduct) | **POST** /products/products | Create Product
-*DefaultApi* | [**createReview**](docs/Api/DefaultApi.md#createreview) | **POST** /products/reviews/types/{entity_type}/entities/{entity_uuid} | Create Review
 *DefaultApi* | [**deleteAppointment**](docs/Api/DefaultApi.md#deleteappointment) | **DELETE** /appointments/appointments/{appointment_uuid} | Delete Appointment
-*DefaultApi* | [**deleteCatalog**](docs/Api/DefaultApi.md#deletecatalog) | **DELETE** /products/catalogs/{catalog_uuid} | Delete Catalog
-*DefaultApi* | [**deleteProduct**](docs/Api/DefaultApi.md#deleteproduct) | **DELETE** /products/products/{product_uuid} | Delete Product
-*DefaultApi* | [**deleteReview**](docs/Api/DefaultApi.md#deletereview) | **DELETE** /products/reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Delete Review
 *DefaultApi* | [**detachEntityFromAppointment**](docs/Api/DefaultApi.md#detachentityfromappointment) | **DELETE** /appointments/appointments/{appointment_uuid}/entities/{entity_uuid} | Detach Entity From Appointment
-*DefaultApi* | [**detachProductFromCatalog**](docs/Api/DefaultApi.md#detachproductfromcatalog) | **DELETE** /products/catalogs/{catalog_uuid}/products/{product_uuid} | Detach Product From Catalog
 *DefaultApi* | [**getAppointment**](docs/Api/DefaultApi.md#getappointment) | **GET** /appointments/appointments/{appointment_uuid} | Get Appointment
-*DefaultApi* | [**getCatalog**](docs/Api/DefaultApi.md#getcatalog) | **GET** /products/catalogs/{catalog_uuid} | Get Catalog
-*DefaultApi* | [**getProduct**](docs/Api/DefaultApi.md#getproduct) | **GET** /products/products/{product_uuid} | Get Product
-*DefaultApi* | [**getReview**](docs/Api/DefaultApi.md#getreview) | **GET** /products/reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Get Review
 *DefaultApi* | [**searchAppointment**](docs/Api/DefaultApi.md#searchappointment) | **GET** /appointments/appointments | Search Appointment
 *DefaultApi* | [**searchAppointmentEntities**](docs/Api/DefaultApi.md#searchappointmententities) | **GET** /appointments/appointments/{appointment_uuid}/entities | Search Appointment Entities
-*DefaultApi* | [**searchCatalogProducts**](docs/Api/DefaultApi.md#searchcatalogproducts) | **GET** /products/catalogs/{catalog_uuid}/products | Search Catalog Products
-*DefaultApi* | [**searchCatalogs**](docs/Api/DefaultApi.md#searchcatalogs) | **GET** /products/catalogs | Search Catalogs
 *DefaultApi* | [**searchEntityAppointments**](docs/Api/DefaultApi.md#searchentityappointments) | **GET** /appointments/appointments/entities/{entity_uuid}/appointments | Get Entities Appointments
-*DefaultApi* | [**searchProduct**](docs/Api/DefaultApi.md#searchproduct) | **GET** /products/products | Search Products
-*DefaultApi* | [**searchProductCatalog**](docs/Api/DefaultApi.md#searchproductcatalog) | **GET** /products/products/{product_uuid}/catalogs | Search Product Catalogs
-*DefaultApi* | [**searchReviews**](docs/Api/DefaultApi.md#searchreviews) | **GET** /products/reviews/types/{entity_type}/entities/{entity_uuid} | Search Review
 *DefaultApi* | [**updateAppointment**](docs/Api/DefaultApi.md#updateappointment) | **PUT** /appointments/appointments/{appointment_uuid} | Update Appointment
-*DefaultApi* | [**updateCatalog**](docs/Api/DefaultApi.md#updatecatalog) | **PUT** /products/catalogs/{catalog_uuid} | Update Catalog
-*DefaultApi* | [**updateProduct**](docs/Api/DefaultApi.md#updateproduct) | **PUT** /products/products/{product_uuid} | Update Product
-*DefaultApi* | [**updateReview**](docs/Api/DefaultApi.md#updatereview) | **PUT** /products/reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Update Review
 *LoggingApi* | [**getLogs**](docs/Api/LoggingApi.md#getlogs) | **GET** /sam/logging/logs | Getlogs
 *LoggingApi* | [**getServiceLogs**](docs/Api/LoggingApi.md#getservicelogs) | **GET** /sam/logging/logs/services/{service} | Getservicelogs
 *LoggingApi* | [**getSubjectLogs**](docs/Api/LoggingApi.md#getsubjectlogs) | **GET** /sam/logging/logs/services/{service}/subjects/{subject} | Getsubjectlogs
@@ -173,6 +162,12 @@ Class | Method | HTTP request | Description
 *PlacesApi* | [**searchPlacesBySearchStringPlacesSearchPlacesStringGet**](docs/Api/PlacesApi.md#searchplacesbysearchstringplacessearchplacesstringget) | **GET** /places/search/places/string | Search Places By Search String
 *PlacesApi* | [**searchPlacesPlacesPlacesGet**](docs/Api/PlacesApi.md#searchplacesplacesplacesget) | **GET** /places/places | Search Places
 *PlacesApi* | [**updatePlacePlacesPlacesPlaceUuidPut**](docs/Api/PlacesApi.md#updateplaceplacesplacesplaceuuidput) | **PUT** /places/places/{place_uuid} | Update Place
+*ProductsApi* | [**createProduct**](docs/Api/ProductsApi.md#createproduct) | **POST** /products/products | Createproduct
+*ProductsApi* | [**deleteProduct**](docs/Api/ProductsApi.md#deleteproduct) | **DELETE** /products/products/{product_uuid} | Deleteproduct
+*ProductsApi* | [**getProduct**](docs/Api/ProductsApi.md#getproduct) | **GET** /products/products/{product_uuid} | Getproduct
+*ProductsApi* | [**searchProductCatalog**](docs/Api/ProductsApi.md#searchproductcatalog) | **GET** /products/products/{product_uuid}/catalogs | Searchproductcatalog
+*ProductsApi* | [**searchProducts**](docs/Api/ProductsApi.md#searchproducts) | **GET** /products/products | Searchproducts
+*ProductsApi* | [**updateProduct**](docs/Api/ProductsApi.md#updateproduct) | **PUT** /products/products/{product_uuid} | Updateproduct
 *ProjectsApi* | [**addMemberToProject**](docs/Api/ProjectsApi.md#addmembertoproject) | **POST** /sam/projects/projects/{project_uuid}/members/{entity_uuid} | Addmembertoproject
 *ProjectsApi* | [**archiveProject**](docs/Api/ProjectsApi.md#archiveproject) | **DELETE** /sam/projects/projects/{project_uuid} | Archiveproject
 *ProjectsApi* | [**createProject**](docs/Api/ProjectsApi.md#createproject) | **POST** /sam/projects/projects | Createproject
@@ -192,6 +187,11 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**searchUsageType**](docs/Api/ProjectsApi.md#searchusagetype) | **GET** /sam/projects/usage/types | Searchusagetype
 *ProjectsApi* | [**updateProject**](docs/Api/ProjectsApi.md#updateproject) | **PUT** /sam/projects/projects/{project_uuid} | Updateproject
 *ProjectsApi* | [**updateUsageType**](docs/Api/ProjectsApi.md#updateusagetype) | **PUT** /sam/projects/usage/types/{usage_type_key} | Updateusagetype
+*ReviewsApi* | [**createReview**](docs/Api/ReviewsApi.md#createreview) | **POST** /products/reviews/types/{entity_type}/entities/{entity_uuid} | Create
+*ReviewsApi* | [**deleteReview**](docs/Api/ReviewsApi.md#deletereview) | **DELETE** /products/reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Deletereview
+*ReviewsApi* | [**getReview**](docs/Api/ReviewsApi.md#getreview) | **GET** /products/reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Getreview
+*ReviewsApi* | [**searchReviews**](docs/Api/ReviewsApi.md#searchreviews) | **GET** /products/reviews/types/{entity_type}/entities/{entity_uuid} | Searchreview
+*ReviewsApi* | [**updateReview**](docs/Api/ReviewsApi.md#updatereview) | **PUT** /products/reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Updatereview
 *SecurityApi* | [**createEncryptionKey**](docs/Api/SecurityApi.md#createencryptionkey) | **POST** /sam/security/encryption/categories/{category}/keys | Createencryptionkey
 *SecurityApi* | [**createKey**](docs/Api/SecurityApi.md#createkey) | **POST** /sam/security/keys | Createkey
 *SecurityApi* | [**deleteKey**](docs/Api/SecurityApi.md#deletekey) | **DELETE** /sam/security/keys/{key_uuid} | Deletekey
@@ -377,6 +377,6 @@ support@ehelply.com
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.1.95`
-    - Package version: `1.1.95`
+- API version: `1.1.96`
+    - Package version: `1.1.96`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
