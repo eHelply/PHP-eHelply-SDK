@@ -5,6 +5,7 @@
 README.md
 composer.json
 docs/Api/BillingApi.md
+docs/Api/CatalogsApi.md
 docs/Api/CategoryApi.md
 docs/Api/CompaniesApi.md
 docs/Api/DefaultApi.md
@@ -13,7 +14,9 @@ docs/Api/MetaApi.md
 docs/Api/MonitorApi.md
 docs/Api/NotesApi.md
 docs/Api/PlacesApi.md
+docs/Api/ProductsApi.md
 docs/Api/ProjectsApi.md
+docs/Api/ReviewsApi.md
 docs/Api/SecurityApi.md
 docs/Api/StaffApi.md
 docs/Api/SupportApi.md
@@ -152,6 +155,7 @@ docs/Model/ValidationError.md
 docs/Model/Validations.md
 git_push.sh
 lib/Api/BillingApi.php
+lib/Api/CatalogsApi.php
 lib/Api/CategoryApi.php
 lib/Api/CompaniesApi.php
 lib/Api/DefaultApi.php
@@ -160,7 +164,9 @@ lib/Api/MetaApi.php
 lib/Api/MonitorApi.php
 lib/Api/NotesApi.php
 lib/Api/PlacesApi.php
+lib/Api/ProductsApi.php
 lib/Api/ProjectsApi.php
+lib/Api/ReviewsApi.php
 lib/Api/SecurityApi.php
 lib/Api/StaffApi.php
 lib/Api/SupportApi.php
@@ -304,6 +310,7 @@ lib/Model/Validations.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
 test/Api/BillingApiTest.php
+test/Api/CatalogsApiTest.php
 test/Api/CategoryApiTest.php
 test/Api/CompaniesApiTest.php
 test/Api/DefaultApiTest.php
@@ -312,7 +319,9 @@ test/Api/MetaApiTest.php
 test/Api/MonitorApiTest.php
 test/Api/NotesApiTest.php
 test/Api/PlacesApiTest.php
+test/Api/ProductsApiTest.php
 test/Api/ProjectsApiTest.php
+test/Api/ReviewsApiTest.php
 test/Api/SecurityApiTest.php
 test/Api/StaffApiTest.php
 test/Api/SupportApiTest.php
