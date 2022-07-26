@@ -430,7 +430,7 @@ No authorization required
 ## `getMeta()`
 
 ```php
-getMeta($service, $type_str, $entity_uuid, $detailed, $custom, $dates, $history, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\MetaDynamo
+getMeta($service, $type_str, $entity_uuid, $detailed, $custom, $dates, $history, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\MetaGet
 ```
 
 Get Meta
@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\MetaDynamo**](../Model/MetaDynamo.md)
+[**\OpenAPI\Client\Model\MetaGet**](../Model/MetaGet.md)
 
 ### Authorization
 
@@ -508,7 +508,7 @@ No authorization required
 ## `getMetaFromUuid()`
 
 ```php
-getMetaFromUuid($meta_uuid, $detailed, $custom, $dates, $history, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\MetaDynamo
+getMetaFromUuid($meta_uuid, $detailed, $custom, $dates, $history, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\MetaGet
 ```
 
 Get Meta From Uuid
@@ -564,7 +564,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\MetaDynamo**](../Model/MetaDynamo.md)
+[**\OpenAPI\Client\Model\MetaGet**](../Model/MetaGet.md)
 
 ### Authorization
 
