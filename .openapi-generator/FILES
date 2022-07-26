@@ -55,6 +55,7 @@ docs/Model/DatesMeta.md
 docs/Model/Detailed.md
 docs/Model/DetailedMeta.md
 docs/Model/DetailedMetaCreate.md
+docs/Model/DetailedMetaGet.md
 docs/Model/Email.md
 docs/Model/Field.md
 docs/Model/FieldDynamo.md
@@ -72,6 +73,7 @@ docs/Model/MetaChildren.md
 docs/Model/MetaCreate.md
 docs/Model/MetaCustom.md
 docs/Model/MetaDynamo.md
+docs/Model/MetaGet.md
 docs/Model/MetaSlugger.md
 docs/Model/NoteBase.md
 docs/Model/NoteDynamoHistoryResponse.md
@@ -203,6 +205,7 @@ lib/Model/DatesMeta.php
 lib/Model/Detailed.php
 lib/Model/DetailedMeta.php
 lib/Model/DetailedMetaCreate.php
+lib/Model/DetailedMetaGet.php
 lib/Model/Email.php
 lib/Model/Field.php
 lib/Model/FieldDynamo.php
@@ -220,6 +223,7 @@ lib/Model/MetaChildren.php
 lib/Model/MetaCreate.php
 lib/Model/MetaCustom.php
 lib/Model/MetaDynamo.php
+lib/Model/MetaGet.php
 lib/Model/MetaSlugger.php
 lib/Model/ModelInterface.php
 lib/Model/NoteBase.php
@@ -348,6 +352,7 @@ test/Model/CredentialTest.php
 test/Model/CustomListTest.php
 test/Model/DatesMetaTest.php
 test/Model/DetailedMetaCreateTest.php
+test/Model/DetailedMetaGetTest.php
 test/Model/DetailedMetaTest.php
 test/Model/DetailedTest.php
 test/Model/EmailTest.php
@@ -367,6 +372,7 @@ test/Model/MetaChildrenTest.php
 test/Model/MetaCreateTest.php
 test/Model/MetaCustomTest.php
 test/Model/MetaDynamoTest.php
+test/Model/MetaGetTest.php
 test/Model/MetaSluggerTest.php
 test/Model/NoteBaseTest.php
 test/Model/NoteDynamoHistoryResponseTest.php
