@@ -21,6 +21,7 @@ docs/Api/SecurityApi.md
 docs/Api/StaffApi.md
 docs/Api/SupportApi.md
 docs/Api/TagApi.md
+docs/Api/TagsApi.md
 docs/Api/UsersApi.md
 docs/Model/AddressBase.md
 docs/Model/AlarmAcknowledge.md
@@ -163,6 +164,7 @@ lib/Api/SecurityApi.php
 lib/Api/StaffApi.php
 lib/Api/SupportApi.php
 lib/Api/TagApi.php
+lib/Api/TagsApi.php
 lib/Api/UsersApi.php
 lib/ApiException.php
 lib/Configuration.php
@@ -310,6 +312,7 @@ test/Api/SecurityApiTest.php
 test/Api/StaffApiTest.php
 test/Api/SupportApiTest.php
 test/Api/TagApiTest.php
+test/Api/TagsApiTest.php
 test/Api/UsersApiTest.php
 test/Model/AddressBaseTest.php
 test/Model/AlarmAcknowledgeTest.php

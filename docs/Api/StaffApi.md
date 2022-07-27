@@ -4,20 +4,20 @@ All URIs are relative to https://api.prod.ehelply.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createStaffPlacesStaffPost()**](StaffApi.md#createStaffPlacesStaffPost) | **POST** /places/staff | Create Staff
-[**deleteStaffPlacesStaffStaffUuidDelete()**](StaffApi.md#deleteStaffPlacesStaffStaffUuidDelete) | **DELETE** /places/staff/{staff_uuid} | Delete Staff
-[**getStaffPlacesStaffStaffUuidGet()**](StaffApi.md#getStaffPlacesStaffStaffUuidGet) | **GET** /places/staff/{staff_uuid} | Get Staff
-[**searchStaffPlacesStaffGet()**](StaffApi.md#searchStaffPlacesStaffGet) | **GET** /places/staff | Search Staff
-[**updateStaffPlacesStaffStaffUuidPut()**](StaffApi.md#updateStaffPlacesStaffStaffUuidPut) | **PUT** /places/staff/{staff_uuid} | Update Staff
+[**createStaff()**](StaffApi.md#createStaff) | **POST** /places/staff | Createstaff
+[**deleteStaff()**](StaffApi.md#deleteStaff) | **DELETE** /places/staff/{staff_uuid} | Deletestaff
+[**getStaff()**](StaffApi.md#getStaff) | **GET** /places/staff/{staff_uuid} | Getstaff
+[**searchStaff()**](StaffApi.md#searchStaff) | **GET** /places/staff | Searchstaff
+[**updateStaff()**](StaffApi.md#updateStaff) | **PUT** /places/staff/{staff_uuid} | Updatestaff
 
 
-## `createStaffPlacesStaffPost()`
+## `createStaff()`
 
 ```php
-createStaffPlacesStaffPost($staff_create, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\StaffDb
+createStaff($staff_create, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\StaffDb
 ```
 
-Create Staff
+Createstaff
 
 Creates a staff member
 
@@ -43,10 +43,10 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->createStaffPlacesStaffPost($staff_create, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->createStaff($staff_create, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StaffApi->createStaffPlacesStaffPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StaffApi->createStaff: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -79,13 +79,13 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `deleteStaffPlacesStaffStaffUuidDelete()`
+## `deleteStaff()`
 
 ```php
-deleteStaffPlacesStaffStaffUuidDelete($staff_uuid, $soft_delete, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): mixed
+deleteStaff($staff_uuid, $soft_delete, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): mixed
 ```
 
-Delete Staff
+Deletestaff
 
 Deletes the staff member with the given ID and returns True if successful
 
@@ -112,10 +112,10 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->deleteStaffPlacesStaffStaffUuidDelete($staff_uuid, $soft_delete, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->deleteStaff($staff_uuid, $soft_delete, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StaffApi->deleteStaffPlacesStaffStaffUuidDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StaffApi->deleteStaff: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -149,13 +149,13 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getStaffPlacesStaffStaffUuidGet()`
+## `getStaff()`
 
 ```php
-getStaffPlacesStaffStaffUuidGet($staff_uuid, $with_places, $with_companies, $with_catalog, $with_schedule, $with_roles, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\StaffResponse
+getStaff($staff_uuid, $with_places, $with_companies, $with_catalog, $with_schedule, $with_roles, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\StaffResponse
 ```
 
-Get Staff
+Getstaff
 
 Gets the staff member information given the staff ID
 
@@ -186,10 +186,10 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->getStaffPlacesStaffStaffUuidGet($staff_uuid, $with_places, $with_companies, $with_catalog, $with_schedule, $with_roles, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->getStaff($staff_uuid, $with_places, $with_companies, $with_catalog, $with_schedule, $with_roles, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StaffApi->getStaffPlacesStaffStaffUuidGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StaffApi->getStaff: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -227,13 +227,13 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `searchStaffPlacesStaffGet()`
+## `searchStaff()`
 
 ```php
-searchStaffPlacesStaffGet($project_uuid, $first_name, $last_name, $is_deleted, $with_companies, $with_places, $with_schedule, $with_catalog, $with_reviews, $with_roles, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\Page
+searchStaff($project_uuid, $first_name, $last_name, $is_deleted, $with_companies, $with_places, $with_schedule, $with_catalog, $with_reviews, $with_roles, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\Page
 ```
 
-Search Staff
+Searchstaff
 
 TODO Item return format: ``` {     uuid                                **type:** string     project_uuid                        **type:** string or None      entity                              **type:** string or None      place                               **type:** dict or None      company                             **type:** dict or None      schedule                            **type:** dict or None      catalog                             **type:** dict or None      reviews                             **type:** dict or None      created_at                          **type:** string or None      updated_at                          **type:** string or None      deleted_at                          **type:** string or None  } ```
 
@@ -272,10 +272,10 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->searchStaffPlacesStaffGet($project_uuid, $first_name, $last_name, $is_deleted, $with_companies, $with_places, $with_schedule, $with_catalog, $with_reviews, $with_roles, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->searchStaff($project_uuid, $first_name, $last_name, $is_deleted, $with_companies, $with_places, $with_schedule, $with_catalog, $with_reviews, $with_roles, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StaffApi->searchStaffPlacesStaffGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StaffApi->searchStaff: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -321,13 +321,13 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `updateStaffPlacesStaffStaffUuidPut()`
+## `updateStaff()`
 
 ```php
-updateStaffPlacesStaffStaffUuidPut($staff_uuid, $staff_create, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\StaffResponse
+updateStaff($staff_uuid, $staff_create, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\StaffResponse
 ```
 
-Update Staff
+Updatestaff
 
 Update staff with given info, only updating the fields supplied. Staff Uuid must be sent however.
 
@@ -354,10 +354,10 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->updateStaffPlacesStaffStaffUuidPut($staff_uuid, $staff_create, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->updateStaff($staff_uuid, $staff_create, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StaffApi->updateStaffPlacesStaffStaffUuidPut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StaffApi->updateStaff: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

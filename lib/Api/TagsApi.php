@@ -1,6 +1,6 @@
 <?php
 /**
- * CompaniesApi
+ * TagsApi
  * PHP version 7.4
  *
  * @category Class
@@ -41,14 +41,14 @@ use OpenAPI\Client\HeaderSelector;
 use OpenAPI\Client\ObjectSerializer;
 
 /**
- * CompaniesApi Class Doc Comment
+ * TagsApi Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class CompaniesApi
+class TagsApi
 {
     /**
      * @var ClientInterface
@@ -117,11 +117,11 @@ class CompaniesApi
     }
 
     /**
-     * Operation createCompanyPlacesCompaniesPost
+     * Operation createTag
      *
-     * Create Company
+     * Createtag
      *
-     * @param  \OpenAPI\Client\Model\CompanyBase $company_base company_base (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base tag_base (required)
      * @param  string $x_access_token x_access_token (optional)
      * @param  string $x_secret_token x_secret_token (optional)
      * @param  string $authorization authorization (optional)
@@ -131,20 +131,20 @@ class CompaniesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CompanyResponse|\OpenAPI\Client\Model\HTTPValidationError
+     * @return \OpenAPI\Client\Model\TagDb|\OpenAPI\Client\Model\HTTPValidationError
      */
-    public function createCompanyPlacesCompaniesPost($company_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function createTag($tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        list($response) = $this->createCompanyPlacesCompaniesPostWithHttpInfo($company_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        list($response) = $this->createTagWithHttpInfo($tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
         return $response;
     }
 
     /**
-     * Operation createCompanyPlacesCompaniesPostWithHttpInfo
+     * Operation createTagWithHttpInfo
      *
-     * Create Company
+     * Createtag
      *
-     * @param  \OpenAPI\Client\Model\CompanyBase $company_base (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -154,11 +154,11 @@ class CompaniesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CompanyResponse|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\TagDb|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createCompanyPlacesCompaniesPostWithHttpInfo($company_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function createTagWithHttpInfo($tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        $request = $this->createCompanyPlacesCompaniesPostRequest($company_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        $request = $this->createTagRequest($tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
 
         try {
             $options = $this->createHttpClientOption();
@@ -197,17 +197,17 @@ class CompaniesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CompanyResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\TagDb' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\CompanyResponse' !== 'string') {
+                        if ('\OpenAPI\Client\Model\TagDb' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CompanyResponse', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TagDb', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -228,7 +228,7 @@ class CompaniesApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\CompanyResponse';
+            $returnType = '\OpenAPI\Client\Model\TagDb';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -249,7 +249,7 @@ class CompaniesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CompanyResponse',
+                        '\OpenAPI\Client\Model\TagDb',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -268,11 +268,11 @@ class CompaniesApi
     }
 
     /**
-     * Operation createCompanyPlacesCompaniesPostAsync
+     * Operation createTagAsync
      *
-     * Create Company
+     * Createtag
      *
-     * @param  \OpenAPI\Client\Model\CompanyBase $company_base (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -283,9 +283,9 @@ class CompaniesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createCompanyPlacesCompaniesPostAsync($company_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function createTagAsync($tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        return $this->createCompanyPlacesCompaniesPostAsyncWithHttpInfo($company_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data)
+        return $this->createTagAsyncWithHttpInfo($tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -294,11 +294,11 @@ class CompaniesApi
     }
 
     /**
-     * Operation createCompanyPlacesCompaniesPostAsyncWithHttpInfo
+     * Operation createTagAsyncWithHttpInfo
      *
-     * Create Company
+     * Createtag
      *
-     * @param  \OpenAPI\Client\Model\CompanyBase $company_base (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -309,10 +309,10 @@ class CompaniesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createCompanyPlacesCompaniesPostAsyncWithHttpInfo($company_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function createTagAsyncWithHttpInfo($tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        $returnType = '\OpenAPI\Client\Model\CompanyResponse';
-        $request = $this->createCompanyPlacesCompaniesPostRequest($company_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        $returnType = '\OpenAPI\Client\Model\TagDb';
+        $request = $this->createTagRequest($tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -351,9 +351,9 @@ class CompaniesApi
     }
 
     /**
-     * Create request for operation 'createCompanyPlacesCompaniesPost'
+     * Create request for operation 'createTag'
      *
-     * @param  \OpenAPI\Client\Model\CompanyBase $company_base (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -364,16 +364,16 @@ class CompaniesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createCompanyPlacesCompaniesPostRequest($company_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function createTagRequest($tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        // verify the required parameter 'company_base' is set
-        if ($company_base === null || (is_array($company_base) && count($company_base) === 0)) {
+        // verify the required parameter 'tag_base' is set
+        if ($tag_base === null || (is_array($tag_base) && count($tag_base) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $company_base when calling createCompanyPlacesCompaniesPost'
+                'Missing the required parameter $tag_base when calling createTag'
             );
         }
 
-        $resourcePath = '/places/companies';
+        $resourcePath = '/places/tags';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -420,11 +420,11 @@ class CompaniesApi
         }
 
         // for model (json/xml)
-        if (isset($company_base)) {
+        if (isset($tag_base)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($company_base));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($tag_base));
             } else {
-                $httpBody = $company_base;
+                $httpBody = $tag_base;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -472,12 +472,11 @@ class CompaniesApi
     }
 
     /**
-     * Operation deletePlacePlacesCompaniesCompanyUuidDelete
+     * Operation getTag
      *
-     * Delete Place
+     * Gettag
      *
-     * @param  string $company_uuid company_uuid (required)
-     * @param  bool $soft_delete soft_delete (optional, default to true)
+     * @param  string $tag_uuid tag_uuid (required)
      * @param  string $x_access_token x_access_token (optional)
      * @param  string $x_secret_token x_secret_token (optional)
      * @param  string $authorization authorization (optional)
@@ -487,21 +486,20 @@ class CompaniesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return mixed|\OpenAPI\Client\Model\HTTPValidationError
+     * @return \OpenAPI\Client\Model\TagBase|\OpenAPI\Client\Model\HTTPValidationError
      */
-    public function deletePlacePlacesCompaniesCompanyUuidDelete($company_uuid, $soft_delete = true, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function getTag($tag_uuid, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        list($response) = $this->deletePlacePlacesCompaniesCompanyUuidDeleteWithHttpInfo($company_uuid, $soft_delete, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        list($response) = $this->getTagWithHttpInfo($tag_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
         return $response;
     }
 
     /**
-     * Operation deletePlacePlacesCompaniesCompanyUuidDeleteWithHttpInfo
+     * Operation getTagWithHttpInfo
      *
-     * Delete Place
+     * Gettag
      *
-     * @param  string $company_uuid (required)
-     * @param  bool $soft_delete (optional, default to true)
+     * @param  string $tag_uuid (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -511,11 +509,11 @@ class CompaniesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of mixed|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\TagBase|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletePlacePlacesCompaniesCompanyUuidDeleteWithHttpInfo($company_uuid, $soft_delete = true, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function getTagWithHttpInfo($tag_uuid, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        $request = $this->deletePlacePlacesCompaniesCompanyUuidDeleteRequest($company_uuid, $soft_delete, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        $request = $this->getTagRequest($tag_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
 
         try {
             $options = $this->createHttpClientOption();
@@ -554,17 +552,17 @@ class CompaniesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('mixed' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\TagBase' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('mixed' !== 'string') {
+                        if ('\OpenAPI\Client\Model\TagBase' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, 'mixed', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TagBase', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -585,7 +583,7 @@ class CompaniesApi
                     ];
             }
 
-            $returnType = 'mixed';
+            $returnType = '\OpenAPI\Client\Model\TagBase';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -606,7 +604,7 @@ class CompaniesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'mixed',
+                        '\OpenAPI\Client\Model\TagBase',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -625,12 +623,11 @@ class CompaniesApi
     }
 
     /**
-     * Operation deletePlacePlacesCompaniesCompanyUuidDeleteAsync
+     * Operation getTagAsync
      *
-     * Delete Place
+     * Gettag
      *
-     * @param  string $company_uuid (required)
-     * @param  bool $soft_delete (optional, default to true)
+     * @param  string $tag_uuid (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -641,9 +638,9 @@ class CompaniesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletePlacePlacesCompaniesCompanyUuidDeleteAsync($company_uuid, $soft_delete = true, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function getTagAsync($tag_uuid, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        return $this->deletePlacePlacesCompaniesCompanyUuidDeleteAsyncWithHttpInfo($company_uuid, $soft_delete, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data)
+        return $this->getTagAsyncWithHttpInfo($tag_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -652,12 +649,11 @@ class CompaniesApi
     }
 
     /**
-     * Operation deletePlacePlacesCompaniesCompanyUuidDeleteAsyncWithHttpInfo
+     * Operation getTagAsyncWithHttpInfo
      *
-     * Delete Place
+     * Gettag
      *
-     * @param  string $company_uuid (required)
-     * @param  bool $soft_delete (optional, default to true)
+     * @param  string $tag_uuid (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -668,10 +664,10 @@ class CompaniesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletePlacePlacesCompaniesCompanyUuidDeleteAsyncWithHttpInfo($company_uuid, $soft_delete = true, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function getTagAsyncWithHttpInfo($tag_uuid, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        $returnType = 'mixed';
-        $request = $this->deletePlacePlacesCompaniesCompanyUuidDeleteRequest($company_uuid, $soft_delete, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        $returnType = '\OpenAPI\Client\Model\TagBase';
+        $request = $this->getTagRequest($tag_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -710,10 +706,9 @@ class CompaniesApi
     }
 
     /**
-     * Create request for operation 'deletePlacePlacesCompaniesCompanyUuidDelete'
+     * Create request for operation 'getTag'
      *
-     * @param  string $company_uuid (required)
-     * @param  bool $soft_delete (optional, default to true)
+     * @param  string $tag_uuid (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -724,31 +719,22 @@ class CompaniesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletePlacePlacesCompaniesCompanyUuidDeleteRequest($company_uuid, $soft_delete = true, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function getTagRequest($tag_uuid, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        // verify the required parameter 'company_uuid' is set
-        if ($company_uuid === null || (is_array($company_uuid) && count($company_uuid) === 0)) {
+        // verify the required parameter 'tag_uuid' is set
+        if ($tag_uuid === null || (is_array($tag_uuid) && count($tag_uuid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $company_uuid when calling deletePlacePlacesCompaniesCompanyUuidDelete'
+                'Missing the required parameter $tag_uuid when calling getTag'
             );
         }
 
-        $resourcePath = '/places/companies/{company_uuid}';
+        $resourcePath = '/places/tags/{tag_uuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $soft_delete,
-            'soft_delete', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
 
         // header params
         if ($x_access_token !== null) {
@@ -776,479 +762,10 @@ class CompaniesApi
         }
 
         // path params
-        if ($company_uuid !== null) {
+        if ($tag_uuid !== null) {
             $resourcePath = str_replace(
-                '{' . 'company_uuid' . '}',
-                ObjectSerializer::toPathValue($company_uuid),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation getCompanyPlacesCompaniesCompanyUuidGet
-     *
-     * Get Company
-     *
-     * @param  string $company_uuid company_uuid (required)
-     * @param  bool $with_meta with_meta (optional, default to false)
-     * @param  bool $with_catalog with_catalog (optional, default to false)
-     * @param  bool $with_reviews with_reviews (optional, default to false)
-     * @param  bool $with_schedule with_schedule (optional, default to false)
-     * @param  bool $with_blog with_blog (optional, default to false)
-     * @param  bool $with_tags with_tags (optional, default to false)
-     * @param  bool $with_categories with_categories (optional, default to false)
-     * @param  bool $with_places with_places (optional, default to false)
-     * @param  string $x_access_token x_access_token (optional)
-     * @param  string $x_secret_token x_secret_token (optional)
-     * @param  string $authorization authorization (optional)
-     * @param  string $ehelply_active_participant ehelply_active_participant (optional)
-     * @param  string $ehelply_project ehelply_project (optional)
-     * @param  string $ehelply_data ehelply_data (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CompanyResponse|\OpenAPI\Client\Model\HTTPValidationError
-     */
-    public function getCompanyPlacesCompaniesCompanyUuidGet($company_uuid, $with_meta = false, $with_catalog = false, $with_reviews = false, $with_schedule = false, $with_blog = false, $with_tags = false, $with_categories = false, $with_places = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
-    {
-        list($response) = $this->getCompanyPlacesCompaniesCompanyUuidGetWithHttpInfo($company_uuid, $with_meta, $with_catalog, $with_reviews, $with_schedule, $with_blog, $with_tags, $with_categories, $with_places, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
-        return $response;
-    }
-
-    /**
-     * Operation getCompanyPlacesCompaniesCompanyUuidGetWithHttpInfo
-     *
-     * Get Company
-     *
-     * @param  string $company_uuid (required)
-     * @param  bool $with_meta (optional, default to false)
-     * @param  bool $with_catalog (optional, default to false)
-     * @param  bool $with_reviews (optional, default to false)
-     * @param  bool $with_schedule (optional, default to false)
-     * @param  bool $with_blog (optional, default to false)
-     * @param  bool $with_tags (optional, default to false)
-     * @param  bool $with_categories (optional, default to false)
-     * @param  bool $with_places (optional, default to false)
-     * @param  string $x_access_token (optional)
-     * @param  string $x_secret_token (optional)
-     * @param  string $authorization (optional)
-     * @param  string $ehelply_active_participant (optional)
-     * @param  string $ehelply_project (optional)
-     * @param  string $ehelply_data (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CompanyResponse|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getCompanyPlacesCompaniesCompanyUuidGetWithHttpInfo($company_uuid, $with_meta = false, $with_catalog = false, $with_reviews = false, $with_schedule = false, $with_blog = false, $with_tags = false, $with_categories = false, $with_places = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
-    {
-        $request = $this->getCompanyPlacesCompaniesCompanyUuidGetRequest($company_uuid, $with_meta, $with_catalog, $with_reviews, $with_schedule, $with_blog, $with_tags, $with_categories, $with_places, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\CompanyResponse' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\CompanyResponse' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CompanyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 422:
-                    if ('\OpenAPI\Client\Model\HTTPValidationError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\HTTPValidationError' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\HTTPValidationError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\CompanyResponse';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CompanyResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 422:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\HTTPValidationError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getCompanyPlacesCompaniesCompanyUuidGetAsync
-     *
-     * Get Company
-     *
-     * @param  string $company_uuid (required)
-     * @param  bool $with_meta (optional, default to false)
-     * @param  bool $with_catalog (optional, default to false)
-     * @param  bool $with_reviews (optional, default to false)
-     * @param  bool $with_schedule (optional, default to false)
-     * @param  bool $with_blog (optional, default to false)
-     * @param  bool $with_tags (optional, default to false)
-     * @param  bool $with_categories (optional, default to false)
-     * @param  bool $with_places (optional, default to false)
-     * @param  string $x_access_token (optional)
-     * @param  string $x_secret_token (optional)
-     * @param  string $authorization (optional)
-     * @param  string $ehelply_active_participant (optional)
-     * @param  string $ehelply_project (optional)
-     * @param  string $ehelply_data (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getCompanyPlacesCompaniesCompanyUuidGetAsync($company_uuid, $with_meta = false, $with_catalog = false, $with_reviews = false, $with_schedule = false, $with_blog = false, $with_tags = false, $with_categories = false, $with_places = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
-    {
-        return $this->getCompanyPlacesCompaniesCompanyUuidGetAsyncWithHttpInfo($company_uuid, $with_meta, $with_catalog, $with_reviews, $with_schedule, $with_blog, $with_tags, $with_categories, $with_places, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getCompanyPlacesCompaniesCompanyUuidGetAsyncWithHttpInfo
-     *
-     * Get Company
-     *
-     * @param  string $company_uuid (required)
-     * @param  bool $with_meta (optional, default to false)
-     * @param  bool $with_catalog (optional, default to false)
-     * @param  bool $with_reviews (optional, default to false)
-     * @param  bool $with_schedule (optional, default to false)
-     * @param  bool $with_blog (optional, default to false)
-     * @param  bool $with_tags (optional, default to false)
-     * @param  bool $with_categories (optional, default to false)
-     * @param  bool $with_places (optional, default to false)
-     * @param  string $x_access_token (optional)
-     * @param  string $x_secret_token (optional)
-     * @param  string $authorization (optional)
-     * @param  string $ehelply_active_participant (optional)
-     * @param  string $ehelply_project (optional)
-     * @param  string $ehelply_data (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getCompanyPlacesCompaniesCompanyUuidGetAsyncWithHttpInfo($company_uuid, $with_meta = false, $with_catalog = false, $with_reviews = false, $with_schedule = false, $with_blog = false, $with_tags = false, $with_categories = false, $with_places = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
-    {
-        $returnType = '\OpenAPI\Client\Model\CompanyResponse';
-        $request = $this->getCompanyPlacesCompaniesCompanyUuidGetRequest($company_uuid, $with_meta, $with_catalog, $with_reviews, $with_schedule, $with_blog, $with_tags, $with_categories, $with_places, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getCompanyPlacesCompaniesCompanyUuidGet'
-     *
-     * @param  string $company_uuid (required)
-     * @param  bool $with_meta (optional, default to false)
-     * @param  bool $with_catalog (optional, default to false)
-     * @param  bool $with_reviews (optional, default to false)
-     * @param  bool $with_schedule (optional, default to false)
-     * @param  bool $with_blog (optional, default to false)
-     * @param  bool $with_tags (optional, default to false)
-     * @param  bool $with_categories (optional, default to false)
-     * @param  bool $with_places (optional, default to false)
-     * @param  string $x_access_token (optional)
-     * @param  string $x_secret_token (optional)
-     * @param  string $authorization (optional)
-     * @param  string $ehelply_active_participant (optional)
-     * @param  string $ehelply_project (optional)
-     * @param  string $ehelply_data (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function getCompanyPlacesCompaniesCompanyUuidGetRequest($company_uuid, $with_meta = false, $with_catalog = false, $with_reviews = false, $with_schedule = false, $with_blog = false, $with_tags = false, $with_categories = false, $with_places = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
-    {
-        // verify the required parameter 'company_uuid' is set
-        if ($company_uuid === null || (is_array($company_uuid) && count($company_uuid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $company_uuid when calling getCompanyPlacesCompaniesCompanyUuidGet'
-            );
-        }
-
-        $resourcePath = '/places/companies/{company_uuid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $with_meta,
-            'with_meta', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $with_catalog,
-            'with_catalog', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $with_reviews,
-            'with_reviews', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $with_schedule,
-            'with_schedule', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $with_blog,
-            'with_blog', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $with_tags,
-            'with_tags', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $with_categories,
-            'with_categories', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $with_places,
-            'with_places', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-
-        // header params
-        if ($x_access_token !== null) {
-            $headerParams['x-access-token'] = ObjectSerializer::toHeaderValue($x_access_token);
-        }
-        // header params
-        if ($x_secret_token !== null) {
-            $headerParams['x-secret-token'] = ObjectSerializer::toHeaderValue($x_secret_token);
-        }
-        // header params
-        if ($authorization !== null) {
-            $headerParams['authorization'] = ObjectSerializer::toHeaderValue($authorization);
-        }
-        // header params
-        if ($ehelply_active_participant !== null) {
-            $headerParams['ehelply-active-participant'] = ObjectSerializer::toHeaderValue($ehelply_active_participant);
-        }
-        // header params
-        if ($ehelply_project !== null) {
-            $headerParams['ehelply-project'] = ObjectSerializer::toHeaderValue($ehelply_project);
-        }
-        // header params
-        if ($ehelply_data !== null) {
-            $headerParams['ehelply-data'] = ObjectSerializer::toHeaderValue($ehelply_data);
-        }
-
-        // path params
-        if ($company_uuid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'company_uuid' . '}',
-                ObjectSerializer::toPathValue($company_uuid),
+                '{' . 'tag_uuid' . '}',
+                ObjectSerializer::toPathValue($tag_uuid),
                 $resourcePath
             );
         }
@@ -1312,23 +829,12 @@ class CompaniesApi
     }
 
     /**
-     * Operation searchCompaniesPlacesCompaniesGet
+     * Operation searchTag
      *
-     * Search Companies
+     * Searchtag
      *
      * @param  string $project_uuid project_uuid (optional)
      * @param  string $name name (optional)
-     * @param  string $email email (optional)
-     * @param  bool $is_public is_public (optional, default to true)
-     * @param  bool $is_deleted is_deleted (optional, default to false)
-     * @param  bool $with_places with_places (optional, default to false)
-     * @param  bool $with_meta with_meta (optional, default to false)
-     * @param  bool $with_catalog with_catalog (optional, default to false)
-     * @param  bool $with_reviews with_reviews (optional, default to false)
-     * @param  bool $with_schedule with_schedule (optional, default to false)
-     * @param  bool $with_blog with_blog (optional, default to false)
-     * @param  bool $with_tags with_tags (optional, default to false)
-     * @param  bool $with_categories with_categories (optional, default to false)
      * @param  int $page page (optional, default to 1)
      * @param  int $page_size page_size (optional, default to 25)
      * @param  string $sort_on sort_on (optional)
@@ -1344,30 +850,19 @@ class CompaniesApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\Page|\OpenAPI\Client\Model\HTTPValidationError
      */
-    public function searchCompaniesPlacesCompaniesGet($project_uuid = null, $name = null, $email = null, $is_public = true, $is_deleted = false, $with_places = false, $with_meta = false, $with_catalog = false, $with_reviews = false, $with_schedule = false, $with_blog = false, $with_tags = false, $with_categories = false, $page = 1, $page_size = 25, $sort_on = null, $sort_desc = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function searchTag($project_uuid = null, $name = null, $page = 1, $page_size = 25, $sort_on = null, $sort_desc = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        list($response) = $this->searchCompaniesPlacesCompaniesGetWithHttpInfo($project_uuid, $name, $email, $is_public, $is_deleted, $with_places, $with_meta, $with_catalog, $with_reviews, $with_schedule, $with_blog, $with_tags, $with_categories, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        list($response) = $this->searchTagWithHttpInfo($project_uuid, $name, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
         return $response;
     }
 
     /**
-     * Operation searchCompaniesPlacesCompaniesGetWithHttpInfo
+     * Operation searchTagWithHttpInfo
      *
-     * Search Companies
+     * Searchtag
      *
      * @param  string $project_uuid (optional)
      * @param  string $name (optional)
-     * @param  string $email (optional)
-     * @param  bool $is_public (optional, default to true)
-     * @param  bool $is_deleted (optional, default to false)
-     * @param  bool $with_places (optional, default to false)
-     * @param  bool $with_meta (optional, default to false)
-     * @param  bool $with_catalog (optional, default to false)
-     * @param  bool $with_reviews (optional, default to false)
-     * @param  bool $with_schedule (optional, default to false)
-     * @param  bool $with_blog (optional, default to false)
-     * @param  bool $with_tags (optional, default to false)
-     * @param  bool $with_categories (optional, default to false)
      * @param  int $page (optional, default to 1)
      * @param  int $page_size (optional, default to 25)
      * @param  string $sort_on (optional)
@@ -1383,9 +878,9 @@ class CompaniesApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\Page|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchCompaniesPlacesCompaniesGetWithHttpInfo($project_uuid = null, $name = null, $email = null, $is_public = true, $is_deleted = false, $with_places = false, $with_meta = false, $with_catalog = false, $with_reviews = false, $with_schedule = false, $with_blog = false, $with_tags = false, $with_categories = false, $page = 1, $page_size = 25, $sort_on = null, $sort_desc = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function searchTagWithHttpInfo($project_uuid = null, $name = null, $page = 1, $page_size = 25, $sort_on = null, $sort_desc = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        $request = $this->searchCompaniesPlacesCompaniesGetRequest($project_uuid, $name, $email, $is_public, $is_deleted, $with_places, $with_meta, $with_catalog, $with_reviews, $with_schedule, $with_blog, $with_tags, $with_categories, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        $request = $this->searchTagRequest($project_uuid, $name, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1495,23 +990,12 @@ class CompaniesApi
     }
 
     /**
-     * Operation searchCompaniesPlacesCompaniesGetAsync
+     * Operation searchTagAsync
      *
-     * Search Companies
+     * Searchtag
      *
      * @param  string $project_uuid (optional)
      * @param  string $name (optional)
-     * @param  string $email (optional)
-     * @param  bool $is_public (optional, default to true)
-     * @param  bool $is_deleted (optional, default to false)
-     * @param  bool $with_places (optional, default to false)
-     * @param  bool $with_meta (optional, default to false)
-     * @param  bool $with_catalog (optional, default to false)
-     * @param  bool $with_reviews (optional, default to false)
-     * @param  bool $with_schedule (optional, default to false)
-     * @param  bool $with_blog (optional, default to false)
-     * @param  bool $with_tags (optional, default to false)
-     * @param  bool $with_categories (optional, default to false)
      * @param  int $page (optional, default to 1)
      * @param  int $page_size (optional, default to 25)
      * @param  string $sort_on (optional)
@@ -1526,9 +1010,9 @@ class CompaniesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchCompaniesPlacesCompaniesGetAsync($project_uuid = null, $name = null, $email = null, $is_public = true, $is_deleted = false, $with_places = false, $with_meta = false, $with_catalog = false, $with_reviews = false, $with_schedule = false, $with_blog = false, $with_tags = false, $with_categories = false, $page = 1, $page_size = 25, $sort_on = null, $sort_desc = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function searchTagAsync($project_uuid = null, $name = null, $page = 1, $page_size = 25, $sort_on = null, $sort_desc = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        return $this->searchCompaniesPlacesCompaniesGetAsyncWithHttpInfo($project_uuid, $name, $email, $is_public, $is_deleted, $with_places, $with_meta, $with_catalog, $with_reviews, $with_schedule, $with_blog, $with_tags, $with_categories, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data)
+        return $this->searchTagAsyncWithHttpInfo($project_uuid, $name, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1537,23 +1021,12 @@ class CompaniesApi
     }
 
     /**
-     * Operation searchCompaniesPlacesCompaniesGetAsyncWithHttpInfo
+     * Operation searchTagAsyncWithHttpInfo
      *
-     * Search Companies
+     * Searchtag
      *
      * @param  string $project_uuid (optional)
      * @param  string $name (optional)
-     * @param  string $email (optional)
-     * @param  bool $is_public (optional, default to true)
-     * @param  bool $is_deleted (optional, default to false)
-     * @param  bool $with_places (optional, default to false)
-     * @param  bool $with_meta (optional, default to false)
-     * @param  bool $with_catalog (optional, default to false)
-     * @param  bool $with_reviews (optional, default to false)
-     * @param  bool $with_schedule (optional, default to false)
-     * @param  bool $with_blog (optional, default to false)
-     * @param  bool $with_tags (optional, default to false)
-     * @param  bool $with_categories (optional, default to false)
      * @param  int $page (optional, default to 1)
      * @param  int $page_size (optional, default to 25)
      * @param  string $sort_on (optional)
@@ -1568,10 +1041,10 @@ class CompaniesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchCompaniesPlacesCompaniesGetAsyncWithHttpInfo($project_uuid = null, $name = null, $email = null, $is_public = true, $is_deleted = false, $with_places = false, $with_meta = false, $with_catalog = false, $with_reviews = false, $with_schedule = false, $with_blog = false, $with_tags = false, $with_categories = false, $page = 1, $page_size = 25, $sort_on = null, $sort_desc = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function searchTagAsyncWithHttpInfo($project_uuid = null, $name = null, $page = 1, $page_size = 25, $sort_on = null, $sort_desc = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
         $returnType = '\OpenAPI\Client\Model\Page';
-        $request = $this->searchCompaniesPlacesCompaniesGetRequest($project_uuid, $name, $email, $is_public, $is_deleted, $with_places, $with_meta, $with_catalog, $with_reviews, $with_schedule, $with_blog, $with_tags, $with_categories, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        $request = $this->searchTagRequest($project_uuid, $name, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1610,21 +1083,10 @@ class CompaniesApi
     }
 
     /**
-     * Create request for operation 'searchCompaniesPlacesCompaniesGet'
+     * Create request for operation 'searchTag'
      *
      * @param  string $project_uuid (optional)
      * @param  string $name (optional)
-     * @param  string $email (optional)
-     * @param  bool $is_public (optional, default to true)
-     * @param  bool $is_deleted (optional, default to false)
-     * @param  bool $with_places (optional, default to false)
-     * @param  bool $with_meta (optional, default to false)
-     * @param  bool $with_catalog (optional, default to false)
-     * @param  bool $with_reviews (optional, default to false)
-     * @param  bool $with_schedule (optional, default to false)
-     * @param  bool $with_blog (optional, default to false)
-     * @param  bool $with_tags (optional, default to false)
-     * @param  bool $with_categories (optional, default to false)
      * @param  int $page (optional, default to 1)
      * @param  int $page_size (optional, default to 25)
      * @param  string $sort_on (optional)
@@ -1639,10 +1101,10 @@ class CompaniesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function searchCompaniesPlacesCompaniesGetRequest($project_uuid = null, $name = null, $email = null, $is_public = true, $is_deleted = false, $with_places = false, $with_meta = false, $with_catalog = false, $with_reviews = false, $with_schedule = false, $with_blog = false, $with_tags = false, $with_categories = false, $page = 1, $page_size = 25, $sort_on = null, $sort_desc = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function searchTagRequest($project_uuid = null, $name = null, $page = 1, $page_size = 25, $sort_on = null, $sort_desc = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
 
-        $resourcePath = '/places/companies';
+        $resourcePath = '/places/tags';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1663,105 +1125,6 @@ class CompaniesApi
             $name,
             'name', // param base name
             'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $email,
-            'email', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $is_public,
-            'is_public', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $is_deleted,
-            'is_deleted', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $with_places,
-            'with_places', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $with_meta,
-            'with_meta', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $with_catalog,
-            'with_catalog', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $with_reviews,
-            'with_reviews', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $with_schedule,
-            'with_schedule', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $with_blog,
-            'with_blog', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $with_tags,
-            'with_tags', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $with_categories,
-            'with_categories', // param base name
-            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1888,12 +1251,12 @@ class CompaniesApi
     }
 
     /**
-     * Operation updateCompanyPlacesCompaniesCompanyUuidPut
+     * Operation updateTag
      *
-     * Update Company
+     * Updatetag
      *
-     * @param  string $company_uuid company_uuid (required)
-     * @param  \OpenAPI\Client\Model\CompanyBase $company_base company_base (required)
+     * @param  string $tag_uuid tag_uuid (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base tag_base (required)
      * @param  string $x_access_token x_access_token (optional)
      * @param  string $x_secret_token x_secret_token (optional)
      * @param  string $authorization authorization (optional)
@@ -1903,21 +1266,21 @@ class CompaniesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CompanyResponse|\OpenAPI\Client\Model\HTTPValidationError
+     * @return \OpenAPI\Client\Model\TagBase|\OpenAPI\Client\Model\HTTPValidationError
      */
-    public function updateCompanyPlacesCompaniesCompanyUuidPut($company_uuid, $company_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function updateTag($tag_uuid, $tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        list($response) = $this->updateCompanyPlacesCompaniesCompanyUuidPutWithHttpInfo($company_uuid, $company_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        list($response) = $this->updateTagWithHttpInfo($tag_uuid, $tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
         return $response;
     }
 
     /**
-     * Operation updateCompanyPlacesCompaniesCompanyUuidPutWithHttpInfo
+     * Operation updateTagWithHttpInfo
      *
-     * Update Company
+     * Updatetag
      *
-     * @param  string $company_uuid (required)
-     * @param  \OpenAPI\Client\Model\CompanyBase $company_base (required)
+     * @param  string $tag_uuid (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -1927,11 +1290,11 @@ class CompaniesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CompanyResponse|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\TagBase|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateCompanyPlacesCompaniesCompanyUuidPutWithHttpInfo($company_uuid, $company_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function updateTagWithHttpInfo($tag_uuid, $tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        $request = $this->updateCompanyPlacesCompaniesCompanyUuidPutRequest($company_uuid, $company_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        $request = $this->updateTagRequest($tag_uuid, $tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1970,17 +1333,17 @@ class CompaniesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CompanyResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\TagBase' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\CompanyResponse' !== 'string') {
+                        if ('\OpenAPI\Client\Model\TagBase' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CompanyResponse', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TagBase', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2001,7 +1364,7 @@ class CompaniesApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\CompanyResponse';
+            $returnType = '\OpenAPI\Client\Model\TagBase';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2022,7 +1385,7 @@ class CompaniesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CompanyResponse',
+                        '\OpenAPI\Client\Model\TagBase',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2041,12 +1404,12 @@ class CompaniesApi
     }
 
     /**
-     * Operation updateCompanyPlacesCompaniesCompanyUuidPutAsync
+     * Operation updateTagAsync
      *
-     * Update Company
+     * Updatetag
      *
-     * @param  string $company_uuid (required)
-     * @param  \OpenAPI\Client\Model\CompanyBase $company_base (required)
+     * @param  string $tag_uuid (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -2057,9 +1420,9 @@ class CompaniesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateCompanyPlacesCompaniesCompanyUuidPutAsync($company_uuid, $company_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function updateTagAsync($tag_uuid, $tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        return $this->updateCompanyPlacesCompaniesCompanyUuidPutAsyncWithHttpInfo($company_uuid, $company_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data)
+        return $this->updateTagAsyncWithHttpInfo($tag_uuid, $tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2068,12 +1431,12 @@ class CompaniesApi
     }
 
     /**
-     * Operation updateCompanyPlacesCompaniesCompanyUuidPutAsyncWithHttpInfo
+     * Operation updateTagAsyncWithHttpInfo
      *
-     * Update Company
+     * Updatetag
      *
-     * @param  string $company_uuid (required)
-     * @param  \OpenAPI\Client\Model\CompanyBase $company_base (required)
+     * @param  string $tag_uuid (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -2084,10 +1447,10 @@ class CompaniesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateCompanyPlacesCompaniesCompanyUuidPutAsyncWithHttpInfo($company_uuid, $company_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function updateTagAsyncWithHttpInfo($tag_uuid, $tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        $returnType = '\OpenAPI\Client\Model\CompanyResponse';
-        $request = $this->updateCompanyPlacesCompaniesCompanyUuidPutRequest($company_uuid, $company_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        $returnType = '\OpenAPI\Client\Model\TagBase';
+        $request = $this->updateTagRequest($tag_uuid, $tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2126,10 +1489,10 @@ class CompaniesApi
     }
 
     /**
-     * Create request for operation 'updateCompanyPlacesCompaniesCompanyUuidPut'
+     * Create request for operation 'updateTag'
      *
-     * @param  string $company_uuid (required)
-     * @param  \OpenAPI\Client\Model\CompanyBase $company_base (required)
+     * @param  string $tag_uuid (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -2140,22 +1503,22 @@ class CompaniesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateCompanyPlacesCompaniesCompanyUuidPutRequest($company_uuid, $company_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function updateTagRequest($tag_uuid, $tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        // verify the required parameter 'company_uuid' is set
-        if ($company_uuid === null || (is_array($company_uuid) && count($company_uuid) === 0)) {
+        // verify the required parameter 'tag_uuid' is set
+        if ($tag_uuid === null || (is_array($tag_uuid) && count($tag_uuid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $company_uuid when calling updateCompanyPlacesCompaniesCompanyUuidPut'
+                'Missing the required parameter $tag_uuid when calling updateTag'
             );
         }
-        // verify the required parameter 'company_base' is set
-        if ($company_base === null || (is_array($company_base) && count($company_base) === 0)) {
+        // verify the required parameter 'tag_base' is set
+        if ($tag_base === null || (is_array($tag_base) && count($tag_base) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $company_base when calling updateCompanyPlacesCompaniesCompanyUuidPut'
+                'Missing the required parameter $tag_base when calling updateTag'
             );
         }
 
-        $resourcePath = '/places/companies/{company_uuid}';
+        $resourcePath = '/places/tags/{tag_uuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2189,10 +1552,10 @@ class CompaniesApi
         }
 
         // path params
-        if ($company_uuid !== null) {
+        if ($tag_uuid !== null) {
             $resourcePath = str_replace(
-                '{' . 'company_uuid' . '}',
-                ObjectSerializer::toPathValue($company_uuid),
+                '{' . 'tag_uuid' . '}',
+                ObjectSerializer::toPathValue($tag_uuid),
                 $resourcePath
             );
         }
@@ -2210,11 +1573,11 @@ class CompaniesApi
         }
 
         // for model (json/xml)
-        if (isset($company_base)) {
+        if (isset($tag_base)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($company_base));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($tag_base));
             } else {
-                $httpBody = $company_base;
+                $httpBody = $tag_base;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
