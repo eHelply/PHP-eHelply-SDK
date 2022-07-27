@@ -1,6 +1,6 @@
 <?php
 /**
- * SupportApi
+ * TagsApi
  * PHP version 7.4
  *
  * @category Class
@@ -41,14 +41,14 @@ use OpenAPI\Client\HeaderSelector;
 use OpenAPI\Client\ObjectSerializer;
 
 /**
- * SupportApi Class Doc Comment
+ * TagsApi Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class SupportApi
+class TagsApi
 {
     /**
      * @var ClientInterface
@@ -117,11 +117,11 @@ class SupportApi
     }
 
     /**
-     * Operation createContact
+     * Operation createTag
      *
-     * Createcontact
+     * Createtag
      *
-     * @param  \OpenAPI\Client\Model\Contact $contact contact (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base tag_base (required)
      * @param  string $x_access_token x_access_token (optional)
      * @param  string $x_secret_token x_secret_token (optional)
      * @param  string $authorization authorization (optional)
@@ -131,20 +131,20 @@ class SupportApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ContactResponse|\OpenAPI\Client\Model\GetServicesWithSpecs403Response|\OpenAPI\Client\Model\HTTPValidationError
+     * @return \OpenAPI\Client\Model\TagDb|\OpenAPI\Client\Model\HTTPValidationError
      */
-    public function createContact($contact, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function createTag($tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        list($response) = $this->createContactWithHttpInfo($contact, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        list($response) = $this->createTagWithHttpInfo($tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
         return $response;
     }
 
     /**
-     * Operation createContactWithHttpInfo
+     * Operation createTagWithHttpInfo
      *
-     * Createcontact
+     * Createtag
      *
-     * @param  \OpenAPI\Client\Model\Contact $contact (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -154,11 +154,11 @@ class SupportApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ContactResponse|\OpenAPI\Client\Model\GetServicesWithSpecs403Response|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\TagDb|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createContactWithHttpInfo($contact, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function createTagWithHttpInfo($tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        $request = $this->createContactRequest($contact, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        $request = $this->createTagRequest($tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
 
         try {
             $options = $this->createHttpClientOption();
@@ -197,32 +197,17 @@ class SupportApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ContactResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\TagDb' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ContactResponse' !== 'string') {
+                        if ('\OpenAPI\Client\Model\TagDb' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ContactResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 403:
-                    if ('\OpenAPI\Client\Model\GetServicesWithSpecs403Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\GetServicesWithSpecs403Response' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\GetServicesWithSpecs403Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TagDb', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -243,7 +228,7 @@ class SupportApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\ContactResponse';
+            $returnType = '\OpenAPI\Client\Model\TagDb';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -264,15 +249,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ContactResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\GetServicesWithSpecs403Response',
+                        '\OpenAPI\Client\Model\TagDb',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -291,11 +268,11 @@ class SupportApi
     }
 
     /**
-     * Operation createContactAsync
+     * Operation createTagAsync
      *
-     * Createcontact
+     * Createtag
      *
-     * @param  \OpenAPI\Client\Model\Contact $contact (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -306,9 +283,9 @@ class SupportApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createContactAsync($contact, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function createTagAsync($tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        return $this->createContactAsyncWithHttpInfo($contact, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data)
+        return $this->createTagAsyncWithHttpInfo($tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -317,11 +294,11 @@ class SupportApi
     }
 
     /**
-     * Operation createContactAsyncWithHttpInfo
+     * Operation createTagAsyncWithHttpInfo
      *
-     * Createcontact
+     * Createtag
      *
-     * @param  \OpenAPI\Client\Model\Contact $contact (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -332,10 +309,10 @@ class SupportApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createContactAsyncWithHttpInfo($contact, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function createTagAsyncWithHttpInfo($tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        $returnType = '\OpenAPI\Client\Model\ContactResponse';
-        $request = $this->createContactRequest($contact, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        $returnType = '\OpenAPI\Client\Model\TagDb';
+        $request = $this->createTagRequest($tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -374,9 +351,9 @@ class SupportApi
     }
 
     /**
-     * Create request for operation 'createContact'
+     * Create request for operation 'createTag'
      *
-     * @param  \OpenAPI\Client\Model\Contact $contact (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -387,16 +364,16 @@ class SupportApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createContactRequest($contact, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function createTagRequest($tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        // verify the required parameter 'contact' is set
-        if ($contact === null || (is_array($contact) && count($contact) === 0)) {
+        // verify the required parameter 'tag_base' is set
+        if ($tag_base === null || (is_array($tag_base) && count($tag_base) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $contact when calling createContact'
+                'Missing the required parameter $tag_base when calling createTag'
             );
         }
 
-        $resourcePath = '/sam/support/contact';
+        $resourcePath = '/places/tags';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -443,11 +420,11 @@ class SupportApi
         }
 
         // for model (json/xml)
-        if (isset($contact)) {
+        if (isset($tag_base)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($contact));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($tag_base));
             } else {
-                $httpBody = $contact;
+                $httpBody = $tag_base;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -495,13 +472,11 @@ class SupportApi
     }
 
     /**
-     * Operation createTicket
+     * Operation getTag
      *
-     * Createticket
+     * Gettag
      *
-     * @param  string $project_uuid project_uuid (required)
-     * @param  string $member_uuid member_uuid (required)
-     * @param  \OpenAPI\Client\Model\CreateTicket $create_ticket create_ticket (required)
+     * @param  string $tag_uuid tag_uuid (required)
      * @param  string $x_access_token x_access_token (optional)
      * @param  string $x_secret_token x_secret_token (optional)
      * @param  string $authorization authorization (optional)
@@ -511,22 +486,20 @@ class SupportApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TicketResponse|\OpenAPI\Client\Model\GetServicesWithSpecs403Response|\OpenAPI\Client\Model\HTTPValidationError
+     * @return \OpenAPI\Client\Model\TagBase|\OpenAPI\Client\Model\HTTPValidationError
      */
-    public function createTicket($project_uuid, $member_uuid, $create_ticket, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function getTag($tag_uuid, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        list($response) = $this->createTicketWithHttpInfo($project_uuid, $member_uuid, $create_ticket, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        list($response) = $this->getTagWithHttpInfo($tag_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
         return $response;
     }
 
     /**
-     * Operation createTicketWithHttpInfo
+     * Operation getTagWithHttpInfo
      *
-     * Createticket
+     * Gettag
      *
-     * @param  string $project_uuid (required)
-     * @param  string $member_uuid (required)
-     * @param  \OpenAPI\Client\Model\CreateTicket $create_ticket (required)
+     * @param  string $tag_uuid (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -536,11 +509,11 @@ class SupportApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TicketResponse|\OpenAPI\Client\Model\GetServicesWithSpecs403Response|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\TagBase|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createTicketWithHttpInfo($project_uuid, $member_uuid, $create_ticket, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function getTagWithHttpInfo($tag_uuid, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        $request = $this->createTicketRequest($project_uuid, $member_uuid, $create_ticket, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        $request = $this->getTagRequest($tag_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
 
         try {
             $options = $this->createHttpClientOption();
@@ -579,32 +552,17 @@ class SupportApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TicketResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\TagBase' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TicketResponse' !== 'string') {
+                        if ('\OpenAPI\Client\Model\TagBase' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TicketResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 403:
-                    if ('\OpenAPI\Client\Model\GetServicesWithSpecs403Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\GetServicesWithSpecs403Response' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\GetServicesWithSpecs403Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TagBase', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -625,7 +583,7 @@ class SupportApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\TicketResponse';
+            $returnType = '\OpenAPI\Client\Model\TagBase';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -646,15 +604,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TicketResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\GetServicesWithSpecs403Response',
+                        '\OpenAPI\Client\Model\TagBase',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -673,13 +623,11 @@ class SupportApi
     }
 
     /**
-     * Operation createTicketAsync
+     * Operation getTagAsync
      *
-     * Createticket
+     * Gettag
      *
-     * @param  string $project_uuid (required)
-     * @param  string $member_uuid (required)
-     * @param  \OpenAPI\Client\Model\CreateTicket $create_ticket (required)
+     * @param  string $tag_uuid (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -690,9 +638,9 @@ class SupportApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createTicketAsync($project_uuid, $member_uuid, $create_ticket, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function getTagAsync($tag_uuid, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        return $this->createTicketAsyncWithHttpInfo($project_uuid, $member_uuid, $create_ticket, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data)
+        return $this->getTagAsyncWithHttpInfo($tag_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -701,13 +649,11 @@ class SupportApi
     }
 
     /**
-     * Operation createTicketAsyncWithHttpInfo
+     * Operation getTagAsyncWithHttpInfo
      *
-     * Createticket
+     * Gettag
      *
-     * @param  string $project_uuid (required)
-     * @param  string $member_uuid (required)
-     * @param  \OpenAPI\Client\Model\CreateTicket $create_ticket (required)
+     * @param  string $tag_uuid (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -718,10 +664,10 @@ class SupportApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createTicketAsyncWithHttpInfo($project_uuid, $member_uuid, $create_ticket, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function getTagAsyncWithHttpInfo($tag_uuid, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        $returnType = '\OpenAPI\Client\Model\TicketResponse';
-        $request = $this->createTicketRequest($project_uuid, $member_uuid, $create_ticket, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        $returnType = '\OpenAPI\Client\Model\TagBase';
+        $request = $this->getTagRequest($tag_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -760,11 +706,9 @@ class SupportApi
     }
 
     /**
-     * Create request for operation 'createTicket'
+     * Create request for operation 'getTag'
      *
-     * @param  string $project_uuid (required)
-     * @param  string $member_uuid (required)
-     * @param  \OpenAPI\Client\Model\CreateTicket $create_ticket (required)
+     * @param  string $tag_uuid (required)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -775,28 +719,16 @@ class SupportApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createTicketRequest($project_uuid, $member_uuid, $create_ticket, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function getTagRequest($tag_uuid, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        // verify the required parameter 'project_uuid' is set
-        if ($project_uuid === null || (is_array($project_uuid) && count($project_uuid) === 0)) {
+        // verify the required parameter 'tag_uuid' is set
+        if ($tag_uuid === null || (is_array($tag_uuid) && count($tag_uuid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $project_uuid when calling createTicket'
-            );
-        }
-        // verify the required parameter 'member_uuid' is set
-        if ($member_uuid === null || (is_array($member_uuid) && count($member_uuid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $member_uuid when calling createTicket'
-            );
-        }
-        // verify the required parameter 'create_ticket' is set
-        if ($create_ticket === null || (is_array($create_ticket) && count($create_ticket) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $create_ticket when calling createTicket'
+                'Missing the required parameter $tag_uuid when calling getTag'
             );
         }
 
-        $resourcePath = '/sam/support/projects/{project_uuid}/members/{member_uuid}/tickets';
+        $resourcePath = '/places/tags/{tag_uuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -830,446 +762,10 @@ class SupportApi
         }
 
         // path params
-        if ($project_uuid !== null) {
+        if ($tag_uuid !== null) {
             $resourcePath = str_replace(
-                '{' . 'project_uuid' . '}',
-                ObjectSerializer::toPathValue($project_uuid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($member_uuid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'member_uuid' . '}',
-                ObjectSerializer::toPathValue($member_uuid),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($create_ticket)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($create_ticket));
-            } else {
-                $httpBody = $create_ticket;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation listTickets
-     *
-     * Listtickets
-     *
-     * @param  string $project_uuid project_uuid (required)
-     * @param  string $member_uuid member_uuid (required)
-     * @param  string $x_access_token x_access_token (optional)
-     * @param  string $x_secret_token x_secret_token (optional)
-     * @param  string $authorization authorization (optional)
-     * @param  string $ehelply_active_participant ehelply_active_participant (optional)
-     * @param  string $ehelply_project ehelply_project (optional)
-     * @param  string $ehelply_data ehelply_data (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TicketsResponse[]|\OpenAPI\Client\Model\GetServicesWithSpecs403Response|\OpenAPI\Client\Model\GetServicesWithSpecs403Response|\OpenAPI\Client\Model\HTTPValidationError
-     */
-    public function listTickets($project_uuid, $member_uuid, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
-    {
-        list($response) = $this->listTicketsWithHttpInfo($project_uuid, $member_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
-        return $response;
-    }
-
-    /**
-     * Operation listTicketsWithHttpInfo
-     *
-     * Listtickets
-     *
-     * @param  string $project_uuid (required)
-     * @param  string $member_uuid (required)
-     * @param  string $x_access_token (optional)
-     * @param  string $x_secret_token (optional)
-     * @param  string $authorization (optional)
-     * @param  string $ehelply_active_participant (optional)
-     * @param  string $ehelply_project (optional)
-     * @param  string $ehelply_data (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TicketsResponse[]|\OpenAPI\Client\Model\GetServicesWithSpecs403Response|\OpenAPI\Client\Model\GetServicesWithSpecs403Response|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function listTicketsWithHttpInfo($project_uuid, $member_uuid, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
-    {
-        $request = $this->listTicketsRequest($project_uuid, $member_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\TicketsResponse[]' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TicketsResponse[]' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TicketsResponse[]', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 403:
-                    if ('\OpenAPI\Client\Model\GetServicesWithSpecs403Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\GetServicesWithSpecs403Response' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\GetServicesWithSpecs403Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 404:
-                    if ('\OpenAPI\Client\Model\GetServicesWithSpecs403Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\GetServicesWithSpecs403Response' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\GetServicesWithSpecs403Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 422:
-                    if ('\OpenAPI\Client\Model\HTTPValidationError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\HTTPValidationError' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\HTTPValidationError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\TicketsResponse[]';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TicketsResponse[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\GetServicesWithSpecs403Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\GetServicesWithSpecs403Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 422:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\HTTPValidationError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation listTicketsAsync
-     *
-     * Listtickets
-     *
-     * @param  string $project_uuid (required)
-     * @param  string $member_uuid (required)
-     * @param  string $x_access_token (optional)
-     * @param  string $x_secret_token (optional)
-     * @param  string $authorization (optional)
-     * @param  string $ehelply_active_participant (optional)
-     * @param  string $ehelply_project (optional)
-     * @param  string $ehelply_data (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function listTicketsAsync($project_uuid, $member_uuid, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
-    {
-        return $this->listTicketsAsyncWithHttpInfo($project_uuid, $member_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation listTicketsAsyncWithHttpInfo
-     *
-     * Listtickets
-     *
-     * @param  string $project_uuid (required)
-     * @param  string $member_uuid (required)
-     * @param  string $x_access_token (optional)
-     * @param  string $x_secret_token (optional)
-     * @param  string $authorization (optional)
-     * @param  string $ehelply_active_participant (optional)
-     * @param  string $ehelply_project (optional)
-     * @param  string $ehelply_data (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function listTicketsAsyncWithHttpInfo($project_uuid, $member_uuid, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
-    {
-        $returnType = '\OpenAPI\Client\Model\TicketsResponse[]';
-        $request = $this->listTicketsRequest($project_uuid, $member_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'listTickets'
-     *
-     * @param  string $project_uuid (required)
-     * @param  string $member_uuid (required)
-     * @param  string $x_access_token (optional)
-     * @param  string $x_secret_token (optional)
-     * @param  string $authorization (optional)
-     * @param  string $ehelply_active_participant (optional)
-     * @param  string $ehelply_project (optional)
-     * @param  string $ehelply_data (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function listTicketsRequest($project_uuid, $member_uuid, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
-    {
-        // verify the required parameter 'project_uuid' is set
-        if ($project_uuid === null || (is_array($project_uuid) && count($project_uuid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $project_uuid when calling listTickets'
-            );
-        }
-        // verify the required parameter 'member_uuid' is set
-        if ($member_uuid === null || (is_array($member_uuid) && count($member_uuid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $member_uuid when calling listTickets'
-            );
-        }
-
-        $resourcePath = '/sam/support/projects/{project_uuid}/members/{member_uuid}/tickets';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // header params
-        if ($x_access_token !== null) {
-            $headerParams['x-access-token'] = ObjectSerializer::toHeaderValue($x_access_token);
-        }
-        // header params
-        if ($x_secret_token !== null) {
-            $headerParams['x-secret-token'] = ObjectSerializer::toHeaderValue($x_secret_token);
-        }
-        // header params
-        if ($authorization !== null) {
-            $headerParams['authorization'] = ObjectSerializer::toHeaderValue($authorization);
-        }
-        // header params
-        if ($ehelply_active_participant !== null) {
-            $headerParams['ehelply-active-participant'] = ObjectSerializer::toHeaderValue($ehelply_active_participant);
-        }
-        // header params
-        if ($ehelply_project !== null) {
-            $headerParams['ehelply-project'] = ObjectSerializer::toHeaderValue($ehelply_project);
-        }
-        // header params
-        if ($ehelply_data !== null) {
-            $headerParams['ehelply-data'] = ObjectSerializer::toHeaderValue($ehelply_data);
-        }
-
-        // path params
-        if ($project_uuid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'project_uuid' . '}',
-                ObjectSerializer::toPathValue($project_uuid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($member_uuid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'member_uuid' . '}',
-                ObjectSerializer::toPathValue($member_uuid),
+                '{' . 'tag_uuid' . '}',
+                ObjectSerializer::toPathValue($tag_uuid),
                 $resourcePath
             );
         }
@@ -1333,14 +829,16 @@ class SupportApi
     }
 
     /**
-     * Operation updateTicket
+     * Operation searchTag
      *
-     * Updateticket
+     * Searchtag
      *
-     * @param  string $project_uuid project_uuid (required)
-     * @param  string $member_uuid member_uuid (required)
-     * @param  string $ticket_id ticket_id (required)
-     * @param  \OpenAPI\Client\Model\CreateTicket $create_ticket create_ticket (required)
+     * @param  string $project_uuid project_uuid (optional)
+     * @param  string $name name (optional)
+     * @param  int $page page (optional, default to 1)
+     * @param  int $page_size page_size (optional, default to 25)
+     * @param  string $sort_on sort_on (optional)
+     * @param  bool $sort_desc sort_desc (optional, default to false)
      * @param  string $x_access_token x_access_token (optional)
      * @param  string $x_secret_token x_secret_token (optional)
      * @param  string $authorization authorization (optional)
@@ -1350,23 +848,25 @@ class SupportApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TicketResponse|\OpenAPI\Client\Model\GetServicesWithSpecs403Response|\OpenAPI\Client\Model\HTTPValidationError
+     * @return \OpenAPI\Client\Model\Page|\OpenAPI\Client\Model\HTTPValidationError
      */
-    public function updateTicket($project_uuid, $member_uuid, $ticket_id, $create_ticket, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function searchTag($project_uuid = null, $name = null, $page = 1, $page_size = 25, $sort_on = null, $sort_desc = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        list($response) = $this->updateTicketWithHttpInfo($project_uuid, $member_uuid, $ticket_id, $create_ticket, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        list($response) = $this->searchTagWithHttpInfo($project_uuid, $name, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
         return $response;
     }
 
     /**
-     * Operation updateTicketWithHttpInfo
+     * Operation searchTagWithHttpInfo
      *
-     * Updateticket
+     * Searchtag
      *
-     * @param  string $project_uuid (required)
-     * @param  string $member_uuid (required)
-     * @param  string $ticket_id (required)
-     * @param  \OpenAPI\Client\Model\CreateTicket $create_ticket (required)
+     * @param  string $project_uuid (optional)
+     * @param  string $name (optional)
+     * @param  int $page (optional, default to 1)
+     * @param  int $page_size (optional, default to 25)
+     * @param  string $sort_on (optional)
+     * @param  bool $sort_desc (optional, default to false)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -1376,11 +876,11 @@ class SupportApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TicketResponse|\OpenAPI\Client\Model\GetServicesWithSpecs403Response|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\Page|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateTicketWithHttpInfo($project_uuid, $member_uuid, $ticket_id, $create_ticket, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function searchTagWithHttpInfo($project_uuid = null, $name = null, $page = 1, $page_size = 25, $sort_on = null, $sort_desc = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        $request = $this->updateTicketRequest($project_uuid, $member_uuid, $ticket_id, $create_ticket, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        $request = $this->searchTagRequest($project_uuid, $name, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1419,32 +919,17 @@ class SupportApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TicketResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\Page' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TicketResponse' !== 'string') {
+                        if ('\OpenAPI\Client\Model\Page' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TicketResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 403:
-                    if ('\OpenAPI\Client\Model\GetServicesWithSpecs403Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\GetServicesWithSpecs403Response' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\GetServicesWithSpecs403Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Page', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1465,7 +950,7 @@ class SupportApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\TicketResponse';
+            $returnType = '\OpenAPI\Client\Model\Page';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1486,15 +971,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TicketResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\GetServicesWithSpecs403Response',
+                        '\OpenAPI\Client\Model\Page',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1513,14 +990,16 @@ class SupportApi
     }
 
     /**
-     * Operation updateTicketAsync
+     * Operation searchTagAsync
      *
-     * Updateticket
+     * Searchtag
      *
-     * @param  string $project_uuid (required)
-     * @param  string $member_uuid (required)
-     * @param  string $ticket_id (required)
-     * @param  \OpenAPI\Client\Model\CreateTicket $create_ticket (required)
+     * @param  string $project_uuid (optional)
+     * @param  string $name (optional)
+     * @param  int $page (optional, default to 1)
+     * @param  int $page_size (optional, default to 25)
+     * @param  string $sort_on (optional)
+     * @param  bool $sort_desc (optional, default to false)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -1531,9 +1010,9 @@ class SupportApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateTicketAsync($project_uuid, $member_uuid, $ticket_id, $create_ticket, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function searchTagAsync($project_uuid = null, $name = null, $page = 1, $page_size = 25, $sort_on = null, $sort_desc = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        return $this->updateTicketAsyncWithHttpInfo($project_uuid, $member_uuid, $ticket_id, $create_ticket, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data)
+        return $this->searchTagAsyncWithHttpInfo($project_uuid, $name, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1542,14 +1021,16 @@ class SupportApi
     }
 
     /**
-     * Operation updateTicketAsyncWithHttpInfo
+     * Operation searchTagAsyncWithHttpInfo
      *
-     * Updateticket
+     * Searchtag
      *
-     * @param  string $project_uuid (required)
-     * @param  string $member_uuid (required)
-     * @param  string $ticket_id (required)
-     * @param  \OpenAPI\Client\Model\CreateTicket $create_ticket (required)
+     * @param  string $project_uuid (optional)
+     * @param  string $name (optional)
+     * @param  int $page (optional, default to 1)
+     * @param  int $page_size (optional, default to 25)
+     * @param  string $sort_on (optional)
+     * @param  bool $sort_desc (optional, default to false)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -1560,10 +1041,10 @@ class SupportApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateTicketAsyncWithHttpInfo($project_uuid, $member_uuid, $ticket_id, $create_ticket, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function searchTagAsyncWithHttpInfo($project_uuid = null, $name = null, $page = 1, $page_size = 25, $sort_on = null, $sort_desc = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        $returnType = '\OpenAPI\Client\Model\TicketResponse';
-        $request = $this->updateTicketRequest($project_uuid, $member_uuid, $ticket_id, $create_ticket, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        $returnType = '\OpenAPI\Client\Model\Page';
+        $request = $this->searchTagRequest($project_uuid, $name, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1602,12 +1083,14 @@ class SupportApi
     }
 
     /**
-     * Create request for operation 'updateTicket'
+     * Create request for operation 'searchTag'
      *
-     * @param  string $project_uuid (required)
-     * @param  string $member_uuid (required)
-     * @param  string $ticket_id (required)
-     * @param  \OpenAPI\Client\Model\CreateTicket $create_ticket (required)
+     * @param  string $project_uuid (optional)
+     * @param  string $name (optional)
+     * @param  int $page (optional, default to 1)
+     * @param  int $page_size (optional, default to 25)
+     * @param  string $sort_on (optional)
+     * @param  bool $sort_desc (optional, default to false)
      * @param  string $x_access_token (optional)
      * @param  string $x_secret_token (optional)
      * @param  string $authorization (optional)
@@ -1618,34 +1101,424 @@ class SupportApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateTicketRequest($project_uuid, $member_uuid, $ticket_id, $create_ticket, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    public function searchTagRequest($project_uuid = null, $name = null, $page = 1, $page_size = 25, $sort_on = null, $sort_desc = false, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
     {
-        // verify the required parameter 'project_uuid' is set
-        if ($project_uuid === null || (is_array($project_uuid) && count($project_uuid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $project_uuid when calling updateTicket'
-            );
+
+        $resourcePath = '/places/tags';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $project_uuid,
+            'project_uuid', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $name,
+            'name', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'page_size', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sort_on,
+            'sort_on', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sort_desc,
+            'sort_desc', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($x_access_token !== null) {
+            $headerParams['x-access-token'] = ObjectSerializer::toHeaderValue($x_access_token);
         }
-        // verify the required parameter 'member_uuid' is set
-        if ($member_uuid === null || (is_array($member_uuid) && count($member_uuid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $member_uuid when calling updateTicket'
-            );
+        // header params
+        if ($x_secret_token !== null) {
+            $headerParams['x-secret-token'] = ObjectSerializer::toHeaderValue($x_secret_token);
         }
-        // verify the required parameter 'ticket_id' is set
-        if ($ticket_id === null || (is_array($ticket_id) && count($ticket_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $ticket_id when calling updateTicket'
-            );
+        // header params
+        if ($authorization !== null) {
+            $headerParams['authorization'] = ObjectSerializer::toHeaderValue($authorization);
         }
-        // verify the required parameter 'create_ticket' is set
-        if ($create_ticket === null || (is_array($create_ticket) && count($create_ticket) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $create_ticket when calling updateTicket'
+        // header params
+        if ($ehelply_active_participant !== null) {
+            $headerParams['ehelply-active-participant'] = ObjectSerializer::toHeaderValue($ehelply_active_participant);
+        }
+        // header params
+        if ($ehelply_project !== null) {
+            $headerParams['ehelply-project'] = ObjectSerializer::toHeaderValue($ehelply_project);
+        }
+        // header params
+        if ($ehelply_data !== null) {
+            $headerParams['ehelply-data'] = ObjectSerializer::toHeaderValue($ehelply_data);
+        }
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
             );
         }
 
-        $resourcePath = '/sam/support/projects/{project_uuid}/members/{member_uuid}/tickets/{ticket_id}';
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateTag
+     *
+     * Updatetag
+     *
+     * @param  string $tag_uuid tag_uuid (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base tag_base (required)
+     * @param  string $x_access_token x_access_token (optional)
+     * @param  string $x_secret_token x_secret_token (optional)
+     * @param  string $authorization authorization (optional)
+     * @param  string $ehelply_active_participant ehelply_active_participant (optional)
+     * @param  string $ehelply_project ehelply_project (optional)
+     * @param  string $ehelply_data ehelply_data (optional)
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\TagBase|\OpenAPI\Client\Model\HTTPValidationError
+     */
+    public function updateTag($tag_uuid, $tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    {
+        list($response) = $this->updateTagWithHttpInfo($tag_uuid, $tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+        return $response;
+    }
+
+    /**
+     * Operation updateTagWithHttpInfo
+     *
+     * Updatetag
+     *
+     * @param  string $tag_uuid (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base (required)
+     * @param  string $x_access_token (optional)
+     * @param  string $x_secret_token (optional)
+     * @param  string $authorization (optional)
+     * @param  string $ehelply_active_participant (optional)
+     * @param  string $ehelply_project (optional)
+     * @param  string $ehelply_data (optional)
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\TagBase|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateTagWithHttpInfo($tag_uuid, $tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    {
+        $request = $this->updateTagRequest($tag_uuid, $tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\TagBase' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\TagBase' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TagBase', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\HTTPValidationError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\HTTPValidationError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\HTTPValidationError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\TagBase';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\TagBase',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\HTTPValidationError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateTagAsync
+     *
+     * Updatetag
+     *
+     * @param  string $tag_uuid (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base (required)
+     * @param  string $x_access_token (optional)
+     * @param  string $x_secret_token (optional)
+     * @param  string $authorization (optional)
+     * @param  string $ehelply_active_participant (optional)
+     * @param  string $ehelply_project (optional)
+     * @param  string $ehelply_data (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateTagAsync($tag_uuid, $tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    {
+        return $this->updateTagAsyncWithHttpInfo($tag_uuid, $tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateTagAsyncWithHttpInfo
+     *
+     * Updatetag
+     *
+     * @param  string $tag_uuid (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base (required)
+     * @param  string $x_access_token (optional)
+     * @param  string $x_secret_token (optional)
+     * @param  string $authorization (optional)
+     * @param  string $ehelply_active_participant (optional)
+     * @param  string $ehelply_project (optional)
+     * @param  string $ehelply_data (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateTagAsyncWithHttpInfo($tag_uuid, $tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    {
+        $returnType = '\OpenAPI\Client\Model\TagBase';
+        $request = $this->updateTagRequest($tag_uuid, $tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateTag'
+     *
+     * @param  string $tag_uuid (required)
+     * @param  \OpenAPI\Client\Model\TagBase $tag_base (required)
+     * @param  string $x_access_token (optional)
+     * @param  string $x_secret_token (optional)
+     * @param  string $authorization (optional)
+     * @param  string $ehelply_active_participant (optional)
+     * @param  string $ehelply_project (optional)
+     * @param  string $ehelply_data (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateTagRequest($tag_uuid, $tag_base, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
+    {
+        // verify the required parameter 'tag_uuid' is set
+        if ($tag_uuid === null || (is_array($tag_uuid) && count($tag_uuid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $tag_uuid when calling updateTag'
+            );
+        }
+        // verify the required parameter 'tag_base' is set
+        if ($tag_base === null || (is_array($tag_base) && count($tag_base) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $tag_base when calling updateTag'
+            );
+        }
+
+        $resourcePath = '/places/tags/{tag_uuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1679,26 +1552,10 @@ class SupportApi
         }
 
         // path params
-        if ($project_uuid !== null) {
+        if ($tag_uuid !== null) {
             $resourcePath = str_replace(
-                '{' . 'project_uuid' . '}',
-                ObjectSerializer::toPathValue($project_uuid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($member_uuid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'member_uuid' . '}',
-                ObjectSerializer::toPathValue($member_uuid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($ticket_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'ticket_id' . '}',
-                ObjectSerializer::toPathValue($ticket_id),
+                '{' . 'tag_uuid' . '}',
+                ObjectSerializer::toPathValue($tag_uuid),
                 $resourcePath
             );
         }
@@ -1716,11 +1573,11 @@ class SupportApi
         }
 
         // for model (json/xml)
-        if (isset($create_ticket)) {
+        if (isset($tag_base)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($create_ticket));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($tag_base));
             } else {
-                $httpBody = $create_ticket;
+                $httpBody = $tag_base;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1761,424 +1618,6 @@ class SupportApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'PUT',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation viewTicket
-     *
-     * Viewticket
-     *
-     * @param  string $project_uuid project_uuid (required)
-     * @param  string $member_uuid member_uuid (required)
-     * @param  string $ticket_id ticket_id (required)
-     * @param  string $x_access_token x_access_token (optional)
-     * @param  string $x_secret_token x_secret_token (optional)
-     * @param  string $authorization authorization (optional)
-     * @param  string $ehelply_active_participant ehelply_active_participant (optional)
-     * @param  string $ehelply_project ehelply_project (optional)
-     * @param  string $ehelply_data ehelply_data (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TicketResponse|\OpenAPI\Client\Model\GetServicesWithSpecs403Response|\OpenAPI\Client\Model\HTTPValidationError
-     */
-    public function viewTicket($project_uuid, $member_uuid, $ticket_id, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
-    {
-        list($response) = $this->viewTicketWithHttpInfo($project_uuid, $member_uuid, $ticket_id, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
-        return $response;
-    }
-
-    /**
-     * Operation viewTicketWithHttpInfo
-     *
-     * Viewticket
-     *
-     * @param  string $project_uuid (required)
-     * @param  string $member_uuid (required)
-     * @param  string $ticket_id (required)
-     * @param  string $x_access_token (optional)
-     * @param  string $x_secret_token (optional)
-     * @param  string $authorization (optional)
-     * @param  string $ehelply_active_participant (optional)
-     * @param  string $ehelply_project (optional)
-     * @param  string $ehelply_data (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TicketResponse|\OpenAPI\Client\Model\GetServicesWithSpecs403Response|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function viewTicketWithHttpInfo($project_uuid, $member_uuid, $ticket_id, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
-    {
-        $request = $this->viewTicketRequest($project_uuid, $member_uuid, $ticket_id, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\TicketResponse' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TicketResponse' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TicketResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 403:
-                    if ('\OpenAPI\Client\Model\GetServicesWithSpecs403Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\GetServicesWithSpecs403Response' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\GetServicesWithSpecs403Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 422:
-                    if ('\OpenAPI\Client\Model\HTTPValidationError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\HTTPValidationError' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\HTTPValidationError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\TicketResponse';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TicketResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\GetServicesWithSpecs403Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 422:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\HTTPValidationError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation viewTicketAsync
-     *
-     * Viewticket
-     *
-     * @param  string $project_uuid (required)
-     * @param  string $member_uuid (required)
-     * @param  string $ticket_id (required)
-     * @param  string $x_access_token (optional)
-     * @param  string $x_secret_token (optional)
-     * @param  string $authorization (optional)
-     * @param  string $ehelply_active_participant (optional)
-     * @param  string $ehelply_project (optional)
-     * @param  string $ehelply_data (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function viewTicketAsync($project_uuid, $member_uuid, $ticket_id, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
-    {
-        return $this->viewTicketAsyncWithHttpInfo($project_uuid, $member_uuid, $ticket_id, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation viewTicketAsyncWithHttpInfo
-     *
-     * Viewticket
-     *
-     * @param  string $project_uuid (required)
-     * @param  string $member_uuid (required)
-     * @param  string $ticket_id (required)
-     * @param  string $x_access_token (optional)
-     * @param  string $x_secret_token (optional)
-     * @param  string $authorization (optional)
-     * @param  string $ehelply_active_participant (optional)
-     * @param  string $ehelply_project (optional)
-     * @param  string $ehelply_data (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function viewTicketAsyncWithHttpInfo($project_uuid, $member_uuid, $ticket_id, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
-    {
-        $returnType = '\OpenAPI\Client\Model\TicketResponse';
-        $request = $this->viewTicketRequest($project_uuid, $member_uuid, $ticket_id, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'viewTicket'
-     *
-     * @param  string $project_uuid (required)
-     * @param  string $member_uuid (required)
-     * @param  string $ticket_id (required)
-     * @param  string $x_access_token (optional)
-     * @param  string $x_secret_token (optional)
-     * @param  string $authorization (optional)
-     * @param  string $ehelply_active_participant (optional)
-     * @param  string $ehelply_project (optional)
-     * @param  string $ehelply_data (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function viewTicketRequest($project_uuid, $member_uuid, $ticket_id, $x_access_token = null, $x_secret_token = null, $authorization = null, $ehelply_active_participant = null, $ehelply_project = null, $ehelply_data = null)
-    {
-        // verify the required parameter 'project_uuid' is set
-        if ($project_uuid === null || (is_array($project_uuid) && count($project_uuid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $project_uuid when calling viewTicket'
-            );
-        }
-        // verify the required parameter 'member_uuid' is set
-        if ($member_uuid === null || (is_array($member_uuid) && count($member_uuid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $member_uuid when calling viewTicket'
-            );
-        }
-        // verify the required parameter 'ticket_id' is set
-        if ($ticket_id === null || (is_array($ticket_id) && count($ticket_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $ticket_id when calling viewTicket'
-            );
-        }
-
-        $resourcePath = '/sam/support/projects/{project_uuid}/members/{member_uuid}/tickets/{ticket_id}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // header params
-        if ($x_access_token !== null) {
-            $headerParams['x-access-token'] = ObjectSerializer::toHeaderValue($x_access_token);
-        }
-        // header params
-        if ($x_secret_token !== null) {
-            $headerParams['x-secret-token'] = ObjectSerializer::toHeaderValue($x_secret_token);
-        }
-        // header params
-        if ($authorization !== null) {
-            $headerParams['authorization'] = ObjectSerializer::toHeaderValue($authorization);
-        }
-        // header params
-        if ($ehelply_active_participant !== null) {
-            $headerParams['ehelply-active-participant'] = ObjectSerializer::toHeaderValue($ehelply_active_participant);
-        }
-        // header params
-        if ($ehelply_project !== null) {
-            $headerParams['ehelply-project'] = ObjectSerializer::toHeaderValue($ehelply_project);
-        }
-        // header params
-        if ($ehelply_data !== null) {
-            $headerParams['ehelply-data'] = ObjectSerializer::toHeaderValue($ehelply_data);
-        }
-
-        // path params
-        if ($project_uuid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'project_uuid' . '}',
-                ObjectSerializer::toPathValue($project_uuid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($member_uuid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'member_uuid' . '}',
-                ObjectSerializer::toPathValue($member_uuid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($ticket_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'ticket_id' . '}',
-                ObjectSerializer::toPathValue($ticket_id),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
