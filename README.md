@@ -171,21 +171,26 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**addMemberToProject**](docs/Api/ProjectsApi.md#addmembertoproject) | **POST** /sam/projects/projects/{project_uuid}/members/{entity_uuid} | Addmembertoproject
 *ProjectsApi* | [**archiveProject**](docs/Api/ProjectsApi.md#archiveproject) | **DELETE** /sam/projects/projects/{project_uuid} | Archiveproject
 *ProjectsApi* | [**createProject**](docs/Api/ProjectsApi.md#createproject) | **POST** /sam/projects/projects | Createproject
+*ProjectsApi* | [**createProjectCredential**](docs/Api/ProjectsApi.md#createprojectcredential) | **POST** /sam/projects/projects/{project_uuid}/credentials | Createprojectcredential
 *ProjectsApi* | [**createProjectKey**](docs/Api/ProjectsApi.md#createprojectkey) | **POST** /sam/projects/projects/{project_uuid}/keys | Createprojectkey
 *ProjectsApi* | [**createUsageType**](docs/Api/ProjectsApi.md#createusagetype) | **POST** /sam/projects/usage/types | Createusagetype
+*ProjectsApi* | [**deleteProjectCredential**](docs/Api/ProjectsApi.md#deleteprojectcredential) | **DELETE** /sam/projects/projects/{project_uuid}/credentials/{service_name} | Deleteprojectcredential
 *ProjectsApi* | [**deleteProjectKey**](docs/Api/ProjectsApi.md#deleteprojectkey) | **DELETE** /sam/projects/projects/{project_uuid}/keys | Deleteprojectkey
 *ProjectsApi* | [**deleteUsageType**](docs/Api/ProjectsApi.md#deleteusagetype) | **DELETE** /sam/projects/usage/types/{usage_type_key} | Deleteusagetype
+*ProjectsApi* | [**getAllProjectCredentials**](docs/Api/ProjectsApi.md#getallprojectcredentials) | **GET** /sam/projects/projects/{project_uuid}/credentials | Getallprojectcredentials
 *ProjectsApi* | [**getAllProjectUsage**](docs/Api/ProjectsApi.md#getallprojectusage) | **GET** /sam/projects/projects/{project_uuid}/usage | Getallprojectusage
 *ProjectsApi* | [**getMemberProjects**](docs/Api/ProjectsApi.md#getmemberprojects) | **GET** /sam/projects/members/{entity_uuid}/projects | Getmemberprojects
 *ProjectsApi* | [**getProject**](docs/Api/ProjectsApi.md#getproject) | **GET** /sam/projects/projects/{project_uuid} | Getproject
 *ProjectsApi* | [**getProjectKeys**](docs/Api/ProjectsApi.md#getprojectkeys) | **GET** /sam/projects/projects/{project_uuid}/keys | Getprojectkeys
 *ProjectsApi* | [**getProjectMembers**](docs/Api/ProjectsApi.md#getprojectmembers) | **GET** /sam/projects/projects/{project_uuid}/members | Getprojectmembers
+*ProjectsApi* | [**getSpecificProjectCredential**](docs/Api/ProjectsApi.md#getspecificprojectcredential) | **GET** /sam/projects/projects/{project_uuid}/credentials/{service_name} | Getspecificprojectcredential
 *ProjectsApi* | [**getSpecificProjectUsage**](docs/Api/ProjectsApi.md#getspecificprojectusage) | **GET** /sam/projects/projects/{project_uuid}/usage/{usage_type_key} | Getspecificprojectusage
 *ProjectsApi* | [**getUsageType**](docs/Api/ProjectsApi.md#getusagetype) | **GET** /sam/projects/usage/types/{usage_type_key} | Getusagetype
 *ProjectsApi* | [**removeMemberFromProject**](docs/Api/ProjectsApi.md#removememberfromproject) | **DELETE** /sam/projects/projects/{project_uuid}/members/{entity_uuid} | Removememberfromproject
 *ProjectsApi* | [**searchProjects**](docs/Api/ProjectsApi.md#searchprojects) | **GET** /sam/projects/projects | Searchprojects
 *ProjectsApi* | [**searchUsageType**](docs/Api/ProjectsApi.md#searchusagetype) | **GET** /sam/projects/usage/types | Searchusagetype
 *ProjectsApi* | [**updateProject**](docs/Api/ProjectsApi.md#updateproject) | **PUT** /sam/projects/projects/{project_uuid} | Updateproject
+*ProjectsApi* | [**updateProjectCredential**](docs/Api/ProjectsApi.md#updateprojectcredential) | **PUT** /sam/projects/projects/{project_uuid}/credentials/{service_name} | Updateprojectcredential
 *ProjectsApi* | [**updateUsageType**](docs/Api/ProjectsApi.md#updateusagetype) | **PUT** /sam/projects/usage/types/{usage_type_key} | Updateusagetype
 *ReviewsApi* | [**createReview**](docs/Api/ReviewsApi.md#createreview) | **POST** /products/reviews/types/{entity_type}/entities/{entity_uuid} | Create
 *ReviewsApi* | [**deleteReview**](docs/Api/ReviewsApi.md#deletereview) | **DELETE** /products/reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Deletereview
@@ -261,8 +266,10 @@ Class | Method | HTTP request | Description
 - [ContactMethod](docs/Model/ContactMethod.md)
 - [ContactResponse](docs/Model/ContactResponse.md)
 - [CreateKeyResponse](docs/Model/CreateKeyResponse.md)
+- [CreateProjectCredential](docs/Model/CreateProjectCredential.md)
 - [CreateReview](docs/Model/CreateReview.md)
 - [CreateTicket](docs/Model/CreateTicket.md)
+- [Credential](docs/Model/Credential.md)
 - [CustomList](docs/Model/CustomList.md)
 - [DatesMeta](docs/Model/DatesMeta.md)
 - [Detailed](docs/Model/Detailed.md)
@@ -273,6 +280,8 @@ Class | Method | HTTP request | Description
 - [Field](docs/Model/Field.md)
 - [FieldDynamo](docs/Model/FieldDynamo.md)
 - [GetAppointment403Response](docs/Model/GetAppointment403Response.md)
+- [GetProjectCredential](docs/Model/GetProjectCredential.md)
+- [GetSecret](docs/Model/GetSecret.md)
 - [GetServiceServiceWithSpecsResponse](docs/Model/GetServiceServiceWithSpecsResponse.md)
 - [GetServiceSpecResponse](docs/Model/GetServiceSpecResponse.md)
 - [GetServiceSpecsResponse](docs/Model/GetServiceSpecsResponse.md)
@@ -317,10 +326,13 @@ Class | Method | HTTP request | Description
 - [ResponseAddmembertoproject](docs/Model/ResponseAddmembertoproject.md)
 - [ResponseArchiveproject](docs/Model/ResponseArchiveproject.md)
 - [ResponseCreatekey](docs/Model/ResponseCreatekey.md)
+- [ResponseCreateprojectcredential](docs/Model/ResponseCreateprojectcredential.md)
 - [ResponseDeletekey](docs/Model/ResponseDeletekey.md)
+- [ResponseDeleteprojectcredential](docs/Model/ResponseDeleteprojectcredential.md)
 - [ResponseDeleteusagetype](docs/Model/ResponseDeleteusagetype.md)
 - [ResponseGeneratetoken](docs/Model/ResponseGeneratetoken.md)
 - [ResponseRemovememberfromproject](docs/Model/ResponseRemovememberfromproject.md)
+- [ResponseUpdateprojectcredential](docs/Model/ResponseUpdateprojectcredential.md)
 - [SecurityCreateToken](docs/Model/SecurityCreateToken.md)
 - [SecurityEncryptionKeyGet](docs/Model/SecurityEncryptionKeyGet.md)
 - [SecurityEncryptionKeyResponse](docs/Model/SecurityEncryptionKeyResponse.md)
@@ -341,6 +353,7 @@ Class | Method | HTTP request | Description
 - [TagDb](docs/Model/TagDb.md)
 - [TicketResponse](docs/Model/TicketResponse.md)
 - [TicketsResponse](docs/Model/TicketsResponse.md)
+- [UpdateProjectCredentialRequest](docs/Model/UpdateProjectCredentialRequest.md)
 - [UpdateReview](docs/Model/UpdateReview.md)
 - [User](docs/Model/User.md)
 - [UserConfirmation](docs/Model/UserConfirmation.md)
@@ -377,6 +390,6 @@ support@ehelply.com
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.1.98`
-    - Package version: `1.1.98`
+- API version: `1.1.99`
+    - Package version: `1.1.99`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

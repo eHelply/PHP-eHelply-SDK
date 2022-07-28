@@ -7,21 +7,26 @@ Method | HTTP request | Description
 [**addMemberToProject()**](ProjectsApi.md#addMemberToProject) | **POST** /sam/projects/projects/{project_uuid}/members/{entity_uuid} | Addmembertoproject
 [**archiveProject()**](ProjectsApi.md#archiveProject) | **DELETE** /sam/projects/projects/{project_uuid} | Archiveproject
 [**createProject()**](ProjectsApi.md#createProject) | **POST** /sam/projects/projects | Createproject
+[**createProjectCredential()**](ProjectsApi.md#createProjectCredential) | **POST** /sam/projects/projects/{project_uuid}/credentials | Createprojectcredential
 [**createProjectKey()**](ProjectsApi.md#createProjectKey) | **POST** /sam/projects/projects/{project_uuid}/keys | Createprojectkey
 [**createUsageType()**](ProjectsApi.md#createUsageType) | **POST** /sam/projects/usage/types | Createusagetype
+[**deleteProjectCredential()**](ProjectsApi.md#deleteProjectCredential) | **DELETE** /sam/projects/projects/{project_uuid}/credentials/{service_name} | Deleteprojectcredential
 [**deleteProjectKey()**](ProjectsApi.md#deleteProjectKey) | **DELETE** /sam/projects/projects/{project_uuid}/keys | Deleteprojectkey
 [**deleteUsageType()**](ProjectsApi.md#deleteUsageType) | **DELETE** /sam/projects/usage/types/{usage_type_key} | Deleteusagetype
+[**getAllProjectCredentials()**](ProjectsApi.md#getAllProjectCredentials) | **GET** /sam/projects/projects/{project_uuid}/credentials | Getallprojectcredentials
 [**getAllProjectUsage()**](ProjectsApi.md#getAllProjectUsage) | **GET** /sam/projects/projects/{project_uuid}/usage | Getallprojectusage
 [**getMemberProjects()**](ProjectsApi.md#getMemberProjects) | **GET** /sam/projects/members/{entity_uuid}/projects | Getmemberprojects
 [**getProject()**](ProjectsApi.md#getProject) | **GET** /sam/projects/projects/{project_uuid} | Getproject
 [**getProjectKeys()**](ProjectsApi.md#getProjectKeys) | **GET** /sam/projects/projects/{project_uuid}/keys | Getprojectkeys
 [**getProjectMembers()**](ProjectsApi.md#getProjectMembers) | **GET** /sam/projects/projects/{project_uuid}/members | Getprojectmembers
+[**getSpecificProjectCredential()**](ProjectsApi.md#getSpecificProjectCredential) | **GET** /sam/projects/projects/{project_uuid}/credentials/{service_name} | Getspecificprojectcredential
 [**getSpecificProjectUsage()**](ProjectsApi.md#getSpecificProjectUsage) | **GET** /sam/projects/projects/{project_uuid}/usage/{usage_type_key} | Getspecificprojectusage
 [**getUsageType()**](ProjectsApi.md#getUsageType) | **GET** /sam/projects/usage/types/{usage_type_key} | Getusagetype
 [**removeMemberFromProject()**](ProjectsApi.md#removeMemberFromProject) | **DELETE** /sam/projects/projects/{project_uuid}/members/{entity_uuid} | Removememberfromproject
 [**searchProjects()**](ProjectsApi.md#searchProjects) | **GET** /sam/projects/projects | Searchprojects
 [**searchUsageType()**](ProjectsApi.md#searchUsageType) | **GET** /sam/projects/usage/types | Searchusagetype
 [**updateProject()**](ProjectsApi.md#updateProject) | **PUT** /sam/projects/projects/{project_uuid} | Updateproject
+[**updateProjectCredential()**](ProjectsApi.md#updateProjectCredential) | **PUT** /sam/projects/projects/{project_uuid}/credentials/{service_name} | Updateprojectcredential
 [**updateUsageType()**](ProjectsApi.md#updateUsageType) | **PUT** /sam/projects/usage/types/{usage_type_key} | Updateusagetype
 
 
@@ -227,6 +232,74 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `createProjectCredential()`
+
+```php
+createProjectCredential($project_uuid, $create_project_credential, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\ResponseCreateprojectcredential
+```
+
+Createprojectcredential
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\ProjectsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$project_uuid = 'project_uuid_example'; // string
+$create_project_credential = new \OpenAPI\Client\Model\CreateProjectCredential(); // \OpenAPI\Client\Model\CreateProjectCredential
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
+
+try {
+    $result = $apiInstance->createProjectCredential($project_uuid, $create_project_credential, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProjectsApi->createProjectCredential: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **string**|  |
+ **create_project_credential** | [**\OpenAPI\Client\Model\CreateProjectCredential**](../Model/CreateProjectCredential.md)|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\ResponseCreateprojectcredential**](../Model/ResponseCreateprojectcredential.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `createProjectKey()`
 
 ```php
@@ -361,6 +434,74 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `deleteProjectCredential()`
+
+```php
+deleteProjectCredential($project_uuid, $service_name, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\ResponseDeleteprojectcredential
+```
+
+Deleteprojectcredential
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\ProjectsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$project_uuid = 'project_uuid_example'; // string
+$service_name = 'service_name_example'; // string
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
+
+try {
+    $result = $apiInstance->deleteProjectCredential($project_uuid, $service_name, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProjectsApi->deleteProjectCredential: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **string**|  |
+ **service_name** | **string**|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\ResponseDeleteprojectcredential**](../Model/ResponseDeleteprojectcredential.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `deleteProjectKey()`
 
 ```php
@@ -481,6 +622,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\OpenAPI\Client\Model\ResponseDeleteusagetype**](../Model/ResponseDeleteusagetype.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getAllProjectCredentials()`
+
+```php
+getAllProjectCredentials($project_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\GetProjectCredential[]
+```
+
+Getallprojectcredentials
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\ProjectsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$project_uuid = 'project_uuid_example'; // string
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
+
+try {
+    $result = $apiInstance->getAllProjectCredentials($project_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProjectsApi->getAllProjectCredentials: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **string**|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetProjectCredential[]**](../Model/GetProjectCredential.md)
 
 ### Authorization
 
@@ -821,6 +1028,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\OpenAPI\Client\Model\ProjectsProjectMemberDB[]**](../Model/ProjectsProjectMemberDB.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getSpecificProjectCredential()`
+
+```php
+getSpecificProjectCredential($project_uuid, $service_name, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\GetProjectCredential
+```
+
+Getspecificprojectcredential
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\ProjectsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$project_uuid = 'project_uuid_example'; // string
+$service_name = 'service_name_example'; // string
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
+
+try {
+    $result = $apiInstance->getSpecificProjectCredential($project_uuid, $service_name, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProjectsApi->getSpecificProjectCredential: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **string**|  |
+ **service_name** | **string**|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetProjectCredential**](../Model/GetProjectCredential.md)
 
 ### Authorization
 
@@ -1225,6 +1500,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 **object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateProjectCredential()`
+
+```php
+updateProjectCredential($project_uuid, $service_name, $update_project_credential_request, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\ResponseUpdateprojectcredential
+```
+
+Updateprojectcredential
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\ProjectsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$project_uuid = 'project_uuid_example'; // string
+$service_name = 'service_name_example'; // string
+$update_project_credential_request = new \OpenAPI\Client\Model\UpdateProjectCredentialRequest(); // \OpenAPI\Client\Model\UpdateProjectCredentialRequest
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
+
+try {
+    $result = $apiInstance->updateProjectCredential($project_uuid, $service_name, $update_project_credential_request, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProjectsApi->updateProjectCredential: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **string**|  |
+ **service_name** | **string**|  |
+ **update_project_credential_request** | [**\OpenAPI\Client\Model\UpdateProjectCredentialRequest**](../Model/UpdateProjectCredentialRequest.md)|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\ResponseUpdateprojectcredential**](../Model/ResponseUpdateprojectcredential.md)
 
 ### Authorization
 
