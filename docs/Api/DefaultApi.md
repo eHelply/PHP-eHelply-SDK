@@ -352,7 +352,7 @@ No authorization required
 ## `searchAppointment()`
 
 ```php
-searchAppointment($place_uuid, $exclude_cancelled, $is_deleted, $start_range, $end_range, $page, $page_size, $sort_on, $sort_desc, $search, $search_on, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): mixed
+searchAppointment($place_uuid, $exclude_cancelled, $is_deleted, $start_range, $end_range, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): mixed
 ```
 
 Search Appointment
@@ -379,8 +379,6 @@ $page = 1; // int
 $page_size = 25; // int
 $sort_on = 'sort_on_example'; // string
 $sort_desc = false; // bool
-$search = 'search_example'; // string
-$search_on = 'search_on_example'; // string
 $x_access_token = 'x_access_token_example'; // string
 $x_secret_token = 'x_secret_token_example'; // string
 $authorization = 'authorization_example'; // string
@@ -389,7 +387,7 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->searchAppointment($place_uuid, $exclude_cancelled, $is_deleted, $start_range, $end_range, $page, $page_size, $sort_on, $sort_desc, $search, $search_on, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->searchAppointment($place_uuid, $exclude_cancelled, $is_deleted, $start_range, $end_range, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->searchAppointment: ', $e->getMessage(), PHP_EOL;
@@ -409,8 +407,6 @@ Name | Type | Description  | Notes
  **page_size** | **int**|  | [optional] [default to 25]
  **sort_on** | **string**|  | [optional]
  **sort_desc** | **bool**|  | [optional] [default to false]
- **search** | **string**|  | [optional]
- **search_on** | **string**|  | [optional]
  **x_access_token** | **string**|  | [optional]
  **x_secret_token** | **string**|  | [optional]
  **authorization** | **string**|  | [optional]
@@ -516,7 +512,7 @@ No authorization required
 ## `searchEntityAppointments()`
 
 ```php
-searchEntityAppointments($entity_uuid, $start_date, $end_date, $include_cancelled, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): mixed
+searchEntityAppointments($entity_uuid, $start_date, $end_date, $exclude_cancelled, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): mixed
 ```
 
 Get Entities Appointments
@@ -537,7 +533,7 @@ $apiInstance = new OpenAPI\Client\Api\DefaultApi(
 $entity_uuid = 'entity_uuid_example'; // string
 $start_date = 'start_date_example'; // string
 $end_date = 'end_date_example'; // string
-$include_cancelled = false; // bool
+$exclude_cancelled = false; // bool
 $x_access_token = 'x_access_token_example'; // string
 $x_secret_token = 'x_secret_token_example'; // string
 $authorization = 'authorization_example'; // string
@@ -546,7 +542,7 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->searchEntityAppointments($entity_uuid, $start_date, $end_date, $include_cancelled, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->searchEntityAppointments($entity_uuid, $start_date, $end_date, $exclude_cancelled, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->searchEntityAppointments: ', $e->getMessage(), PHP_EOL;
@@ -560,7 +556,7 @@ Name | Type | Description  | Notes
  **entity_uuid** | **string**|  |
  **start_date** | **string**|  | [optional]
  **end_date** | **string**|  | [optional]
- **include_cancelled** | **bool**|  | [optional] [default to false]
+ **exclude_cancelled** | **bool**|  | [optional] [default to false]
  **x_access_token** | **string**|  | [optional]
  **x_secret_token** | **string**|  | [optional]
  **authorization** | **string**|  | [optional]
