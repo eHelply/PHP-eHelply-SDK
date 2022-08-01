@@ -51,11 +51,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\BillingApi(
+$apiInstance = new OpenAPI\Client\Api\AppointmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$appointment_uuid = 'appointment_uuid_example'; // string
+$entity_uuid = 'entity_uuid_example'; // string
 $x_access_token = 'x_access_token_example'; // string
 $x_secret_token = 'x_secret_token_example'; // string
 $authorization = 'authorization_example'; // string
@@ -64,10 +66,10 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->createBillingAccount($x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->addEntityToAppointment($appointment_uuid, $entity_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BillingApi->createBillingAccount: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AppointmentsApi->addEntityToAppointment: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -78,6 +80,15 @@ All URIs are relative to *https://api.prod.ehelply.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AppointmentsApi* | [**addEntityToAppointment**](docs/Api/AppointmentsApi.md#addentitytoappointment) | **POST** /appointments/appointments/{appointment_uuid}/entities/{entity_uuid} | Addentitytoappointment
+*AppointmentsApi* | [**createAppointment**](docs/Api/AppointmentsApi.md#createappointment) | **POST** /appointments/appointments | Createappointment
+*AppointmentsApi* | [**deleteAppointment**](docs/Api/AppointmentsApi.md#deleteappointment) | **DELETE** /appointments/appointments/{appointment_uuid} | Deleteappointment
+*AppointmentsApi* | [**detachEntityFromAppointment**](docs/Api/AppointmentsApi.md#detachentityfromappointment) | **DELETE** /appointments/appointments/{appointment_uuid}/entities/{entity_uuid} | Removeentityfromappointment
+*AppointmentsApi* | [**getAppointment**](docs/Api/AppointmentsApi.md#getappointment) | **GET** /appointments/appointments/{appointment_uuid} | Getappointment
+*AppointmentsApi* | [**searchAppointment**](docs/Api/AppointmentsApi.md#searchappointment) | **GET** /appointments/appointments | Searchappointments
+*AppointmentsApi* | [**searchAppointmentEntities**](docs/Api/AppointmentsApi.md#searchappointmententities) | **GET** /appointments/appointments/{appointment_uuid}/entities | Searchappointmententities
+*AppointmentsApi* | [**searchEntityAppointments**](docs/Api/AppointmentsApi.md#searchentityappointments) | **GET** /appointments/appointments/entities/{entity_uuid}/appointments | Getentityappointments
+*AppointmentsApi* | [**updateAppointment**](docs/Api/AppointmentsApi.md#updateappointment) | **PUT** /appointments/appointments/{appointment_uuid} | Updateappointment
 *BillingApi* | [**createBillingAccount**](docs/Api/BillingApi.md#createbillingaccount) | **POST** /sam/billing/create_billing_account | Createbillingaccount
 *BillingApi* | [**getClientSecret**](docs/Api/BillingApi.md#getclientsecret) | **GET** /sam/billing/retrieve_secret | Getclientsecret
 *BillingApi* | [**hasPayment**](docs/Api/BillingApi.md#haspayment) | **GET** /sam/billing/has_payment | Haspayment
@@ -103,15 +114,6 @@ Class | Method | HTTP request | Description
 *CompaniesApi* | [**getCompanyPlacesCompaniesCompanyUuidGet**](docs/Api/CompaniesApi.md#getcompanyplacescompaniescompanyuuidget) | **GET** /places/companies/{company_uuid} | Get Company
 *CompaniesApi* | [**searchCompaniesPlacesCompaniesGet**](docs/Api/CompaniesApi.md#searchcompaniesplacescompaniesget) | **GET** /places/companies | Search Companies
 *CompaniesApi* | [**updateCompanyPlacesCompaniesCompanyUuidPut**](docs/Api/CompaniesApi.md#updatecompanyplacescompaniescompanyuuidput) | **PUT** /places/companies/{company_uuid} | Update Company
-*DefaultApi* | [**attachEntityToAppointment**](docs/Api/DefaultApi.md#attachentitytoappointment) | **POST** /appointments/appointments/{appointment_uuid}/entities/{entity_uuid} | Attach Entity To Appointment
-*DefaultApi* | [**createAppointment**](docs/Api/DefaultApi.md#createappointment) | **POST** /appointments/appointments | Create Appointment
-*DefaultApi* | [**deleteAppointment**](docs/Api/DefaultApi.md#deleteappointment) | **DELETE** /appointments/appointments/{appointment_uuid} | Delete Appointment
-*DefaultApi* | [**detachEntityFromAppointment**](docs/Api/DefaultApi.md#detachentityfromappointment) | **DELETE** /appointments/appointments/{appointment_uuid}/entities/{entity_uuid} | Detach Entity From Appointment
-*DefaultApi* | [**getAppointment**](docs/Api/DefaultApi.md#getappointment) | **GET** /appointments/appointments/{appointment_uuid} | Get Appointment
-*DefaultApi* | [**searchAppointment**](docs/Api/DefaultApi.md#searchappointment) | **GET** /appointments/appointments | Search Appointment
-*DefaultApi* | [**searchAppointmentEntities**](docs/Api/DefaultApi.md#searchappointmententities) | **GET** /appointments/appointments/{appointment_uuid}/entities | Search Appointment Entities
-*DefaultApi* | [**searchEntityAppointments**](docs/Api/DefaultApi.md#searchentityappointments) | **GET** /appointments/appointments/entities/{entity_uuid}/appointments | Get Entities Appointments
-*DefaultApi* | [**updateAppointment**](docs/Api/DefaultApi.md#updateappointment) | **PUT** /appointments/appointments/{appointment_uuid} | Update Appointment
 *LoggingApi* | [**getLogs**](docs/Api/LoggingApi.md#getlogs) | **GET** /sam/logging/logs | Getlogs
 *LoggingApi* | [**getServiceLogs**](docs/Api/LoggingApi.md#getservicelogs) | **GET** /sam/logging/logs/services/{service} | Getservicelogs
 *LoggingApi* | [**getSubjectLogs**](docs/Api/LoggingApi.md#getsubjectlogs) | **GET** /sam/logging/logs/services/{service}/subjects/{subject} | Getsubjectlogs
@@ -390,6 +392,6 @@ support@ehelply.com
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.1.99`
-    - Package version: `1.1.99`
+- API version: `1.1.100`
+    - Package version: `1.1.100`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

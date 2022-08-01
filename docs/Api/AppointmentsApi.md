@@ -1,27 +1,27 @@
-# OpenAPI\Client\DefaultApi
+# OpenAPI\Client\AppointmentsApi
 
 All URIs are relative to https://api.prod.ehelply.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attachEntityToAppointment()**](DefaultApi.md#attachEntityToAppointment) | **POST** /appointments/appointments/{appointment_uuid}/entities/{entity_uuid} | Attach Entity To Appointment
-[**createAppointment()**](DefaultApi.md#createAppointment) | **POST** /appointments/appointments | Create Appointment
-[**deleteAppointment()**](DefaultApi.md#deleteAppointment) | **DELETE** /appointments/appointments/{appointment_uuid} | Delete Appointment
-[**detachEntityFromAppointment()**](DefaultApi.md#detachEntityFromAppointment) | **DELETE** /appointments/appointments/{appointment_uuid}/entities/{entity_uuid} | Detach Entity From Appointment
-[**getAppointment()**](DefaultApi.md#getAppointment) | **GET** /appointments/appointments/{appointment_uuid} | Get Appointment
-[**searchAppointment()**](DefaultApi.md#searchAppointment) | **GET** /appointments/appointments | Search Appointment
-[**searchAppointmentEntities()**](DefaultApi.md#searchAppointmentEntities) | **GET** /appointments/appointments/{appointment_uuid}/entities | Search Appointment Entities
-[**searchEntityAppointments()**](DefaultApi.md#searchEntityAppointments) | **GET** /appointments/appointments/entities/{entity_uuid}/appointments | Get Entities Appointments
-[**updateAppointment()**](DefaultApi.md#updateAppointment) | **PUT** /appointments/appointments/{appointment_uuid} | Update Appointment
+[**addEntityToAppointment()**](AppointmentsApi.md#addEntityToAppointment) | **POST** /appointments/appointments/{appointment_uuid}/entities/{entity_uuid} | Addentitytoappointment
+[**createAppointment()**](AppointmentsApi.md#createAppointment) | **POST** /appointments/appointments | Createappointment
+[**deleteAppointment()**](AppointmentsApi.md#deleteAppointment) | **DELETE** /appointments/appointments/{appointment_uuid} | Deleteappointment
+[**detachEntityFromAppointment()**](AppointmentsApi.md#detachEntityFromAppointment) | **DELETE** /appointments/appointments/{appointment_uuid}/entities/{entity_uuid} | Removeentityfromappointment
+[**getAppointment()**](AppointmentsApi.md#getAppointment) | **GET** /appointments/appointments/{appointment_uuid} | Getappointment
+[**searchAppointment()**](AppointmentsApi.md#searchAppointment) | **GET** /appointments/appointments | Searchappointments
+[**searchAppointmentEntities()**](AppointmentsApi.md#searchAppointmentEntities) | **GET** /appointments/appointments/{appointment_uuid}/entities | Searchappointmententities
+[**searchEntityAppointments()**](AppointmentsApi.md#searchEntityAppointments) | **GET** /appointments/appointments/entities/{entity_uuid}/appointments | Getentityappointments
+[**updateAppointment()**](AppointmentsApi.md#updateAppointment) | **PUT** /appointments/appointments/{appointment_uuid} | Updateappointment
 
 
-## `attachEntityToAppointment()`
+## `addEntityToAppointment()`
 
 ```php
-attachEntityToAppointment($appointment_uuid, $entity_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): bool
+addEntityToAppointment($appointment_uuid, $entity_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): bool
 ```
 
-Attach Entity To Appointment
+Addentitytoappointment
 
 ### Example
 
@@ -31,7 +31,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\DefaultApi(
+$apiInstance = new OpenAPI\Client\Api\AppointmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -46,10 +46,10 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->attachEntityToAppointment($appointment_uuid, $entity_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->addEntityToAppointment($appointment_uuid, $entity_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->attachEntityToAppointment: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AppointmentsApi->addEntityToAppointment: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -89,7 +89,7 @@ No authorization required
 createAppointment($appointment_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\AppointmentResponse
 ```
 
-Create Appointment
+Createappointment
 
 ### Example
 
@@ -99,7 +99,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\DefaultApi(
+$apiInstance = new OpenAPI\Client\Api\AppointmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -116,7 +116,7 @@ try {
     $result = $apiInstance->createAppointment($appointment_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->createAppointment: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AppointmentsApi->createAppointment: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -155,7 +155,7 @@ No authorization required
 deleteAppointment($appointment_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): bool
 ```
 
-Delete Appointment
+Deleteappointment
 
 ### Example
 
@@ -165,7 +165,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\DefaultApi(
+$apiInstance = new OpenAPI\Client\Api\AppointmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -182,7 +182,7 @@ try {
     $result = $apiInstance->deleteAppointment($appointment_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->deleteAppointment: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AppointmentsApi->deleteAppointment: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -221,7 +221,7 @@ No authorization required
 detachEntityFromAppointment($appointment_uuid, $entity_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): bool
 ```
 
-Detach Entity From Appointment
+Removeentityfromappointment
 
 ### Example
 
@@ -231,7 +231,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\DefaultApi(
+$apiInstance = new OpenAPI\Client\Api\AppointmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -249,7 +249,7 @@ try {
     $result = $apiInstance->detachEntityFromAppointment($appointment_uuid, $entity_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->detachEntityFromAppointment: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AppointmentsApi->detachEntityFromAppointment: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -289,7 +289,7 @@ No authorization required
 getAppointment($appointment_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\AppointmentResponse
 ```
 
-Get Appointment
+Getappointment
 
 ### Example
 
@@ -299,7 +299,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\DefaultApi(
+$apiInstance = new OpenAPI\Client\Api\AppointmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -316,7 +316,7 @@ try {
     $result = $apiInstance->getAppointment($appointment_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getAppointment: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AppointmentsApi->getAppointment: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -355,7 +355,7 @@ No authorization required
 searchAppointment($place_uuid, $exclude_cancelled, $is_deleted, $start_range, $end_range, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): mixed
 ```
 
-Search Appointment
+Searchappointments
 
 ### Example
 
@@ -365,7 +365,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\DefaultApi(
+$apiInstance = new OpenAPI\Client\Api\AppointmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -390,7 +390,7 @@ try {
     $result = $apiInstance->searchAppointment($place_uuid, $exclude_cancelled, $is_deleted, $start_range, $end_range, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->searchAppointment: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AppointmentsApi->searchAppointment: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -437,7 +437,7 @@ No authorization required
 searchAppointmentEntities($appointment_uuid, $page, $page_size, $sort_on, $sort_desc, $search, $search_on, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): mixed
 ```
 
-Search Appointment Entities
+Searchappointmententities
 
 ### Example
 
@@ -447,7 +447,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\DefaultApi(
+$apiInstance = new OpenAPI\Client\Api\AppointmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -470,7 +470,7 @@ try {
     $result = $apiInstance->searchAppointmentEntities($appointment_uuid, $page, $page_size, $sort_on, $sort_desc, $search, $search_on, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->searchAppointmentEntities: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AppointmentsApi->searchAppointmentEntities: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -515,7 +515,7 @@ No authorization required
 searchEntityAppointments($entity_uuid, $start_date, $end_date, $exclude_cancelled, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): mixed
 ```
 
-Get Entities Appointments
+Getentityappointments
 
 ### Example
 
@@ -525,7 +525,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\DefaultApi(
+$apiInstance = new OpenAPI\Client\Api\AppointmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -545,7 +545,7 @@ try {
     $result = $apiInstance->searchEntityAppointments($entity_uuid, $start_date, $end_date, $exclude_cancelled, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->searchEntityAppointments: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AppointmentsApi->searchEntityAppointments: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -587,7 +587,7 @@ No authorization required
 updateAppointment($appointment_uuid, $appointment_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\AppointmentResponse
 ```
 
-Update Appointment
+Updateappointment
 
 ### Example
 
@@ -597,7 +597,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\DefaultApi(
+$apiInstance = new OpenAPI\Client\Api\AppointmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -615,7 +615,7 @@ try {
     $result = $apiInstance->updateAppointment($appointment_uuid, $appointment_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->updateAppointment: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AppointmentsApi->updateAppointment: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
