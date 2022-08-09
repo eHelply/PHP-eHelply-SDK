@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **meta** | **object** |  | [optional]
 **addresses** | [**\OpenAPI\Client\Model\AddressBase[]**](AddressBase.md) |  | [optional]
 **contact** | [**\OpenAPI\Client\Model\ContactBase**](ContactBase.md) |  | [optional]
+**picture** | **string** |  | [optional]
 **uuid** | **string** |  |
 **project_uuid** | **string** |  | [optional]
 **meta_uuid** | **string** |  | [optional]
