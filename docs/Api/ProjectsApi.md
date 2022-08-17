@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**archiveProject()**](ProjectsApi.md#archiveProject) | **DELETE** /sam/projects/projects/{project_uuid} | Archiveproject
 [**createProject()**](ProjectsApi.md#createProject) | **POST** /sam/projects/projects | Createproject
 [**createProjectCredential()**](ProjectsApi.md#createProjectCredential) | **POST** /sam/projects/projects/{project_uuid}/credentials | Createprojectcredential
+[**createProjectInvoice()**](ProjectsApi.md#createProjectInvoice) | **POST** /sam/projects/projects/{project_uuid}/invoices | Createprojectinvoice
 [**createProjectKey()**](ProjectsApi.md#createProjectKey) | **POST** /sam/projects/projects/{project_uuid}/keys | Createprojectkey
 [**createUsageType()**](ProjectsApi.md#createUsageType) | **POST** /sam/projects/usage/types | Createusagetype
 [**deleteProjectCredential()**](ProjectsApi.md#deleteProjectCredential) | **DELETE** /sam/projects/projects/{project_uuid}/credentials/{service_name} | Deleteprojectcredential
@@ -17,6 +18,8 @@ Method | HTTP request | Description
 [**getAllProjectUsage()**](ProjectsApi.md#getAllProjectUsage) | **GET** /sam/projects/projects/{project_uuid}/usage | Getallprojectusage
 [**getMemberProjects()**](ProjectsApi.md#getMemberProjects) | **GET** /sam/projects/members/{entity_uuid}/projects | Getmemberprojects
 [**getProject()**](ProjectsApi.md#getProject) | **GET** /sam/projects/projects/{project_uuid} | Getproject
+[**getProjectInvoice()**](ProjectsApi.md#getProjectInvoice) | **GET** /sam/projects/projects/{project_uuid}/invoices | Getprojectinvoice
+[**getProjectInvoiceHistory()**](ProjectsApi.md#getProjectInvoiceHistory) | **GET** /sam/projects/projects/{project_uuid}/invoices/history | Getprojectinvoicehistory
 [**getProjectKeys()**](ProjectsApi.md#getProjectKeys) | **GET** /sam/projects/projects/{project_uuid}/keys | Getprojectkeys
 [**getProjectMembers()**](ProjectsApi.md#getProjectMembers) | **GET** /sam/projects/projects/{project_uuid}/members | Getprojectmembers
 [**getSpecificProjectCredential()**](ProjectsApi.md#getSpecificProjectCredential) | **GET** /sam/projects/projects/{project_uuid}/credentials/{service_name} | Getspecificprojectcredential
@@ -286,6 +289,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\OpenAPI\Client\Model\ResponseCreateprojectcredential**](../Model/ResponseCreateprojectcredential.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `createProjectInvoice()`
+
+```php
+createProjectInvoice($project_uuid, $create_project_invoice, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\ResponseCreateprojectinvoice
+```
+
+Createprojectinvoice
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\ProjectsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$project_uuid = 'project_uuid_example'; // string
+$create_project_invoice = new \OpenAPI\Client\Model\CreateProjectInvoice(); // \OpenAPI\Client\Model\CreateProjectInvoice
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
+
+try {
+    $result = $apiInstance->createProjectInvoice($project_uuid, $create_project_invoice, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProjectsApi->createProjectInvoice: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **string**|  |
+ **create_project_invoice** | [**\OpenAPI\Client\Model\CreateProjectInvoice**](../Model/CreateProjectInvoice.md)|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\ResponseCreateprojectinvoice**](../Model/ResponseCreateprojectinvoice.md)
 
 ### Authorization
 
@@ -908,6 +979,144 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getProjectInvoice()`
+
+```php
+getProjectInvoice($project_uuid, $with_invoice, $year, $month, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\GetProjectInvoiceResponse
+```
+
+Getprojectinvoice
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\ProjectsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$project_uuid = 'project_uuid_example'; // string
+$with_invoice = false; // bool
+$year = 56; // int
+$month = 56; // int
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
+
+try {
+    $result = $apiInstance->getProjectInvoice($project_uuid, $with_invoice, $year, $month, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProjectsApi->getProjectInvoice: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **string**|  |
+ **with_invoice** | **bool**|  | [optional] [default to false]
+ **year** | **int**|  | [optional]
+ **month** | **int**|  | [optional]
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetProjectInvoiceResponse**](../Model/GetProjectInvoiceResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getProjectInvoiceHistory()`
+
+```php
+getProjectInvoiceHistory($project_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\GetProjectInvoiceHistory
+```
+
+Getprojectinvoicehistory
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\ProjectsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$project_uuid = 'project_uuid_example'; // string
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
+
+try {
+    $result = $apiInstance->getProjectInvoiceHistory($project_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProjectsApi->getProjectInvoiceHistory: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **string**|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetProjectInvoiceHistory**](../Model/GetProjectInvoiceHistory.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getProjectKeys()`
 
 ```php
@@ -1305,7 +1514,7 @@ No authorization required
 ## `searchProjects()`
 
 ```php
-searchProjects($page, $page_size, $search, $search_on, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\Page
+searchProjects($is_active, $page, $page_size, $search, $search_on, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\Page
 ```
 
 Searchprojects
@@ -1325,6 +1534,7 @@ $apiInstance = new OpenAPI\Client\Api\ProjectsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$is_active = false; // bool
 $page = 1; // int
 $page_size = 25; // int
 $search = 'search_example'; // string
@@ -1339,7 +1549,7 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->searchProjects($page, $page_size, $search, $search_on, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->searchProjects($is_active, $page, $page_size, $search, $search_on, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProjectsApi->searchProjects: ', $e->getMessage(), PHP_EOL;
@@ -1350,6 +1560,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **is_active** | **bool**|  | [optional] [default to false]
  **page** | **int**|  | [optional] [default to 1]
  **page_size** | **int**|  | [optional] [default to 25]
  **search** | **string**|  | [optional]

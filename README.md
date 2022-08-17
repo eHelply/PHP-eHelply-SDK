@@ -174,6 +174,7 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**archiveProject**](docs/Api/ProjectsApi.md#archiveproject) | **DELETE** /sam/projects/projects/{project_uuid} | Archiveproject
 *ProjectsApi* | [**createProject**](docs/Api/ProjectsApi.md#createproject) | **POST** /sam/projects/projects | Createproject
 *ProjectsApi* | [**createProjectCredential**](docs/Api/ProjectsApi.md#createprojectcredential) | **POST** /sam/projects/projects/{project_uuid}/credentials | Createprojectcredential
+*ProjectsApi* | [**createProjectInvoice**](docs/Api/ProjectsApi.md#createprojectinvoice) | **POST** /sam/projects/projects/{project_uuid}/invoices | Createprojectinvoice
 *ProjectsApi* | [**createProjectKey**](docs/Api/ProjectsApi.md#createprojectkey) | **POST** /sam/projects/projects/{project_uuid}/keys | Createprojectkey
 *ProjectsApi* | [**createUsageType**](docs/Api/ProjectsApi.md#createusagetype) | **POST** /sam/projects/usage/types | Createusagetype
 *ProjectsApi* | [**deleteProjectCredential**](docs/Api/ProjectsApi.md#deleteprojectcredential) | **DELETE** /sam/projects/projects/{project_uuid}/credentials/{service_name} | Deleteprojectcredential
@@ -183,6 +184,8 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**getAllProjectUsage**](docs/Api/ProjectsApi.md#getallprojectusage) | **GET** /sam/projects/projects/{project_uuid}/usage | Getallprojectusage
 *ProjectsApi* | [**getMemberProjects**](docs/Api/ProjectsApi.md#getmemberprojects) | **GET** /sam/projects/members/{entity_uuid}/projects | Getmemberprojects
 *ProjectsApi* | [**getProject**](docs/Api/ProjectsApi.md#getproject) | **GET** /sam/projects/projects/{project_uuid} | Getproject
+*ProjectsApi* | [**getProjectInvoice**](docs/Api/ProjectsApi.md#getprojectinvoice) | **GET** /sam/projects/projects/{project_uuid}/invoices | Getprojectinvoice
+*ProjectsApi* | [**getProjectInvoiceHistory**](docs/Api/ProjectsApi.md#getprojectinvoicehistory) | **GET** /sam/projects/projects/{project_uuid}/invoices/history | Getprojectinvoicehistory
 *ProjectsApi* | [**getProjectKeys**](docs/Api/ProjectsApi.md#getprojectkeys) | **GET** /sam/projects/projects/{project_uuid}/keys | Getprojectkeys
 *ProjectsApi* | [**getProjectMembers**](docs/Api/ProjectsApi.md#getprojectmembers) | **GET** /sam/projects/projects/{project_uuid}/members | Getprojectmembers
 *ProjectsApi* | [**getSpecificProjectCredential**](docs/Api/ProjectsApi.md#getspecificprojectcredential) | **GET** /sam/projects/projects/{project_uuid}/credentials/{service_name} | Getspecificprojectcredential
@@ -269,6 +272,7 @@ Class | Method | HTTP request | Description
 - [ContactResponse](docs/Model/ContactResponse.md)
 - [CreateKeyResponse](docs/Model/CreateKeyResponse.md)
 - [CreateProjectCredential](docs/Model/CreateProjectCredential.md)
+- [CreateProjectInvoice](docs/Model/CreateProjectInvoice.md)
 - [CreateReview](docs/Model/CreateReview.md)
 - [CreateTicket](docs/Model/CreateTicket.md)
 - [Credential](docs/Model/Credential.md)
@@ -278,18 +282,25 @@ Class | Method | HTTP request | Description
 - [DetailedMeta](docs/Model/DetailedMeta.md)
 - [DetailedMetaCreate](docs/Model/DetailedMetaCreate.md)
 - [DetailedMetaGet](docs/Model/DetailedMetaGet.md)
+- [Discount](docs/Model/Discount.md)
 - [Email](docs/Model/Email.md)
 - [Field](docs/Model/Field.md)
 - [FieldDynamo](docs/Model/FieldDynamo.md)
 - [GetAppointment403Response](docs/Model/GetAppointment403Response.md)
+- [GetInvoiceResponse](docs/Model/GetInvoiceResponse.md)
 - [GetProjectCredential](docs/Model/GetProjectCredential.md)
+- [GetProjectInvoiceHistory](docs/Model/GetProjectInvoiceHistory.md)
+- [GetProjectInvoiceResponse](docs/Model/GetProjectInvoiceResponse.md)
 - [GetSecret](docs/Model/GetSecret.md)
 - [GetServiceServiceWithSpecsResponse](docs/Model/GetServiceServiceWithSpecsResponse.md)
 - [GetServiceSpecResponse](docs/Model/GetServiceSpecResponse.md)
 - [GetServiceSpecsResponse](docs/Model/GetServiceSpecsResponse.md)
+- [GetTransactionResponse](docs/Model/GetTransactionResponse.md)
 - [HTTPValidationError](docs/Model/HTTPValidationError.md)
 - [HeartbeatResponse](docs/Model/HeartbeatResponse.md)
+- [History](docs/Model/History.md)
 - [KpiResponse](docs/Model/KpiResponse.md)
+- [LineItem](docs/Model/LineItem.md)
 - [LoggingDynamo](docs/Model/LoggingDynamo.md)
 - [MetaChildren](docs/Model/MetaChildren.md)
 - [MetaCreate](docs/Model/MetaCreate.md)
@@ -297,6 +308,7 @@ Class | Method | HTTP request | Description
 - [MetaDynamo](docs/Model/MetaDynamo.md)
 - [MetaGet](docs/Model/MetaGet.md)
 - [MetaSlugger](docs/Model/MetaSlugger.md)
+- [Note](docs/Model/Note.md)
 - [NoteBase](docs/Model/NoteBase.md)
 - [NoteDynamoHistoryResponse](docs/Model/NoteDynamoHistoryResponse.md)
 - [NoteDynamoResponse](docs/Model/NoteDynamoResponse.md)
@@ -329,6 +341,7 @@ Class | Method | HTTP request | Description
 - [ResponseArchiveproject](docs/Model/ResponseArchiveproject.md)
 - [ResponseCreatekey](docs/Model/ResponseCreatekey.md)
 - [ResponseCreateprojectcredential](docs/Model/ResponseCreateprojectcredential.md)
+- [ResponseCreateprojectinvoice](docs/Model/ResponseCreateprojectinvoice.md)
 - [ResponseDeletekey](docs/Model/ResponseDeletekey.md)
 - [ResponseDeleteprojectcredential](docs/Model/ResponseDeleteprojectcredential.md)
 - [ResponseDeleteusagetype](docs/Model/ResponseDeleteusagetype.md)
@@ -353,6 +366,7 @@ Class | Method | HTTP request | Description
 - [StripeCustomerSecretResponse](docs/Model/StripeCustomerSecretResponse.md)
 - [TagBase](docs/Model/TagBase.md)
 - [TagDb](docs/Model/TagDb.md)
+- [Tax](docs/Model/Tax.md)
 - [TicketResponse](docs/Model/TicketResponse.md)
 - [TicketsResponse](docs/Model/TicketsResponse.md)
 - [UpdateProjectCredentialRequest](docs/Model/UpdateProjectCredentialRequest.md)
@@ -392,6 +406,6 @@ support@ehelply.com
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.1.101`
-    - Package version: `1.1.101`
+- API version: `1.1.102`
+    - Package version: `1.1.102`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
