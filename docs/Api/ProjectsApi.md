@@ -15,9 +15,11 @@ Method | HTTP request | Description
 [**deleteProjectKey()**](ProjectsApi.md#deleteProjectKey) | **DELETE** /sam/projects/projects/{project_uuid}/keys | Deleteprojectkey
 [**deleteUsageType()**](ProjectsApi.md#deleteUsageType) | **DELETE** /sam/projects/usage/types/{usage_type_key} | Deleteusagetype
 [**getAllProjectCredentials()**](ProjectsApi.md#getAllProjectCredentials) | **GET** /sam/projects/projects/{project_uuid}/credentials | Getallprojectcredentials
+[**getAllProjectCredits()**](ProjectsApi.md#getAllProjectCredits) | **GET** /sam/projects/projects/{project_uuid}/credits | Getallprojectcredits
 [**getAllProjectUsage()**](ProjectsApi.md#getAllProjectUsage) | **GET** /sam/projects/projects/{project_uuid}/usage | Getallprojectusage
 [**getMemberProjects()**](ProjectsApi.md#getMemberProjects) | **GET** /sam/projects/members/{entity_uuid}/projects | Getmemberprojects
 [**getProject()**](ProjectsApi.md#getProject) | **GET** /sam/projects/projects/{project_uuid} | Getproject
+[**getProjectCreditTransactions()**](ProjectsApi.md#getProjectCreditTransactions) | **GET** /sam/projects/projects/{project_uuid}/credits/{credit_uuid}/transactions | Getprojectcredittransactions
 [**getProjectInvoice()**](ProjectsApi.md#getProjectInvoice) | **GET** /sam/projects/projects/{project_uuid}/invoices | Getprojectinvoice
 [**getProjectInvoiceHistory()**](ProjectsApi.md#getProjectInvoiceHistory) | **GET** /sam/projects/projects/{project_uuid}/invoices/history | Getprojectinvoicehistory
 [**getProjectKeys()**](ProjectsApi.md#getProjectKeys) | **GET** /sam/projects/projects/{project_uuid}/keys | Getprojectkeys
@@ -773,6 +775,80 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getAllProjectCredits()`
+
+```php
+getAllProjectCredits($project_uuid, $fully_consumed, $revoked, $page, $page_size, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\Page
+```
+
+Getallprojectcredits
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\ProjectsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$project_uuid = 'project_uuid_example'; // string
+$fully_consumed = false; // bool
+$revoked = false; // bool
+$page = 1; // int
+$page_size = 25; // int
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
+
+try {
+    $result = $apiInstance->getAllProjectCredits($project_uuid, $fully_consumed, $revoked, $page, $page_size, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProjectsApi->getAllProjectCredits: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **string**|  |
+ **fully_consumed** | **bool**|  | [optional] [default to false]
+ **revoked** | **bool**|  | [optional] [default to false]
+ **page** | **int**|  | [optional] [default to 1]
+ **page_size** | **int**|  | [optional] [default to 25]
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\Page**](../Model/Page.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getAllProjectUsage()`
 
 ```php
@@ -965,6 +1041,78 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\OpenAPI\Client\Model\ProjectDB**](../Model/ProjectDB.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getProjectCreditTransactions()`
+
+```php
+getProjectCreditTransactions($project_uuid, $credit_uuid, $page, $page_size, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\Page
+```
+
+Getprojectcredittransactions
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\ProjectsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$project_uuid = 'project_uuid_example'; // string
+$credit_uuid = 'credit_uuid_example'; // string
+$page = 1; // int
+$page_size = 25; // int
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
+
+try {
+    $result = $apiInstance->getProjectCreditTransactions($project_uuid, $credit_uuid, $page, $page_size, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProjectsApi->getProjectCreditTransactions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **string**|  |
+ **credit_uuid** | **string**|  |
+ **page** | **int**|  | [optional] [default to 1]
+ **page_size** | **int**|  | [optional] [default to 25]
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\Page**](../Model/Page.md)
 
 ### Authorization
 
