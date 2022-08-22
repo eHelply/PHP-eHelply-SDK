@@ -51,6 +51,7 @@ docs/Model/ContactMethod.md
 docs/Model/ContactResponse.md
 docs/Model/CreateKeyResponse.md
 docs/Model/CreateProjectCredential.md
+docs/Model/CreateProjectCredit.md
 docs/Model/CreateProjectInvoice.md
 docs/Model/CreateReview.md
 docs/Model/CreateTicket.md
@@ -105,6 +106,7 @@ docs/Model/PlaceBase.md
 docs/Model/PlaceResponse.md
 docs/Model/ProductBase.md
 docs/Model/ProductReturn.md
+docs/Model/ProjectCreditResponse.md
 docs/Model/ProjectDB.md
 docs/Model/ProjectsProjectCreate.md
 docs/Model/ProjectsProjectGet.md
@@ -216,6 +218,7 @@ lib/Model/ContactMethod.php
 lib/Model/ContactResponse.php
 lib/Model/CreateKeyResponse.php
 lib/Model/CreateProjectCredential.php
+lib/Model/CreateProjectCredit.php
 lib/Model/CreateProjectInvoice.php
 lib/Model/CreateReview.php
 lib/Model/CreateTicket.php
@@ -271,6 +274,7 @@ lib/Model/PlaceBase.php
 lib/Model/PlaceResponse.php
 lib/Model/ProductBase.php
 lib/Model/ProductReturn.php
+lib/Model/ProjectCreditResponse.php
 lib/Model/ProjectDB.php
 lib/Model/ProjectsProjectCreate.php
 lib/Model/ProjectsProjectGet.php
@@ -380,6 +384,7 @@ test/Model/ContactResponseTest.php
 test/Model/ContactTest.php
 test/Model/CreateKeyResponseTest.php
 test/Model/CreateProjectCredentialTest.php
+test/Model/CreateProjectCreditTest.php
 test/Model/CreateProjectInvoiceTest.php
 test/Model/CreateReviewTest.php
 test/Model/CreateTicketTest.php
@@ -434,6 +439,7 @@ test/Model/PlaceBaseTest.php
 test/Model/PlaceResponseTest.php
 test/Model/ProductBaseTest.php
 test/Model/ProductReturnTest.php
+test/Model/ProjectCreditResponseTest.php
 test/Model/ProjectDBTest.php
 test/Model/ProjectsProjectCreateTest.php
 test/Model/ProjectsProjectGetTest.php
