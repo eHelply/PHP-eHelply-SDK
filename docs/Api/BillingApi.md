@@ -144,7 +144,7 @@ No authorization required
 ## `hasPayment()`
 
 ```php
-hasPayment($x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): bool
+hasPayment($project_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): bool
 ```
 
 Haspayment
@@ -162,6 +162,7 @@ $apiInstance = new OpenAPI\Client\Api\BillingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$project_uuid = NULL; // mixed
 $x_access_token = 'x_access_token_example'; // string
 $x_secret_token = 'x_secret_token_example'; // string
 $authorization = 'authorization_example'; // string
@@ -170,7 +171,7 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->hasPayment($x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->hasPayment($project_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BillingApi->hasPayment: ', $e->getMessage(), PHP_EOL;
@@ -181,6 +182,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **project_uuid** | [**mixed**](../Model/.md)|  | [optional]
  **x_access_token** | **string**|  | [optional]
  **x_secret_token** | **string**|  | [optional]
  **authorization** | **string**|  | [optional]
@@ -208,7 +210,7 @@ No authorization required
 ## `listPaymentMethods()`
 
 ```php
-listPaymentMethods($x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\PaymentMethodResponse[]
+listPaymentMethods($project_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\PaymentMethodResponse[]
 ```
 
 Listpaymentmethods
@@ -226,6 +228,7 @@ $apiInstance = new OpenAPI\Client\Api\BillingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$project_uuid = NULL; // mixed
 $x_access_token = 'x_access_token_example'; // string
 $x_secret_token = 'x_secret_token_example'; // string
 $authorization = 'authorization_example'; // string
@@ -234,7 +237,7 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->listPaymentMethods($x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->listPaymentMethods($project_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BillingApi->listPaymentMethods: ', $e->getMessage(), PHP_EOL;
@@ -245,6 +248,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **project_uuid** | [**mixed**](../Model/.md)|  | [optional]
  **x_access_token** | **string**|  | [optional]
  **x_secret_token** | **string**|  | [optional]
  **authorization** | **string**|  | [optional]
@@ -402,7 +406,7 @@ No authorization required
 ## `removePaymentMethod()`
 
 ```php
-removePaymentMethod($x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): string
+removePaymentMethod($project_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): string
 ```
 
 Removepaymentmethod
@@ -420,6 +424,7 @@ $apiInstance = new OpenAPI\Client\Api\BillingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$project_uuid = NULL; // mixed
 $x_access_token = 'x_access_token_example'; // string
 $x_secret_token = 'x_secret_token_example'; // string
 $authorization = 'authorization_example'; // string
@@ -428,7 +433,7 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->removePaymentMethod($x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->removePaymentMethod($project_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BillingApi->removePaymentMethod: ', $e->getMessage(), PHP_EOL;
@@ -439,6 +444,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **project_uuid** | [**mixed**](../Model/.md)|  | [optional]
  **x_access_token** | **string**|  | [optional]
  **x_secret_token** | **string**|  | [optional]
  **authorization** | **string**|  | [optional]
