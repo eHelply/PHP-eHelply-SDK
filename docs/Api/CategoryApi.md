@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createCategoryPlacesCategoriesPost()`
 
 ```php
-createCategoryPlacesCategoriesPost($category_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\CategoryDb
+createCategoryPlacesCategoriesPost($category_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\CategoryResponse
 ```
 
 Create Category
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CategoryDb**](../Model/CategoryDb.md)
+[**\OpenAPI\Client\Model\CategoryResponse**](../Model/CategoryResponse.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ No authorization required
 ## `getCategoryPlacesCategoriesCategoryUuidGet()`
 
 ```php
-getCategoryPlacesCategoriesCategoryUuidGet($category_uuid, $with_meta, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\CategoryBase
+getCategoryPlacesCategoriesCategoryUuidGet($category_uuid, $with_meta, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\CategoryResponse
 ```
 
 Get Category
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CategoryBase**](../Model/CategoryBase.md)
+[**\OpenAPI\Client\Model\CategoryResponse**](../Model/CategoryResponse.md)
 
 ### Authorization
 

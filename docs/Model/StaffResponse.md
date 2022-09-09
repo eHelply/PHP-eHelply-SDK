@@ -4,9 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uuid** | **string** |  |
+**entity_uuid** | **string** |  |
 **project_uuid** | **string** |  | [optional]
-**entity** | **object** |  | [optional]
+**schedule_uuid** | **string** |  | [optional]
+**catalog_uuid** | **string** |  | [optional]
+**review_group_uuid** | **string** |  | [optional]
+**uuid** | **string** |  |
+**entity** | **string** |  | [optional]
 **place** | **object** |  | [optional]
 **place_roles** | **string[]** |  | [optional]
 **company** | **object** |  | [optional]

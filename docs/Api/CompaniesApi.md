@@ -5,7 +5,7 @@ All URIs are relative to https://api.prod.ehelply.com.
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createCompanyPlacesCompaniesPost()**](CompaniesApi.md#createCompanyPlacesCompaniesPost) | **POST** /places/companies | Create Company
-[**deletePlacePlacesCompaniesCompanyUuidDelete()**](CompaniesApi.md#deletePlacePlacesCompaniesCompanyUuidDelete) | **DELETE** /places/companies/{company_uuid} | Delete Place
+[**deleteCompanyPlacesCompaniesCompanyUuidDelete()**](CompaniesApi.md#deleteCompanyPlacesCompaniesCompanyUuidDelete) | **DELETE** /places/companies/{company_uuid} | Delete Company
 [**getCompanyPlacesCompaniesCompanyUuidGet()**](CompaniesApi.md#getCompanyPlacesCompaniesCompanyUuidGet) | **GET** /places/companies/{company_uuid} | Get Company
 [**searchCompaniesPlacesCompaniesGet()**](CompaniesApi.md#searchCompaniesPlacesCompaniesGet) | **GET** /places/companies | Search Companies
 [**updateCompanyPlacesCompaniesCompanyUuidPut()**](CompaniesApi.md#updateCompanyPlacesCompaniesCompanyUuidPut) | **PUT** /places/companies/{company_uuid} | Update Company
@@ -79,13 +79,13 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `deletePlacePlacesCompaniesCompanyUuidDelete()`
+## `deleteCompanyPlacesCompaniesCompanyUuidDelete()`
 
 ```php
-deletePlacePlacesCompaniesCompanyUuidDelete($company_uuid, $soft_delete, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): mixed
+deleteCompanyPlacesCompaniesCompanyUuidDelete($company_uuid, $soft_delete, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): mixed
 ```
 
-Delete Place
+Delete Company
 
 Deletes the company with the given ID and returns True if successful
 
@@ -112,10 +112,10 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->deletePlacePlacesCompaniesCompanyUuidDelete($company_uuid, $soft_delete, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->deleteCompanyPlacesCompaniesCompanyUuidDelete($company_uuid, $soft_delete, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CompaniesApi->deletePlacePlacesCompaniesCompanyUuidDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CompaniesApi->deleteCompanyPlacesCompaniesCompanyUuidDelete: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

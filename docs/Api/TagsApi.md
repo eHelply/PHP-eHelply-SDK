@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `createTag()`
 
 ```php
-createTag($tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\TagDb
+createTag($tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\TagResponse
 ```
 
 Createtag
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TagDb**](../Model/TagDb.md)
+[**\OpenAPI\Client\Model\TagResponse**](../Model/TagResponse.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ No authorization required
 ## `getTag()`
 
 ```php
-getTag($tag_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\TagBase
+getTag($tag_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\TagResponse
 ```
 
 Gettag
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TagBase**](../Model/TagBase.md)
+[**\OpenAPI\Client\Model\TagResponse**](../Model/TagResponse.md)
 
 ### Authorization
 
@@ -227,7 +227,7 @@ No authorization required
 ## `updateTag()`
 
 ```php
-updateTag($tag_uuid, $tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\TagBase
+updateTag($tag_uuid, $tag_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\TagResponse
 ```
 
 Updatetag
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TagBase**](../Model/TagBase.md)
+[**\OpenAPI\Client\Model\TagResponse**](../Model/TagResponse.md)
 
 ### Authorization
 

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**project_uuid** | **string** |  | [optional]
 **name** | **string** |  |
 **summary** | **string** |  | [optional]
 **public** | **bool** |  | [optional] [default to true]
@@ -12,7 +13,6 @@ Name | Type | Description | Notes
 **contact** | [**\OpenAPI\Client\Model\ContactBase**](ContactBase.md) |  | [optional]
 **picture** | **string** |  | [optional]
 **uuid** | **string** |  |
-**project_uuid** | **string** |  | [optional]
 **meta_uuid** | **string** |  | [optional]
 **tags** | [**\OpenAPI\Client\Model\TagBase[]**](TagBase.md) |  | [optional]
 **categories** | [**\OpenAPI\Client\Model\CategoryBase[]**](CategoryBase.md) |  | [optional]

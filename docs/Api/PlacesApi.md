@@ -451,7 +451,7 @@ No authorization required
 ## `searchPlaces()`
 
 ```php
-searchPlaces($project_uuid, $name, $address_line_1, $address_line_2, $city, $province_state, $country, $postal_zip_code, $lat, $lng, $email, $is_public, $is_deleted, $with_company, $with_meta, $with_catalog, $with_reviews, $with_schedule, $with_collection, $with_blog, $with_tags, $with_categories, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\Page
+searchPlaces($name, $address_line_1, $address_line_2, $city, $province_state, $country, $postal_zip_code, $lat, $lng, $email, $is_public, $is_deleted, $with_company, $with_meta, $with_catalog, $with_reviews, $with_schedule, $with_collection, $with_blog, $with_tags, $with_categories, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\Page
 ```
 
 Searchplaces
@@ -471,7 +471,6 @@ $apiInstance = new OpenAPI\Client\Api\PlacesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$project_uuid = 'project_uuid_example'; // string
 $name = 'name_example'; // string
 $address_line_1 = 'address_line_1_example'; // string
 $address_line_2 = 'address_line_2_example'; // string
@@ -505,7 +504,7 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->searchPlaces($project_uuid, $name, $address_line_1, $address_line_2, $city, $province_state, $country, $postal_zip_code, $lat, $lng, $email, $is_public, $is_deleted, $with_company, $with_meta, $with_catalog, $with_reviews, $with_schedule, $with_collection, $with_blog, $with_tags, $with_categories, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->searchPlaces($name, $address_line_1, $address_line_2, $city, $province_state, $country, $postal_zip_code, $lat, $lng, $email, $is_public, $is_deleted, $with_company, $with_meta, $with_catalog, $with_reviews, $with_schedule, $with_collection, $with_blog, $with_tags, $with_categories, $page, $page_size, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlacesApi->searchPlaces: ', $e->getMessage(), PHP_EOL;
@@ -516,7 +515,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_uuid** | **string**|  | [optional]
  **name** | **string**|  | [optional]
  **address_line_1** | **string**|  | [optional]
  **address_line_2** | **string**|  | [optional]

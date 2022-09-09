@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createStaff()`
 
 ```php
-createStaff($staff_create, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\StaffDb
+createStaff($staff_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\StaffResponse
 ```
 
 Createstaff
@@ -34,7 +34,7 @@ $apiInstance = new OpenAPI\Client\Api\StaffApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$staff_create = new \OpenAPI\Client\Model\StaffCreate(); // \OpenAPI\Client\Model\StaffCreate
+$staff_base = new \OpenAPI\Client\Model\StaffBase(); // \OpenAPI\Client\Model\StaffBase
 $x_access_token = 'x_access_token_example'; // string
 $x_secret_token = 'x_secret_token_example'; // string
 $authorization = 'authorization_example'; // string
@@ -43,7 +43,7 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->createStaff($staff_create, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->createStaff($staff_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StaffApi->createStaff: ', $e->getMessage(), PHP_EOL;
@@ -54,7 +54,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **staff_create** | [**\OpenAPI\Client\Model\StaffCreate**](../Model/StaffCreate.md)|  |
+ **staff_base** | [**\OpenAPI\Client\Model\StaffBase**](../Model/StaffBase.md)|  |
  **x_access_token** | **string**|  | [optional]
  **x_secret_token** | **string**|  | [optional]
  **authorization** | **string**|  | [optional]
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\StaffDb**](../Model/StaffDb.md)
+[**\OpenAPI\Client\Model\StaffResponse**](../Model/StaffResponse.md)
 
 ### Authorization
 
@@ -324,7 +324,7 @@ No authorization required
 ## `updateStaff()`
 
 ```php
-updateStaff($staff_uuid, $staff_create, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\StaffResponse
+updateStaff($staff_uuid, $staff_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\StaffResponse
 ```
 
 Updatestaff
@@ -345,7 +345,7 @@ $apiInstance = new OpenAPI\Client\Api\StaffApi(
     new GuzzleHttp\Client()
 );
 $staff_uuid = 'staff_uuid_example'; // string
-$staff_create = new \OpenAPI\Client\Model\StaffCreate(); // \OpenAPI\Client\Model\StaffCreate
+$staff_base = new \OpenAPI\Client\Model\StaffBase(); // \OpenAPI\Client\Model\StaffBase
 $x_access_token = 'x_access_token_example'; // string
 $x_secret_token = 'x_secret_token_example'; // string
 $authorization = 'authorization_example'; // string
@@ -354,7 +354,7 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->updateStaff($staff_uuid, $staff_create, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->updateStaff($staff_uuid, $staff_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StaffApi->updateStaff: ', $e->getMessage(), PHP_EOL;
@@ -366,7 +366,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **staff_uuid** | **string**|  |
- **staff_create** | [**\OpenAPI\Client\Model\StaffCreate**](../Model/StaffCreate.md)|  |
+ **staff_base** | [**\OpenAPI\Client\Model\StaffBase**](../Model/StaffBase.md)|  |
  **x_access_token** | **string**|  | [optional]
  **x_secret_token** | **string**|  | [optional]
  **authorization** | **string**|  | [optional]

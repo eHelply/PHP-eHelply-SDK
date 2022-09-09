@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**project_uuid** | **string** |  | [optional]
 **name** | **string** |  |
 **summary** | **string** |  | [optional]
 **public** | **bool** |  | [optional] [default to true]
