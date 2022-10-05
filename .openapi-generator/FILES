@@ -9,7 +9,7 @@ docs/Api/BillingApi.md
 docs/Api/CatalogsApi.md
 docs/Api/CategoryApi.md
 docs/Api/CompaniesApi.md
-docs/Api/DefaultApi.md
+docs/Api/ContentApi.md
 docs/Api/LoggingApi.md
 docs/Api/MetaApi.md
 docs/Api/MonitorApi.md
@@ -178,7 +178,7 @@ lib/Api/BillingApi.php
 lib/Api/CatalogsApi.php
 lib/Api/CategoryApi.php
 lib/Api/CompaniesApi.php
-lib/Api/DefaultApi.php
+lib/Api/ContentApi.php
 lib/Api/LoggingApi.php
 lib/Api/MetaApi.php
 lib/Api/MonitorApi.php
@@ -352,7 +352,7 @@ test/Api/BillingApiTest.php
 test/Api/CatalogsApiTest.php
 test/Api/CategoryApiTest.php
 test/Api/CompaniesApiTest.php
-test/Api/DefaultApiTest.php
+test/Api/ContentApiTest.php
 test/Api/LoggingApiTest.php
 test/Api/MetaApiTest.php
 test/Api/MonitorApiTest.php

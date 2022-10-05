@@ -1,13 +1,13 @@
-# OpenAPI\Client\DefaultApi
+# OpenAPI\Client\ContentApi
 
 All URIs are relative to https://api.prod.ehelply.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createFile()**](DefaultApi.md#createFile) | **POST** /files/files | Createfile
-[**deleteFile()**](DefaultApi.md#deleteFile) | **DELETE** /files/files/{file_uuid} | Deletefile
-[**getFile()**](DefaultApi.md#getFile) | **GET** /files/files/{file_uuid} | Getfile
-[**updateFile()**](DefaultApi.md#updateFile) | **PUT** /files/files/{file_uuid} | Updatefile
+[**createFile()**](ContentApi.md#createFile) | **POST** /files/files | Createfile
+[**deleteFile()**](ContentApi.md#deleteFile) | **DELETE** /files/files/{file_uuid} | Deletefile
+[**getFile()**](ContentApi.md#getFile) | **GET** /files/files/{file_uuid} | Getfile
+[**updateFile()**](ContentApi.md#updateFile) | **PUT** /files/files/{file_uuid} | Updatefile
 
 
 ## `createFile()`
@@ -26,7 +26,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\DefaultApi(
+$apiInstance = new OpenAPI\Client\Api\ContentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -43,7 +43,7 @@ try {
     $result = $apiInstance->createFile($file, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->createFile: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ContentApi->createFile: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -92,7 +92,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\DefaultApi(
+$apiInstance = new OpenAPI\Client\Api\ContentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -109,7 +109,7 @@ try {
     $result = $apiInstance->deleteFile($file_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->deleteFile: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ContentApi->deleteFile: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -158,7 +158,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\DefaultApi(
+$apiInstance = new OpenAPI\Client\Api\ContentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -175,7 +175,7 @@ try {
     $result = $apiInstance->getFile($file_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getFile: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ContentApi->getFile: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -224,7 +224,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\DefaultApi(
+$apiInstance = new OpenAPI\Client\Api\ContentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -242,7 +242,7 @@ try {
     $result = $apiInstance->updateFile($file_uuid, $file, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->updateFile: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ContentApi->updateFile: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
