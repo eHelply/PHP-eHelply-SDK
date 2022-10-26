@@ -4,19 +4,19 @@ All URIs are relative to https://api.prod.ehelply.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createNote()**](NotesApi.md#createNote) | **POST** /notes/notes | Create Note
-[**deleteNote()**](NotesApi.md#deleteNote) | **DELETE** /notes/notes/{note_id} | Delete Note
-[**getNote()**](NotesApi.md#getNote) | **GET** /notes/notes/{note_id} | Get Note
-[**updateNote()**](NotesApi.md#updateNote) | **PUT** /notes/notes/{note_id} | Update Note
+[**createNote()**](NotesApi.md#createNote) | **POST** /notes/notes | Createnote
+[**deleteNote()**](NotesApi.md#deleteNote) | **DELETE** /notes/notes/{note_id} | Deletenote
+[**getNote()**](NotesApi.md#getNote) | **GET** /notes/notes/{note_id} | Getnote
+[**updateNote()**](NotesApi.md#updateNote) | **PUT** /notes/notes/{note_id} | Updatenote
 
 
 ## `createNote()`
 
 ```php
-createNote($note_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\NoteDynamoResponse
+createNote($note_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\CreateNote200Response
 ```
 
-Create Note
+Createnote
 
 ### Example
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\NoteDynamoResponse**](../Model/NoteDynamoResponse.md)
+[**\OpenAPI\Client\Model\CreateNote200Response**](../Model/CreateNote200Response.md)
 
 ### Authorization
 
@@ -79,10 +79,10 @@ No authorization required
 ## `deleteNote()`
 
 ```php
-deleteNote($note_id, $method, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): mixed
+deleteNote($note_id, $method, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\DeleteNote200Response
 ```
 
-Delete Note
+Deletenote
 
 ### Example
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**mixed**
+[**\OpenAPI\Client\Model\DeleteNote200Response**](../Model/DeleteNote200Response.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ No authorization required
 getNote($note_id, $history, $history_content, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\NoteDynamoHistoryResponse
 ```
 
-Get Note
+Getnote
 
 ### Example
 
@@ -217,10 +217,10 @@ No authorization required
 ## `updateNote()`
 
 ```php
-updateNote($note_id, $note_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\NoteDynamoResponse
+updateNote($note_id, $note_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\UpdateNote200Response
 ```
 
-Update Note
+Updatenote
 
 ### Example
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\NoteDynamoResponse**](../Model/NoteDynamoResponse.md)
+[**\OpenAPI\Client\Model\UpdateNote200Response**](../Model/UpdateNote200Response.md)
 
 ### Authorization
 
