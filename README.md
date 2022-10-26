@@ -119,19 +119,6 @@ Class | Method | HTTP request | Description
 *ContentApi* | [**getFile**](docs/Api/ContentApi.md#getfile) | **GET** /files/files/{file_uuid} | Getfile
 *ContentApi* | [**updateFile**](docs/Api/ContentApi.md#updatefile) | **PUT** /files/files/{file_uuid} | Updatefile
 *LoggingApi* | [**getSubjectLogs**](docs/Api/LoggingApi.md#getsubjectlogs) | **GET** /sam/logging/logs/services/{service}/subjects/{subject} | Getsubjectlogs
-*MetaApi* | [**createField**](docs/Api/MetaApi.md#createfield) | **POST** /meta/field | Create Field
-*MetaApi* | [**createMeta**](docs/Api/MetaApi.md#createmeta) | **POST** /meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid} | Create Meta
-*MetaApi* | [**deleteField**](docs/Api/MetaApi.md#deletefield) | **DELETE** /meta/field/{field_uuid} | Delete Field
-*MetaApi* | [**deleteMeta**](docs/Api/MetaApi.md#deletemeta) | **DELETE** /meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid} | Delete Meta
-*MetaApi* | [**deleteMetaFromUuid**](docs/Api/MetaApi.md#deletemetafromuuid) | **DELETE** /meta/meta/{meta_uuid} | Delete Meta From Uuid
-*MetaApi* | [**getField**](docs/Api/MetaApi.md#getfield) | **GET** /meta/field/{field_uuid} | Get Field
-*MetaApi* | [**getMeta**](docs/Api/MetaApi.md#getmeta) | **GET** /meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid} | Get Meta
-*MetaApi* | [**getMetaFromUuid**](docs/Api/MetaApi.md#getmetafromuuid) | **GET** /meta/meta/{meta_uuid} | Get Meta From Uuid
-*MetaApi* | [**makeSlug**](docs/Api/MetaApi.md#makeslug) | **POST** /meta/meta/slug | Make Slug
-*MetaApi* | [**touchMeta**](docs/Api/MetaApi.md#touchmeta) | **POST** /meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid}/touch | Touch Meta
-*MetaApi* | [**updateField**](docs/Api/MetaApi.md#updatefield) | **PUT** /meta/field/{field_uuid} | Update Field
-*MetaApi* | [**updateMeta**](docs/Api/MetaApi.md#updatemeta) | **PUT** /meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid} | Update Meta
-*MetaApi* | [**updateMetaFromUuid**](docs/Api/MetaApi.md#updatemetafromuuid) | **PUT** /meta/meta/{meta_uuid} | Update Meta From Uuid
 *MonitorApi* | [**acknowledgeAlarm**](docs/Api/MonitorApi.md#acknowledgealarm) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/acknowledge | Acknowledgealarm
 *MonitorApi* | [**assignAlarm**](docs/Api/MonitorApi.md#assignalarm) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/assign | Assignalarm
 *MonitorApi* | [**attachAlarmNote**](docs/Api/MonitorApi.md#attachalarmnote) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/note | Attachalarmnote
@@ -154,10 +141,6 @@ Class | Method | HTTP request | Description
 *MonitorApi* | [**showService**](docs/Api/MonitorApi.md#showservice) | **POST** /sam/monitor/services/{service}/stages/{stage}/show | Showservice
 *MonitorApi* | [**terminateAlarm**](docs/Api/MonitorApi.md#terminatealarm) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/terminate | Terminatealarm
 *MonitorApi* | [**triggerAlarm**](docs/Api/MonitorApi.md#triggeralarm) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms | Triggeralarm
-*NotesApi* | [**createNote**](docs/Api/NotesApi.md#createnote) | **POST** /notes/notes | Create Note
-*NotesApi* | [**deleteNote**](docs/Api/NotesApi.md#deletenote) | **DELETE** /notes/notes/{note_id} | Delete Note
-*NotesApi* | [**getNote**](docs/Api/NotesApi.md#getnote) | **GET** /notes/notes/{note_id} | Get Note
-*NotesApi* | [**updateNote**](docs/Api/NotesApi.md#updatenote) | **PUT** /notes/notes/{note_id} | Update Note
 *PlacesApi* | [**advancedSearchPlaces**](docs/Api/PlacesApi.md#advancedsearchplaces) | **GET** /places/search/places/string | Advancedsearchplaces
 *PlacesApi* | [**createPlacePlacesPlacesPost**](docs/Api/PlacesApi.md#createplaceplacesplacespost) | **POST** /places/places | Create Place
 *PlacesApi* | [**deletePlace**](docs/Api/PlacesApi.md#deleteplace) | **DELETE** /places/places/{place_uuid} | Deleteplace
@@ -262,9 +245,6 @@ Class | Method | HTTP request | Description
 - [AppointmentBase](docs/Model/AppointmentBase.md)
 - [AppointmentResponse](docs/Model/AppointmentResponse.md)
 - [AttachPaymentToProject](docs/Model/AttachPaymentToProject.md)
-- [Basic](docs/Model/Basic.md)
-- [BasicMeta](docs/Model/BasicMeta.md)
-- [BasicMetaCreate](docs/Model/BasicMetaCreate.md)
 - [CatalogBase](docs/Model/CatalogBase.md)
 - [CatalogReturn](docs/Model/CatalogReturn.md)
 - [CategoryBase](docs/Model/CategoryBase.md)
@@ -284,17 +264,9 @@ Class | Method | HTTP request | Description
 - [CreateReview](docs/Model/CreateReview.md)
 - [CreateTicket](docs/Model/CreateTicket.md)
 - [Credential](docs/Model/Credential.md)
-- [CustomList](docs/Model/CustomList.md)
-- [DatesMeta](docs/Model/DatesMeta.md)
 - [DeleteFile200Response](docs/Model/DeleteFile200Response.md)
-- [Detailed](docs/Model/Detailed.md)
-- [DetailedMeta](docs/Model/DetailedMeta.md)
-- [DetailedMetaCreate](docs/Model/DetailedMetaCreate.md)
-- [DetailedMetaGet](docs/Model/DetailedMetaGet.md)
 - [Discount](docs/Model/Discount.md)
 - [Email](docs/Model/Email.md)
-- [Field](docs/Model/Field.md)
-- [FieldDynamo](docs/Model/FieldDynamo.md)
 - [GetAppointment403Response](docs/Model/GetAppointment403Response.md)
 - [GetInvoiceResponse](docs/Model/GetInvoiceResponse.md)
 - [GetProjectCredential](docs/Model/GetProjectCredential.md)
@@ -311,19 +283,7 @@ Class | Method | HTTP request | Description
 - [KpiResponse](docs/Model/KpiResponse.md)
 - [LineItem](docs/Model/LineItem.md)
 - [LoggingDynamo](docs/Model/LoggingDynamo.md)
-- [MetaChildren](docs/Model/MetaChildren.md)
-- [MetaCreate](docs/Model/MetaCreate.md)
-- [MetaCustom](docs/Model/MetaCustom.md)
-- [MetaDynamo](docs/Model/MetaDynamo.md)
-- [MetaGet](docs/Model/MetaGet.md)
-- [MetaSlugger](docs/Model/MetaSlugger.md)
 - [Note](docs/Model/Note.md)
-- [NoteBase](docs/Model/NoteBase.md)
-- [NoteDynamoHistoryResponse](docs/Model/NoteDynamoHistoryResponse.md)
-- [NoteDynamoResponse](docs/Model/NoteDynamoResponse.md)
-- [NoteMeta](docs/Model/NoteMeta.md)
-- [OptionGroup](docs/Model/OptionGroup.md)
-- [Options](docs/Model/Options.md)
 - [Page](docs/Model/Page.md)
 - [Pagination](docs/Model/Pagination.md)
 - [ParticipantCreate](docs/Model/ParticipantCreate.md)
@@ -365,7 +325,6 @@ Class | Method | HTTP request | Description
 - [SecurityKeyCreate](docs/Model/SecurityKeyCreate.md)
 - [SecurityKeyGet](docs/Model/SecurityKeyGet.md)
 - [SecurityKeyVerify](docs/Model/SecurityKeyVerify.md)
-- [Selection](docs/Model/Selection.md)
 - [ServiceCreate](docs/Model/ServiceCreate.md)
 - [ServiceMessageResponse](docs/Model/ServiceMessageResponse.md)
 - [ServiceResponse](docs/Model/ServiceResponse.md)
@@ -396,7 +355,6 @@ Class | Method | HTTP request | Description
 - [UserTokenReturn](docs/Model/UserTokenReturn.md)
 - [UserValidations](docs/Model/UserValidations.md)
 - [ValidationError](docs/Model/ValidationError.md)
-- [Validations](docs/Model/Validations.md)
 
 ## Authorization
 All endpoints do not require authorization.
@@ -417,6 +375,6 @@ support@ehelply.com
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.1.116`
-    - Package version: `1.1.116`
+- API version: `1.1.117`
+    - Package version: `1.1.117`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
