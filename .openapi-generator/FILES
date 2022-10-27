@@ -63,7 +63,7 @@ docs/Model/CreateReview.md
 docs/Model/CreateSlug200Response.md
 docs/Model/CreateTicket.md
 docs/Model/Credential.md
-docs/Model/Dates.md
+docs/Model/CustomList.md
 docs/Model/DatesMeta.md
 docs/Model/DeleteField200Response.md
 docs/Model/DeleteFile200Response.md
@@ -92,13 +92,17 @@ docs/Model/History.md
 docs/Model/KpiResponse.md
 docs/Model/LineItem.md
 docs/Model/LoggingDynamo.md
+docs/Model/MetaChildren.md
 docs/Model/MetaCreate.md
+docs/Model/MetaCustom.md
 docs/Model/MetaDynamo.md
 docs/Model/Note.md
 docs/Model/NoteBase.md
 docs/Model/NoteDynamoHistoryResponse.md
 docs/Model/NoteDynamoResponse.md
 docs/Model/NoteMeta.md
+docs/Model/OptionGroup.md
+docs/Model/Options.md
 docs/Model/Page.md
 docs/Model/Pagination.md
 docs/Model/ParticipantCreate.md
@@ -140,6 +144,7 @@ docs/Model/SecurityEncryptionKeyResponse.md
 docs/Model/SecurityKeyCreate.md
 docs/Model/SecurityKeyGet.md
 docs/Model/SecurityKeyVerify.md
+docs/Model/Selection.md
 docs/Model/ServiceCreate.md
 docs/Model/ServiceMessageResponse.md
 docs/Model/ServiceResponse.md
@@ -176,6 +181,7 @@ docs/Model/UserSignupReturn.md
 docs/Model/UserTokenReturn.md
 docs/Model/UserValidations.md
 docs/Model/ValidationError.md
+docs/Model/Validations.md
 git_push.sh
 lib/Api/AppointmentsApi.php
 lib/Api/BillingApi.php
@@ -239,7 +245,7 @@ lib/Model/CreateReview.php
 lib/Model/CreateSlug200Response.php
 lib/Model/CreateTicket.php
 lib/Model/Credential.php
-lib/Model/Dates.php
+lib/Model/CustomList.php
 lib/Model/DatesMeta.php
 lib/Model/DeleteField200Response.php
 lib/Model/DeleteFile200Response.php
@@ -268,7 +274,9 @@ lib/Model/History.php
 lib/Model/KpiResponse.php
 lib/Model/LineItem.php
 lib/Model/LoggingDynamo.php
+lib/Model/MetaChildren.php
 lib/Model/MetaCreate.php
+lib/Model/MetaCustom.php
 lib/Model/MetaDynamo.php
 lib/Model/ModelInterface.php
 lib/Model/Note.php
@@ -276,6 +284,8 @@ lib/Model/NoteBase.php
 lib/Model/NoteDynamoHistoryResponse.php
 lib/Model/NoteDynamoResponse.php
 lib/Model/NoteMeta.php
+lib/Model/OptionGroup.php
+lib/Model/Options.php
 lib/Model/Page.php
 lib/Model/Pagination.php
 lib/Model/ParticipantCreate.php
@@ -317,6 +327,7 @@ lib/Model/SecurityEncryptionKeyResponse.php
 lib/Model/SecurityKeyCreate.php
 lib/Model/SecurityKeyGet.php
 lib/Model/SecurityKeyVerify.php
+lib/Model/Selection.php
 lib/Model/ServiceCreate.php
 lib/Model/ServiceMessageResponse.php
 lib/Model/ServiceResponse.php
@@ -353,6 +364,7 @@ lib/Model/UserSignupReturn.php
 lib/Model/UserTokenReturn.php
 lib/Model/UserValidations.php
 lib/Model/ValidationError.php
+lib/Model/Validations.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
 test/Api/AppointmentsApiTest.php
@@ -414,8 +426,8 @@ test/Model/CreateReviewTest.php
 test/Model/CreateSlug200ResponseTest.php
 test/Model/CreateTicketTest.php
 test/Model/CredentialTest.php
+test/Model/CustomListTest.php
 test/Model/DatesMetaTest.php
-test/Model/DatesTest.php
 test/Model/DeleteField200ResponseTest.php
 test/Model/DeleteFile200ResponseTest.php
 test/Model/DeleteMeta200ResponseTest.php
@@ -443,13 +455,17 @@ test/Model/HistoryTest.php
 test/Model/KpiResponseTest.php
 test/Model/LineItemTest.php
 test/Model/LoggingDynamoTest.php
+test/Model/MetaChildrenTest.php
 test/Model/MetaCreateTest.php
+test/Model/MetaCustomTest.php
 test/Model/MetaDynamoTest.php
 test/Model/NoteBaseTest.php
 test/Model/NoteDynamoHistoryResponseTest.php
 test/Model/NoteDynamoResponseTest.php
 test/Model/NoteMetaTest.php
 test/Model/NoteTest.php
+test/Model/OptionGroupTest.php
+test/Model/OptionsTest.php
 test/Model/PageTest.php
 test/Model/PaginationTest.php
 test/Model/ParticipantCreateTest.php
@@ -491,6 +507,7 @@ test/Model/SecurityEncryptionKeyResponseTest.php
 test/Model/SecurityKeyCreateTest.php
 test/Model/SecurityKeyGetTest.php
 test/Model/SecurityKeyVerifyTest.php
+test/Model/SelectionTest.php
 test/Model/ServiceCreateTest.php
 test/Model/ServiceMessageResponseTest.php
 test/Model/ServiceResponseTest.php
@@ -527,3 +544,4 @@ test/Model/UserTest.php
 test/Model/UserTokenReturnTest.php
 test/Model/UserValidationsTest.php
 test/Model/ValidationErrorTest.php
+test/Model/ValidationsTest.php
