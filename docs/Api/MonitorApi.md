@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**attachAlarmNote()**](MonitorApi.md#attachAlarmNote) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/note | Attachalarmnote
 [**attachAlarmTicket()**](MonitorApi.md#attachAlarmTicket) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/ticket | Attachalarmticket
 [**clearAlarm()**](MonitorApi.md#clearAlarm) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/clear | Clearalarm
+[**deleteServiceSuperStackMeta()**](MonitorApi.md#deleteServiceSuperStackMeta) | **DELETE** /sam/monitor/services/{service}/superstack | Deleteservicesuperstackmeta
 [**getService()**](MonitorApi.md#getService) | **GET** /sam/monitor/services/{service} | Getservice
 [**getServiceAlarm()**](MonitorApi.md#getServiceAlarm) | **GET** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid} | Getservicealarm
 [**getServiceAlarms()**](MonitorApi.md#getServiceAlarms) | **GET** /sam/monitor/services/{service}/stages/{stage}/alarms | Getservicealarms
@@ -19,9 +20,11 @@ Method | HTTP request | Description
 [**getServiceVitals()**](MonitorApi.md#getServiceVitals) | **GET** /sam/monitor/services/{service}/stages/{stage}/vitals | Getservicevitals
 [**getServices()**](MonitorApi.md#getServices) | **GET** /sam/monitor/services | Getservices
 [**getServicesWithSpecs()**](MonitorApi.md#getServicesWithSpecs) | **GET** /sam/monitor/specs/services | Getserviceswithspecs
+[**getSupertackServices()**](MonitorApi.md#getSupertackServices) | **GET** /sam/monitor/superstack-services | Getsupertackservices
 [**hideService()**](MonitorApi.md#hideService) | **POST** /sam/monitor/services/{service}/stages/{stage}/hide | Hideservice
 [**ignoreAlarm()**](MonitorApi.md#ignoreAlarm) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/ignore | Ignorealarm
 [**registerService()**](MonitorApi.md#registerService) | **POST** /sam/monitor/services | Registerservice
+[**saveServiceSuperStackMeta()**](MonitorApi.md#saveServiceSuperStackMeta) | **POST** /sam/monitor/services/{service}/superstack | Saveservicesuperstackmeta
 [**searchAlarms()**](MonitorApi.md#searchAlarms) | **GET** /sam/monitor/services/{service}/alarms | Searchalarms
 [**showService()**](MonitorApi.md#showService) | **POST** /sam/monitor/services/{service}/stages/{stage}/show | Showservice
 [**terminateAlarm()**](MonitorApi.md#terminateAlarm) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/terminate | Terminatealarm
@@ -31,7 +34,7 @@ Method | HTTP request | Description
 ## `acknowledgeAlarm()`
 
 ```php
-acknowledgeAlarm($service, $stage, $alarm_uuid, $alarm_acknowledge): \OpenAPI\Client\Model\AlarmResponse
+acknowledgeAlarm($service, $stage, $alarm_uuid, $alarm_acknowledge, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\AlarmResponse
 ```
 
 Acknowledgealarm
@@ -53,9 +56,15 @@ $service = 'service_example'; // string
 $stage = 'stage_example'; // string
 $alarm_uuid = 'alarm_uuid_example'; // string
 $alarm_acknowledge = new \OpenAPI\Client\Model\AlarmAcknowledge(); // \OpenAPI\Client\Model\AlarmAcknowledge
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->acknowledgeAlarm($service, $stage, $alarm_uuid, $alarm_acknowledge);
+    $result = $apiInstance->acknowledgeAlarm($service, $stage, $alarm_uuid, $alarm_acknowledge, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->acknowledgeAlarm: ', $e->getMessage(), PHP_EOL;
@@ -70,6 +79,12 @@ Name | Type | Description  | Notes
  **stage** | **string**|  |
  **alarm_uuid** | **string**|  |
  **alarm_acknowledge** | [**\OpenAPI\Client\Model\AlarmAcknowledge**](../Model/AlarmAcknowledge.md)|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
@@ -91,7 +106,7 @@ No authorization required
 ## `assignAlarm()`
 
 ```php
-assignAlarm($service, $stage, $alarm_uuid, $alarm_assign): \OpenAPI\Client\Model\AlarmResponse
+assignAlarm($service, $stage, $alarm_uuid, $alarm_assign, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\AlarmResponse
 ```
 
 Assignalarm
@@ -113,9 +128,15 @@ $service = 'service_example'; // string
 $stage = 'stage_example'; // string
 $alarm_uuid = 'alarm_uuid_example'; // string
 $alarm_assign = new \OpenAPI\Client\Model\AlarmAssign(); // \OpenAPI\Client\Model\AlarmAssign
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->assignAlarm($service, $stage, $alarm_uuid, $alarm_assign);
+    $result = $apiInstance->assignAlarm($service, $stage, $alarm_uuid, $alarm_assign, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->assignAlarm: ', $e->getMessage(), PHP_EOL;
@@ -130,6 +151,12 @@ Name | Type | Description  | Notes
  **stage** | **string**|  |
  **alarm_uuid** | **string**|  |
  **alarm_assign** | [**\OpenAPI\Client\Model\AlarmAssign**](../Model/AlarmAssign.md)|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
@@ -151,7 +178,7 @@ No authorization required
 ## `attachAlarmNote()`
 
 ```php
-attachAlarmNote($service, $stage, $alarm_uuid, $alarm_note): \OpenAPI\Client\Model\AlarmResponse
+attachAlarmNote($service, $stage, $alarm_uuid, $alarm_note, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\AlarmResponse
 ```
 
 Attachalarmnote
@@ -173,9 +200,15 @@ $service = 'service_example'; // string
 $stage = 'stage_example'; // string
 $alarm_uuid = 'alarm_uuid_example'; // string
 $alarm_note = new \OpenAPI\Client\Model\AlarmNote(); // \OpenAPI\Client\Model\AlarmNote
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->attachAlarmNote($service, $stage, $alarm_uuid, $alarm_note);
+    $result = $apiInstance->attachAlarmNote($service, $stage, $alarm_uuid, $alarm_note, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->attachAlarmNote: ', $e->getMessage(), PHP_EOL;
@@ -190,6 +223,12 @@ Name | Type | Description  | Notes
  **stage** | **string**|  |
  **alarm_uuid** | **string**|  |
  **alarm_note** | [**\OpenAPI\Client\Model\AlarmNote**](../Model/AlarmNote.md)|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
@@ -211,7 +250,7 @@ No authorization required
 ## `attachAlarmTicket()`
 
 ```php
-attachAlarmTicket($service, $stage, $alarm_uuid, $alarm_ticket): \OpenAPI\Client\Model\AlarmResponse
+attachAlarmTicket($service, $stage, $alarm_uuid, $alarm_ticket, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\AlarmResponse
 ```
 
 Attachalarmticket
@@ -233,9 +272,15 @@ $service = 'service_example'; // string
 $stage = 'stage_example'; // string
 $alarm_uuid = 'alarm_uuid_example'; // string
 $alarm_ticket = new \OpenAPI\Client\Model\AlarmTicket(); // \OpenAPI\Client\Model\AlarmTicket
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->attachAlarmTicket($service, $stage, $alarm_uuid, $alarm_ticket);
+    $result = $apiInstance->attachAlarmTicket($service, $stage, $alarm_uuid, $alarm_ticket, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->attachAlarmTicket: ', $e->getMessage(), PHP_EOL;
@@ -250,6 +295,12 @@ Name | Type | Description  | Notes
  **stage** | **string**|  |
  **alarm_uuid** | **string**|  |
  **alarm_ticket** | [**\OpenAPI\Client\Model\AlarmTicket**](../Model/AlarmTicket.md)|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
@@ -271,7 +322,7 @@ No authorization required
 ## `clearAlarm()`
 
 ```php
-clearAlarm($service, $stage, $alarm_uuid): \OpenAPI\Client\Model\AlarmResponse
+clearAlarm($service, $stage, $alarm_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\AlarmResponse
 ```
 
 Clearalarm
@@ -292,9 +343,15 @@ $apiInstance = new OpenAPI\Client\Api\MonitorApi(
 $service = 'service_example'; // string
 $stage = 'stage_example'; // string
 $alarm_uuid = 'alarm_uuid_example'; // string
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->clearAlarm($service, $stage, $alarm_uuid);
+    $result = $apiInstance->clearAlarm($service, $stage, $alarm_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->clearAlarm: ', $e->getMessage(), PHP_EOL;
@@ -308,6 +365,12 @@ Name | Type | Description  | Notes
  **service** | **string**|  |
  **stage** | **string**|  |
  **alarm_uuid** | **string**|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
@@ -326,10 +389,76 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `deleteServiceSuperStackMeta()`
+
+```php
+deleteServiceSuperStackMeta($service, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): mixed
+```
+
+Deleteservicesuperstackmeta
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\MonitorApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$service = 'service_example'; // string
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
+
+try {
+    $result = $apiInstance->deleteServiceSuperStackMeta($service, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MonitorApi->deleteServiceSuperStackMeta: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **service** | **string**|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
+
+### Return type
+
+**mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getService()`
 
 ```php
-getService($service, $heartbeats, $heartbeat_limit, $alarms, $alarm_limit, $stage): \OpenAPI\Client\Model\ServiceResponse
+getService($service, $heartbeats, $heartbeat_limit, $alarms, $alarm_limit, $stage, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\ServiceResponse
 ```
 
 Getservice
@@ -353,9 +482,15 @@ $heartbeat_limit = 5; // int
 $alarms = false; // bool
 $alarm_limit = 5; // int
 $stage = 'stage_example'; // string
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->getService($service, $heartbeats, $heartbeat_limit, $alarms, $alarm_limit, $stage);
+    $result = $apiInstance->getService($service, $heartbeats, $heartbeat_limit, $alarms, $alarm_limit, $stage, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->getService: ', $e->getMessage(), PHP_EOL;
@@ -372,6 +507,12 @@ Name | Type | Description  | Notes
  **alarms** | **bool**|  | [optional] [default to false]
  **alarm_limit** | **int**|  | [optional] [default to 5]
  **stage** | **string**|  | [optional]
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
@@ -393,7 +534,7 @@ No authorization required
 ## `getServiceAlarm()`
 
 ```php
-getServiceAlarm($service, $stage, $alarm_uuid): \OpenAPI\Client\Model\AlarmResponse
+getServiceAlarm($service, $stage, $alarm_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\AlarmResponse
 ```
 
 Getservicealarm
@@ -414,9 +555,15 @@ $apiInstance = new OpenAPI\Client\Api\MonitorApi(
 $service = 'service_example'; // string
 $stage = 'stage_example'; // string
 $alarm_uuid = 'alarm_uuid_example'; // string
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->getServiceAlarm($service, $stage, $alarm_uuid);
+    $result = $apiInstance->getServiceAlarm($service, $stage, $alarm_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->getServiceAlarm: ', $e->getMessage(), PHP_EOL;
@@ -430,6 +577,12 @@ Name | Type | Description  | Notes
  **service** | **string**|  |
  **stage** | **string**|  |
  **alarm_uuid** | **string**|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
@@ -451,7 +604,7 @@ No authorization required
 ## `getServiceAlarms()`
 
 ```php
-getServiceAlarms($service, $stage, $history, $include_terminated, $include_cleared): \OpenAPI\Client\Model\AlarmResponse[]
+getServiceAlarms($service, $stage, $history, $include_terminated, $include_cleared, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\AlarmResponse[]
 ```
 
 Getservicealarms
@@ -474,9 +627,15 @@ $stage = 'stage_example'; // string
 $history = 5; // int
 $include_terminated = false; // bool
 $include_cleared = false; // bool
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->getServiceAlarms($service, $stage, $history, $include_terminated, $include_cleared);
+    $result = $apiInstance->getServiceAlarms($service, $stage, $history, $include_terminated, $include_cleared, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->getServiceAlarms: ', $e->getMessage(), PHP_EOL;
@@ -492,6 +651,12 @@ Name | Type | Description  | Notes
  **history** | **int**|  | [optional] [default to 5]
  **include_terminated** | **bool**|  | [optional] [default to false]
  **include_cleared** | **bool**|  | [optional] [default to false]
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
@@ -513,7 +678,7 @@ No authorization required
 ## `getServiceHeartbeat()`
 
 ```php
-getServiceHeartbeat($service, $stage, $history): \OpenAPI\Client\Model\HeartbeatResponse[]
+getServiceHeartbeat($service, $stage, $history, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\HeartbeatResponse[]
 ```
 
 Getserviceheartbeat
@@ -534,9 +699,15 @@ $apiInstance = new OpenAPI\Client\Api\MonitorApi(
 $service = 'service_example'; // string
 $stage = 'stage_example'; // string
 $history = 5; // int
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->getServiceHeartbeat($service, $stage, $history);
+    $result = $apiInstance->getServiceHeartbeat($service, $stage, $history, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->getServiceHeartbeat: ', $e->getMessage(), PHP_EOL;
@@ -550,6 +721,12 @@ Name | Type | Description  | Notes
  **service** | **string**|  |
  **stage** | **string**|  |
  **history** | **int**|  | [optional] [default to 5]
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
@@ -571,7 +748,7 @@ No authorization required
 ## `getServiceKpis()`
 
 ```php
-getServiceKpis($service, $history): \OpenAPI\Client\Model\KpiResponse[]
+getServiceKpis($service, $history, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\KpiResponse[]
 ```
 
 Getservicekpis
@@ -591,9 +768,15 @@ $apiInstance = new OpenAPI\Client\Api\MonitorApi(
 );
 $service = 'service_example'; // string
 $history = 5; // int
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->getServiceKpis($service, $history);
+    $result = $apiInstance->getServiceKpis($service, $history, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->getServiceKpis: ', $e->getMessage(), PHP_EOL;
@@ -606,6 +789,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service** | **string**|  |
  **history** | **int**|  | [optional] [default to 5]
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
@@ -737,7 +926,7 @@ No authorization required
 ## `getServiceVitals()`
 
 ```php
-getServiceVitals($service, $stage, $history): \OpenAPI\Client\Model\StatsVitalsResponse[]
+getServiceVitals($service, $stage, $history, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\StatsVitalsResponse[]
 ```
 
 Getservicevitals
@@ -758,9 +947,15 @@ $apiInstance = new OpenAPI\Client\Api\MonitorApi(
 $service = 'service_example'; // string
 $stage = 'stage_example'; // string
 $history = 5; // int
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->getServiceVitals($service, $stage, $history);
+    $result = $apiInstance->getServiceVitals($service, $stage, $history, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->getServiceVitals: ', $e->getMessage(), PHP_EOL;
@@ -774,6 +969,12 @@ Name | Type | Description  | Notes
  **service** | **string**|  |
  **stage** | **string**|  |
  **history** | **int**|  | [optional] [default to 5]
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
@@ -795,7 +996,7 @@ No authorization required
 ## `getServices()`
 
 ```php
-getServices($heartbeats, $heartbeat_limit, $alarms, $alarm_limit, $include_hidden, $stage, $key): \OpenAPI\Client\Model\ServiceResponse[]
+getServices($heartbeats, $heartbeat_limit, $alarms, $alarm_limit, $include_hidden, $stage, $key, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\ServiceResponse[]
 ```
 
 Getservices
@@ -820,9 +1021,15 @@ $alarm_limit = 5; // int
 $include_hidden = false; // bool
 $stage = 'stage_example'; // string
 $key = 'key_example'; // string
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->getServices($heartbeats, $heartbeat_limit, $alarms, $alarm_limit, $include_hidden, $stage, $key);
+    $result = $apiInstance->getServices($heartbeats, $heartbeat_limit, $alarms, $alarm_limit, $include_hidden, $stage, $key, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->getServices: ', $e->getMessage(), PHP_EOL;
@@ -840,6 +1047,12 @@ Name | Type | Description  | Notes
  **include_hidden** | **bool**|  | [optional] [default to false]
  **stage** | **string**|  | [optional]
  **key** | **string**|  | [optional]
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
@@ -909,10 +1122,61 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getSupertackServices()`
+
+```php
+getSupertackServices(): \OpenAPI\Client\Model\ServiceSuperStackMeta[]
+```
+
+Getsupertackservices
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\MonitorApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->getSupertackServices();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MonitorApi->getSupertackServices: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\OpenAPI\Client\Model\ServiceSuperStackMeta[]**](../Model/ServiceSuperStackMeta.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `hideService()`
 
 ```php
-hideService($service, $stage): \OpenAPI\Client\Model\ServiceMessageResponse
+hideService($service, $stage, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\ServiceMessageResponse
 ```
 
 Hideservice
@@ -932,9 +1196,15 @@ $apiInstance = new OpenAPI\Client\Api\MonitorApi(
 );
 $service = 'service_example'; // string
 $stage = 'stage_example'; // string
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->hideService($service, $stage);
+    $result = $apiInstance->hideService($service, $stage, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->hideService: ', $e->getMessage(), PHP_EOL;
@@ -947,6 +1217,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service** | **string**|  |
  **stage** | **string**|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
@@ -968,7 +1244,7 @@ No authorization required
 ## `ignoreAlarm()`
 
 ```php
-ignoreAlarm($service, $stage, $alarm_uuid, $alarm_ignore): \OpenAPI\Client\Model\AlarmResponse
+ignoreAlarm($service, $stage, $alarm_uuid, $alarm_ignore, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\AlarmResponse
 ```
 
 Ignorealarm
@@ -990,9 +1266,15 @@ $service = 'service_example'; // string
 $stage = 'stage_example'; // string
 $alarm_uuid = 'alarm_uuid_example'; // string
 $alarm_ignore = new \OpenAPI\Client\Model\AlarmIgnore(); // \OpenAPI\Client\Model\AlarmIgnore
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->ignoreAlarm($service, $stage, $alarm_uuid, $alarm_ignore);
+    $result = $apiInstance->ignoreAlarm($service, $stage, $alarm_uuid, $alarm_ignore, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->ignoreAlarm: ', $e->getMessage(), PHP_EOL;
@@ -1007,6 +1289,12 @@ Name | Type | Description  | Notes
  **stage** | **string**|  |
  **alarm_uuid** | **string**|  |
  **alarm_ignore** | [**\OpenAPI\Client\Model\AlarmIgnore**](../Model/AlarmIgnore.md)|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
@@ -1028,7 +1316,7 @@ No authorization required
 ## `registerService()`
 
 ```php
-registerService($service_create): \OpenAPI\Client\Model\ServiceResponse
+registerService($service_create, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\ServiceResponse
 ```
 
 Registerservice
@@ -1047,9 +1335,15 @@ $apiInstance = new OpenAPI\Client\Api\MonitorApi(
     new GuzzleHttp\Client()
 );
 $service_create = new \OpenAPI\Client\Model\ServiceCreate(); // \OpenAPI\Client\Model\ServiceCreate
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->registerService($service_create);
+    $result = $apiInstance->registerService($service_create, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->registerService: ', $e->getMessage(), PHP_EOL;
@@ -1061,6 +1355,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_create** | [**\OpenAPI\Client\Model\ServiceCreate**](../Model/ServiceCreate.md)|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
@@ -1079,10 +1379,78 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `saveServiceSuperStackMeta()`
+
+```php
+saveServiceSuperStackMeta($service, $service_super_stack_meta, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): mixed
+```
+
+Saveservicesuperstackmeta
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\MonitorApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$service = 'service_example'; // string
+$service_super_stack_meta = new \OpenAPI\Client\Model\ServiceSuperStackMeta(); // \OpenAPI\Client\Model\ServiceSuperStackMeta
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
+
+try {
+    $result = $apiInstance->saveServiceSuperStackMeta($service, $service_super_stack_meta, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MonitorApi->saveServiceSuperStackMeta: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **service** | **string**|  |
+ **service_super_stack_meta** | [**\OpenAPI\Client\Model\ServiceSuperStackMeta**](../Model/ServiceSuperStackMeta.md)|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
+
+### Return type
+
+**mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `searchAlarms()`
 
 ```php
-searchAlarms($service, $page, $page_size, $search, $search_on, $sort_on, $sort_desc): \OpenAPI\Client\Model\Page
+searchAlarms($service, $page, $page_size, $search, $search_on, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\Page
 ```
 
 Searchalarms
@@ -1107,9 +1475,15 @@ $search = 'search_example'; // string
 $search_on = 'search_on_example'; // string
 $sort_on = 'sort_on_example'; // string
 $sort_desc = false; // bool
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->searchAlarms($service, $page, $page_size, $search, $search_on, $sort_on, $sort_desc);
+    $result = $apiInstance->searchAlarms($service, $page, $page_size, $search, $search_on, $sort_on, $sort_desc, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->searchAlarms: ', $e->getMessage(), PHP_EOL;
@@ -1127,6 +1501,12 @@ Name | Type | Description  | Notes
  **search_on** | **string**|  | [optional]
  **sort_on** | **string**|  | [optional]
  **sort_desc** | **bool**|  | [optional] [default to false]
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
@@ -1148,7 +1528,7 @@ No authorization required
 ## `showService()`
 
 ```php
-showService($service, $stage): \OpenAPI\Client\Model\ServiceMessageResponse
+showService($service, $stage, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\ServiceMessageResponse
 ```
 
 Showservice
@@ -1168,9 +1548,15 @@ $apiInstance = new OpenAPI\Client\Api\MonitorApi(
 );
 $service = 'service_example'; // string
 $stage = 'stage_example'; // string
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->showService($service, $stage);
+    $result = $apiInstance->showService($service, $stage, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->showService: ', $e->getMessage(), PHP_EOL;
@@ -1183,6 +1569,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service** | **string**|  |
  **stage** | **string**|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
@@ -1204,7 +1596,7 @@ No authorization required
 ## `terminateAlarm()`
 
 ```php
-terminateAlarm($service, $stage, $alarm_uuid, $alarm_terminate): \OpenAPI\Client\Model\AlarmResponse
+terminateAlarm($service, $stage, $alarm_uuid, $alarm_terminate, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\AlarmResponse
 ```
 
 Terminatealarm
@@ -1226,9 +1618,15 @@ $service = 'service_example'; // string
 $stage = 'stage_example'; // string
 $alarm_uuid = 'alarm_uuid_example'; // string
 $alarm_terminate = new \OpenAPI\Client\Model\AlarmTerminate(); // \OpenAPI\Client\Model\AlarmTerminate
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->terminateAlarm($service, $stage, $alarm_uuid, $alarm_terminate);
+    $result = $apiInstance->terminateAlarm($service, $stage, $alarm_uuid, $alarm_terminate, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->terminateAlarm: ', $e->getMessage(), PHP_EOL;
@@ -1243,6 +1641,12 @@ Name | Type | Description  | Notes
  **stage** | **string**|  |
  **alarm_uuid** | **string**|  |
  **alarm_terminate** | [**\OpenAPI\Client\Model\AlarmTerminate**](../Model/AlarmTerminate.md)|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
@@ -1264,7 +1668,7 @@ No authorization required
 ## `triggerAlarm()`
 
 ```php
-triggerAlarm($service, $stage, $alarm_create): \OpenAPI\Client\Model\AlarmResponse
+triggerAlarm($service, $stage, $alarm_create, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\AlarmResponse
 ```
 
 Triggeralarm
@@ -1285,9 +1689,15 @@ $apiInstance = new OpenAPI\Client\Api\MonitorApi(
 $service = 'service_example'; // string
 $stage = 'stage_example'; // string
 $alarm_create = new \OpenAPI\Client\Model\AlarmCreate(); // \OpenAPI\Client\Model\AlarmCreate
+$x_access_token = 'x_access_token_example'; // string
+$x_secret_token = 'x_secret_token_example'; // string
+$authorization = 'authorization_example'; // string
+$ehelply_active_participant = 'ehelply_active_participant_example'; // string
+$ehelply_project = 'ehelply_project_example'; // string
+$ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->triggerAlarm($service, $stage, $alarm_create);
+    $result = $apiInstance->triggerAlarm($service, $stage, $alarm_create, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MonitorApi->triggerAlarm: ', $e->getMessage(), PHP_EOL;
@@ -1301,6 +1711,12 @@ Name | Type | Description  | Notes
  **service** | **string**|  |
  **stage** | **string**|  |
  **alarm_create** | [**\OpenAPI\Client\Model\AlarmCreate**](../Model/AlarmCreate.md)|  |
+ **x_access_token** | **string**|  | [optional]
+ **x_secret_token** | **string**|  | [optional]
+ **authorization** | **string**|  | [optional]
+ **ehelply_active_participant** | **string**|  | [optional]
+ **ehelply_project** | **string**|  | [optional]
+ **ehelply_data** | **string**|  | [optional]
 
 ### Return type
 
