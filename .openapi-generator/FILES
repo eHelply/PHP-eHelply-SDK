@@ -10,6 +10,7 @@ docs/Api/CatalogsApi.md
 docs/Api/CategoryApi.md
 docs/Api/CompaniesApi.md
 docs/Api/ContentApi.md
+docs/Api/FactsApi.md
 docs/Api/FieldsApi.md
 docs/Api/LoggingApi.md
 docs/Api/MetaApi.md
@@ -65,6 +66,7 @@ docs/Model/CreateTicket.md
 docs/Model/Credential.md
 docs/Model/CustomList.md
 docs/Model/DatesMeta.md
+docs/Model/DeleteFact200Response.md
 docs/Model/DeleteField200Response.md
 docs/Model/DeleteFile200Response.md
 docs/Model/DeleteMeta200Response.md
@@ -74,6 +76,8 @@ docs/Model/DetailedMeta.md
 docs/Model/DetailedMetaCreate.md
 docs/Model/Discount.md
 docs/Model/Email.md
+docs/Model/Fact.md
+docs/Model/FactCreate.md
 docs/Model/Field.md
 docs/Model/FieldDynamo.md
 docs/Model/GetAppointment403Response.md
@@ -138,6 +142,7 @@ docs/Model/ResponseGeneratetoken.md
 docs/Model/ResponseRemovememberfromproject.md
 docs/Model/ResponseRevokeprojectcredit.md
 docs/Model/ResponseUpdateprojectcredential.md
+docs/Model/SaveFact200Response.md
 docs/Model/SecurityCreateToken.md
 docs/Model/SecurityEncryptionKeyGet.md
 docs/Model/SecurityEncryptionKeyResponse.md
@@ -194,6 +199,7 @@ lib/Api/CatalogsApi.php
 lib/Api/CategoryApi.php
 lib/Api/CompaniesApi.php
 lib/Api/ContentApi.php
+lib/Api/FactsApi.php
 lib/Api/FieldsApi.php
 lib/Api/LoggingApi.php
 lib/Api/MetaApi.php
@@ -252,6 +258,7 @@ lib/Model/CreateTicket.php
 lib/Model/Credential.php
 lib/Model/CustomList.php
 lib/Model/DatesMeta.php
+lib/Model/DeleteFact200Response.php
 lib/Model/DeleteField200Response.php
 lib/Model/DeleteFile200Response.php
 lib/Model/DeleteMeta200Response.php
@@ -261,6 +268,8 @@ lib/Model/DetailedMeta.php
 lib/Model/DetailedMetaCreate.php
 lib/Model/Discount.php
 lib/Model/Email.php
+lib/Model/Fact.php
+lib/Model/FactCreate.php
 lib/Model/Field.php
 lib/Model/FieldDynamo.php
 lib/Model/GetAppointment403Response.php
@@ -326,6 +335,7 @@ lib/Model/ResponseGeneratetoken.php
 lib/Model/ResponseRemovememberfromproject.php
 lib/Model/ResponseRevokeprojectcredit.php
 lib/Model/ResponseUpdateprojectcredential.php
+lib/Model/SaveFact200Response.php
 lib/Model/SecurityCreateToken.php
 lib/Model/SecurityEncryptionKeyGet.php
 lib/Model/SecurityEncryptionKeyResponse.php
@@ -383,6 +393,7 @@ test/Api/CatalogsApiTest.php
 test/Api/CategoryApiTest.php
 test/Api/CompaniesApiTest.php
 test/Api/ContentApiTest.php
+test/Api/FactsApiTest.php
 test/Api/FieldsApiTest.php
 test/Api/LoggingApiTest.php
 test/Api/MetaApiTest.php
@@ -438,6 +449,7 @@ test/Model/CreateTicketTest.php
 test/Model/CredentialTest.php
 test/Model/CustomListTest.php
 test/Model/DatesMetaTest.php
+test/Model/DeleteFact200ResponseTest.php
 test/Model/DeleteField200ResponseTest.php
 test/Model/DeleteFile200ResponseTest.php
 test/Model/DeleteMeta200ResponseTest.php
@@ -447,6 +459,8 @@ test/Model/DetailedMetaTest.php
 test/Model/DetailedTest.php
 test/Model/DiscountTest.php
 test/Model/EmailTest.php
+test/Model/FactCreateTest.php
+test/Model/FactTest.php
 test/Model/FieldDynamoTest.php
 test/Model/FieldTest.php
 test/Model/GetAppointment403ResponseTest.php
@@ -511,6 +525,7 @@ test/Model/ResponseGeneratetokenTest.php
 test/Model/ResponseRemovememberfromprojectTest.php
 test/Model/ResponseRevokeprojectcreditTest.php
 test/Model/ResponseUpdateprojectcredentialTest.php
+test/Model/SaveFact200ResponseTest.php
 test/Model/SecurityCreateTokenTest.php
 test/Model/SecurityEncryptionKeyGetTest.php
 test/Model/SecurityEncryptionKeyResponseTest.php
