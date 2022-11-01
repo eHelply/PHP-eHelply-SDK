@@ -4,19 +4,19 @@ All URIs are relative to https://api.prod.ehelply.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createBillingAccount()**](BillingApi.md#createBillingAccount) | **POST** /sam/billing/create_billing_account | Createbillingaccount
-[**getClientSecret()**](BillingApi.md#getClientSecret) | **GET** /sam/billing/retrieve_secret | Getclientsecret
-[**hasPayment()**](BillingApi.md#hasPayment) | **GET** /sam/billing/has_payment | Haspayment
-[**listPaymentMethods()**](BillingApi.md#listPaymentMethods) | **GET** /sam/billing/view_payment_method | Listpaymentmethods
-[**processPayment()**](BillingApi.md#processPayment) | **POST** /sam/billing/process_payment | Processpayment
-[**reconcilePaymentMethod()**](BillingApi.md#reconcilePaymentMethod) | **GET** /sam/billing/reconcile_payment | Reconcilepaymentmethod
-[**removePaymentMethod()**](BillingApi.md#removePaymentMethod) | **DELETE** /sam/billing/remove_payment_method | Removepaymentmethod
+[**createBillingAccount()**](BillingApi.md#createBillingAccount) | **POST** /sam/billing/projects/{project_uuid}/accounts | Createbillingaccount
+[**getClientSecret()**](BillingApi.md#getClientSecret) | **GET** /sam/billing/projects/{project_uuid}/secrets | Getclientsecret
+[**hasPayment()**](BillingApi.md#hasPayment) | **GET** /sam/billing/projects/{project_uuid}/payment-methods-exist | Haspayment
+[**listPaymentMethods()**](BillingApi.md#listPaymentMethods) | **GET** /sam/billing/projects/{project_uuid}/payment-methods | Listpaymentmethods
+[**processPayment()**](BillingApi.md#processPayment) | **POST** /sam/billing/projects/{project_uuid}/payments | Processpayment
+[**reconcilePaymentMethod()**](BillingApi.md#reconcilePaymentMethod) | **GET** /sam/billing/projects/{project_uuid}/payment-methods-reconciliation | Reconcilepaymentmethod
+[**removePaymentMethod()**](BillingApi.md#removePaymentMethod) | **DELETE** /sam/billing/projects/{project_uuid}/payment-methods | Removepaymentmethod
 
 
 ## `createBillingAccount()`
 
 ```php
-createBillingAccount($x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\StripeAccountResponse
+createBillingAccount($project_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\StripeAccountResponse
 ```
 
 Createbillingaccount
@@ -34,6 +34,7 @@ $apiInstance = new OpenAPI\Client\Api\BillingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$project_uuid = 'project_uuid_example'; // string
 $x_access_token = 'x_access_token_example'; // string
 $x_secret_token = 'x_secret_token_example'; // string
 $authorization = 'authorization_example'; // string
@@ -42,7 +43,7 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->createBillingAccount($x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->createBillingAccount($project_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BillingApi->createBillingAccount: ', $e->getMessage(), PHP_EOL;
@@ -53,6 +54,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **project_uuid** | **string**|  |
  **x_access_token** | **string**|  | [optional]
  **x_secret_token** | **string**|  | [optional]
  **authorization** | **string**|  | [optional]
@@ -80,7 +82,7 @@ No authorization required
 ## `getClientSecret()`
 
 ```php
-getClientSecret($x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\StripeCustomerSecretResponse
+getClientSecret($project_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\StripeCustomerSecretResponse
 ```
 
 Getclientsecret
@@ -98,6 +100,7 @@ $apiInstance = new OpenAPI\Client\Api\BillingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$project_uuid = 'project_uuid_example'; // string
 $x_access_token = 'x_access_token_example'; // string
 $x_secret_token = 'x_secret_token_example'; // string
 $authorization = 'authorization_example'; // string
@@ -106,7 +109,7 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->getClientSecret($x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->getClientSecret($project_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BillingApi->getClientSecret: ', $e->getMessage(), PHP_EOL;
@@ -117,6 +120,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **project_uuid** | **string**|  |
  **x_access_token** | **string**|  | [optional]
  **x_secret_token** | **string**|  | [optional]
  **authorization** | **string**|  | [optional]
@@ -162,7 +166,7 @@ $apiInstance = new OpenAPI\Client\Api\BillingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$project_uuid = NULL; // mixed
+$project_uuid = 'project_uuid_example'; // string
 $x_access_token = 'x_access_token_example'; // string
 $x_secret_token = 'x_secret_token_example'; // string
 $authorization = 'authorization_example'; // string
@@ -182,7 +186,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_uuid** | [**mixed**](../Model/.md)|  | [optional]
+ **project_uuid** | **string**|  |
  **x_access_token** | **string**|  | [optional]
  **x_secret_token** | **string**|  | [optional]
  **authorization** | **string**|  | [optional]
@@ -228,7 +232,7 @@ $apiInstance = new OpenAPI\Client\Api\BillingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$project_uuid = NULL; // mixed
+$project_uuid = 'project_uuid_example'; // string
 $x_access_token = 'x_access_token_example'; // string
 $x_secret_token = 'x_secret_token_example'; // string
 $authorization = 'authorization_example'; // string
@@ -248,7 +252,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_uuid** | [**mixed**](../Model/.md)|  | [optional]
+ **project_uuid** | **string**|  |
  **x_access_token** | **string**|  | [optional]
  **x_secret_token** | **string**|  | [optional]
  **authorization** | **string**|  | [optional]
@@ -276,7 +280,7 @@ No authorization required
 ## `processPayment()`
 
 ```php
-processPayment($payment, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): string
+processPayment($project_uuid, $payment, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): string
 ```
 
 Processpayment
@@ -294,6 +298,7 @@ $apiInstance = new OpenAPI\Client\Api\BillingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$project_uuid = 'project_uuid_example'; // string
 $payment = new \OpenAPI\Client\Model\Payment(); // \OpenAPI\Client\Model\Payment
 $x_access_token = 'x_access_token_example'; // string
 $x_secret_token = 'x_secret_token_example'; // string
@@ -303,7 +308,7 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->processPayment($payment, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->processPayment($project_uuid, $payment, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BillingApi->processPayment: ', $e->getMessage(), PHP_EOL;
@@ -314,6 +319,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **project_uuid** | **string**|  |
  **payment** | [**\OpenAPI\Client\Model\Payment**](../Model/Payment.md)|  |
  **x_access_token** | **string**|  | [optional]
  **x_secret_token** | **string**|  | [optional]
@@ -342,7 +348,7 @@ No authorization required
 ## `reconcilePaymentMethod()`
 
 ```php
-reconcilePaymentMethod($x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): bool
+reconcilePaymentMethod($project_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): bool
 ```
 
 Reconcilepaymentmethod
@@ -360,6 +366,7 @@ $apiInstance = new OpenAPI\Client\Api\BillingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$project_uuid = 'project_uuid_example'; // string
 $x_access_token = 'x_access_token_example'; // string
 $x_secret_token = 'x_secret_token_example'; // string
 $authorization = 'authorization_example'; // string
@@ -368,7 +375,7 @@ $ehelply_project = 'ehelply_project_example'; // string
 $ehelply_data = 'ehelply_data_example'; // string
 
 try {
-    $result = $apiInstance->reconcilePaymentMethod($x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
+    $result = $apiInstance->reconcilePaymentMethod($project_uuid, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BillingApi->reconcilePaymentMethod: ', $e->getMessage(), PHP_EOL;
@@ -379,6 +386,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **project_uuid** | **string**|  |
  **x_access_token** | **string**|  | [optional]
  **x_secret_token** | **string**|  | [optional]
  **authorization** | **string**|  | [optional]
@@ -424,7 +432,7 @@ $apiInstance = new OpenAPI\Client\Api\BillingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$project_uuid = NULL; // mixed
+$project_uuid = 'project_uuid_example'; // string
 $x_access_token = 'x_access_token_example'; // string
 $x_secret_token = 'x_secret_token_example'; // string
 $authorization = 'authorization_example'; // string
@@ -444,7 +452,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_uuid** | [**mixed**](../Model/.md)|  | [optional]
+ **project_uuid** | **string**|  |
  **x_access_token** | **string**|  | [optional]
  **x_secret_token** | **string**|  | [optional]
  **authorization** | **string**|  | [optional]
