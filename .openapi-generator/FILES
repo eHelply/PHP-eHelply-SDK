@@ -56,7 +56,7 @@ docs/Model/CreateField200Response.md
 docs/Model/CreateFile200Response.md
 docs/Model/CreateKeyResponse.md
 docs/Model/CreateMeta200Response.md
-docs/Model/CreateNote200Response.md
+docs/Model/CreateNoteResponse.md
 docs/Model/CreateProjectCredential.md
 docs/Model/CreateProjectCredit.md
 docs/Model/CreateProjectInvoice.md
@@ -249,7 +249,7 @@ lib/Model/CreateField200Response.php
 lib/Model/CreateFile200Response.php
 lib/Model/CreateKeyResponse.php
 lib/Model/CreateMeta200Response.php
-lib/Model/CreateNote200Response.php
+lib/Model/CreateNoteResponse.php
 lib/Model/CreateProjectCredential.php
 lib/Model/CreateProjectCredit.php
 lib/Model/CreateProjectInvoice.php
@@ -441,7 +441,7 @@ test/Model/CreateField200ResponseTest.php
 test/Model/CreateFile200ResponseTest.php
 test/Model/CreateKeyResponseTest.php
 test/Model/CreateMeta200ResponseTest.php
-test/Model/CreateNote200ResponseTest.php
+test/Model/CreateNoteResponseTest.php
 test/Model/CreateProjectCredentialTest.php
 test/Model/CreateProjectCreditTest.php
 test/Model/CreateProjectInvoiceTest.php
