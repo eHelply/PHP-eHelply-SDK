@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `createNote()`
 
 ```php
-createNote($note_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\CreateNote200Response
+createNote($note_base, $x_access_token, $x_secret_token, $authorization, $ehelply_active_participant, $ehelply_project, $ehelply_data): \OpenAPI\Client\Model\CreateNoteResponse
 ```
 
 Createnote
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CreateNote200Response**](../Model/CreateNote200Response.md)
+[**\OpenAPI\Client\Model\CreateNoteResponse**](../Model/CreateNoteResponse.md)
 
 ### Authorization
 
